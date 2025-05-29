@@ -4,8 +4,9 @@ import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
 import sitemap from '@astrojs/sitemap'
 import icon from 'astro-icon'
+import fs from 'node:fs'
 
-import expressiveCode from 'astro-expressive-code'
+import expressiveCode, { ExpressiveCodeTheme } from 'astro-expressive-code'
 import { rehypeHeadingIds } from '@astrojs/markdown-remark'
 import rehypeExternalLinks from 'rehype-external-links'
 import rehypeKatex from 'rehype-katex'
@@ -18,33 +19,9 @@ import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-s
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
 import tailwindcss from '@tailwindcss/vite'
-import fs from 'node:fs';
-import path from 'node:path';
 
-// Load themes from external source
-const ayuLight = JSON.parse(
-  fs.readFileSync(
-    path.resolve(
-      'node_modules',
-      'shiki',
-      'themes',
-      'ayu-light.json'
-    ),
-    'utf-8'
-  )
-);
-
-const ayuDark = JSON.parse(
-  fs.readFileSync(
-    path.resolve(
-      'node_modules',
-      'shiki',
-      'themes',
-      'ayu-dark.json'
-    ),
-    'utf-8'
-  )
-);
+const jsoncString = fs.readFileSync(new URL(`./themes/ayu-light.jsonc`, import.meta.url), 'utf-8')
+const ayu_light = ExpressiveCodeTheme.fromJSONString(jsoncString)
 
 
 
@@ -52,7 +29,7 @@ export default defineConfig({
   site: 'https://astro-erudite.vercel.app',
   integrations: [
     expressiveCode({
-      themes: ['github-light', 'github-dark'],
+      themes: [ayu_light, 'ayu-dark'],
       plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
       useDarkModeMediaQuery: false,
       themeCssSelector: (theme) => `[data-theme="${theme.name.split('-')[1]}"]`,
@@ -131,10 +108,8 @@ export default defineConfig({
         rehypePrettyCode,
         {
           theme: {
-            // light: 'ayu-light',
-            // dark: 'ayu-dark',
-            light: ayuLight,
-            dark: ayuDark,
+            light: ayu_light,
+            dark: 'github-dark',
           },
         },
       ],
