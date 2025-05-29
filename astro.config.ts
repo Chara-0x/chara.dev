@@ -14,6 +14,8 @@ import rehypePrettyCode from 'rehype-pretty-code'
 import remarkEmoji from 'remark-emoji'
 import remarkMath from 'remark-math'
 import rehypeDocument from 'rehype-document'
+import { createHighlighter } from 'shiki'
+
 
 import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-sections'
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
@@ -24,12 +26,11 @@ const jsoncString = fs.readFileSync(new URL(`./themes/ayu-light.jsonc`, import.m
 const ayu_light = ExpressiveCodeTheme.fromJSONString(jsoncString)
 
 
-
 export default defineConfig({
-  site: 'https://astro-erudite.vercel.app',
+  site: 'https://chara.dev',
   integrations: [
     expressiveCode({
-      themes: [ayu_light, 'ayu-dark'],
+      themes: ['ayu-dark'],
       plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
       useDarkModeMediaQuery: false,
       themeCssSelector: (theme) => `[data-theme="${theme.name.split('-')[1]}"]`,
@@ -108,8 +109,8 @@ export default defineConfig({
         rehypePrettyCode,
         {
           theme: {
-            light: ayu_light,
-            dark: 'github-dark',
+            light: 'ayu-dark',
+            dark: 'ayu-dark',
           },
         },
       ],

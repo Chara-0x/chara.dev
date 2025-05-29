@@ -45,7 +45,6 @@
     "shiki": "^3.4.2",
     "tailwind-merge": "^3.3.0",
     "tailwindcss": "^4.1.7",
-    "tm-themes": "^1.10.6",
     "typescript": "^5.8.3"
   },
   "devDependencies": {
