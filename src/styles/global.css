@@ -52,36 +52,40 @@
 }
 
 :root {
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
+  --background: #FCFCFC; /* editor.bg */
+  --foreground: #5C6166; /* editor.fg */
+  --primary: #FFAA33; /* common.accent */
+  --primary-foreground: #FCFCFC; /* match background for contrast */
+  --secondary: #F3F4F5; /* ui.panel.bg */
+  --secondary-foreground: #5C6166; /* editor.fg */
+  --muted: #F8F9FA; /* ui.bg */
+  --muted-foreground: #8A9199; /* ui.fg */
+  --accent: #FFAA33; /* common.accent */
+  --accent-foreground: #5C6166; /* editor.fg */
+  --destructive: #E65050; /* common.error */
+  --destructive-foreground: #FCFCFC; /* editor.bg */
+  --border: rgba(107, 125, 143, 0.12); /* ui.line */
+  --ring: rgba(3, 91, 214, 0.15); /* editor.selection.active */
 }
 
+
 [data-theme="dark"] {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --ring: oklch(0.556 0 0);
+  --background: #0D1017; /* editor.bg */
+  --foreground: #BFBDB6; /* editor.fg */
+  --primary: #E6B450; /* common.accent */
+  --primary-foreground: #0D1017; /* background for contrast */
+  --secondary: #0F131A; /* ui.panel.bg */
+  --secondary-foreground: #BFBDB6; /* editor.fg */
+  --muted: #0B0E14; /* ui.bg */
+  --muted-foreground: #565B66; /* ui.fg */
+  --accent: #E6B450; /* common.accent */
+  --accent-foreground: #0D1017; /* background */
+  --destructive: #D95757; /* common.error */
+  --destructive-foreground: #FCFCFC; /* light text on destructive bg */
+  --border: #11151C; /* ui.line */
+  --ring: rgba(64, 159, 255, 0.3); /* editor.selection.active */
 }
+
 
 @layer base {
   *,

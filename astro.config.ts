@@ -18,6 +18,35 @@ import { pluginCollapsibleSections } from '@expressive-code/plugin-collapsible-s
 import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
 import tailwindcss from '@tailwindcss/vite'
+import fs from 'node:fs';
+import path from 'node:path';
+
+// Load themes from external source
+const ayuLight = JSON.parse(
+  fs.readFileSync(
+    path.resolve(
+      'node_modules',
+      'shiki',
+      'themes',
+      'ayu-light.json'
+    ),
+    'utf-8'
+  )
+);
+
+const ayuDark = JSON.parse(
+  fs.readFileSync(
+    path.resolve(
+      'node_modules',
+      'shiki',
+      'themes',
+      'ayu-dark.json'
+    ),
+    'utf-8'
+  )
+);
+
+
 
 export default defineConfig({
   site: 'https://astro-erudite.vercel.app',
@@ -102,8 +131,10 @@ export default defineConfig({
         rehypePrettyCode,
         {
           theme: {
-            light: 'github-light',
-            dark: 'github-dark',
+            // light: 'ayu-light',
+            // dark: 'ayu-dark',
+            light: ayuLight,
+            dark: ayuDark,
           },
         },
       ],
