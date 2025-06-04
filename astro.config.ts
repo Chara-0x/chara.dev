@@ -38,6 +38,7 @@ export default defineConfig({
       plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
       useDarkModeMediaQuery: false,
       themeCssSelector: (theme) => `[data-theme="${theme.name.split('-')[1]}"]`,
+      minSyntaxHighlightingColorContrast: 0,
       defaultProps: {
         wrap: true,
         // collapseStyle: 'collapsible-auto',
