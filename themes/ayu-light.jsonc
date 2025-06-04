@@ -1058,7 +1058,7 @@
 				"entity.name.function"
 			],
 			"settings": {
-				"foreground": "#F2AE49"
+                                "foreground": "#FA8D3E"
 			}
 		},
 		{
@@ -1078,7 +1078,7 @@
 				"support.function.go"
 			],
 			"settings": {
-				"foreground": "#F2AE49"
+                                "foreground": "#FA8D3E"
 			}
 		},
 		{
@@ -1139,7 +1139,7 @@
 				"entity.other.attribute-name"
 			],
 			"settings": {
-				"foreground": "#F2AE49"
+                                "foreground": "#FA8D3E"
 			}
 		},
 		{
@@ -1193,7 +1193,7 @@
 				"source.ruby variable.other.readwrite"
 			],
 			"settings": {
-				"foreground": "#F2AE49"
+                                "foreground": "#FA8D3E"
 			}
 		},
 		{
@@ -1347,7 +1347,7 @@
 				"markup.list punctuation.definition.list.begin"
 			],
 			"settings": {
-				"foreground": "#F2AE49"
+                                "foreground": "#FA8D3E"
 			}
 		},
 		{

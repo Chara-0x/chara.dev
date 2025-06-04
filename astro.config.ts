@@ -22,8 +22,12 @@ import { pluginLineNumbers } from '@expressive-code/plugin-line-numbers'
 
 import tailwindcss from '@tailwindcss/vite'
 
-const jsoncString = fs.readFileSync(new URL(`./themes/ayu-light.jsonc`, import.meta.url), 'utf-8')
+const jsoncString = fs.readFileSync(
+  new URL(`./themes/ayu-light.jsonc`, import.meta.url),
+  'utf-8'
+)
 const ayu_light = ExpressiveCodeTheme.fromJSONString(jsoncString)
+ayu_light.name = 'ayu-light'
 
 
 export default defineConfig({
