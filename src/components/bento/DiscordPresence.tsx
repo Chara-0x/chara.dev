@@ -29,16 +29,24 @@ interface LanyardData {
 
 const STATUS_CONFIGS = {
   online: {
-    bgClass: 'bg-primary',
+    bgClass: 'bg-green-600',
     hasIndicator: false,
   },
   idle: {
-    bgClass: 'bg-primary',
+    bgClass: 'bg-yellow-500',
     hasIndicator: true,
-    indicator: <div className="bg-background size-[10px] rounded-full" />,
+    indicator: (
+      <div
+        className="bg-white-100 size-[10px] rounded-full"
+        style={{
+          clipPath: 'circle(50% at 50% 50%)',
+          background: 'radial-gradient(circle at 20% 20%, transparent 40%, currentColor 50%)',
+        }}
+      />
+    ),
   },
   dnd: {
-    bgClass: 'bg-destructive',
+    bgClass: 'bg-red-600',
     hasIndicator: true,
     indicator: <div className="bg-background h-[4px] w-[11px] rounded-full" />,
   },
@@ -107,9 +115,9 @@ const DecorativeBadges = memo(() => {
 
 const UserInfo = memo(() => (
   <div className="bg-border/50 flex flex-col gap-y-1 p-3">
-    <span className="text-base leading-none">enscribe</span>
+    <span className="text-base leading-none">Chara</span>
     <span className="text-muted-foreground text-xs leading-none">
-      @enscribe
+      @chara0x
     </span>
   </div>
 ))
@@ -122,11 +130,11 @@ const AvatarSection = memo<{
       <AvatarComponent
         src="/static/bento/avatar.webp"
         alt="Avatar"
-        fallback="e"
-        className="-mt-12 aspect-square size-16 rounded-full sm:-mt-[4.5rem] sm:size-24"
+        fallback="C"
+        className="-mt-12 aspect-square size-16 rounded-full sm:-mt-[3rem] sm:size-20"
       />
       <div
-        className="absolute inset-0 -mt-12 aspect-square size-16 rounded-full bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-200 group-hover/discord:opacity-100 sm:-mt-[4.5rem] sm:size-24 sm:bg-[url('/static/bento/avatar-foreground.png')]"
+        className="absolute inset-0 -mt-12 aspect-square size-16 rounded-full bg-cover bg-center bg-no-repeat opacity-0 transition-opacity duration-200 sm:size-24 sm:bg-[url('/static/bento/avatar-foreground.png')]"
         aria-hidden="true"
       />
       {statusIndicator}
@@ -135,11 +143,11 @@ const AvatarSection = memo<{
   </div>
 ))
 
-const DiscordIcon = memo(() => (
-  <div className="bg-primary absolute top-0 right-0 m-3 flex size-14 items-center justify-center rounded-full">
-    <FaDiscord className="text-background size-10" />
-  </div>
-))
+// const DiscordIcon = memo(() => (
+//   <div className="bg-primary absolute top-0 right-0 m-3 flex size-14 items-center justify-center rounded-full">
+//     <FaDiscord className="text-background size-10" />
+//   </div>
+// ))
 
 const DiscordLayout = memo<{
   statusIndicator: React.ReactNode
@@ -162,7 +170,7 @@ const DiscordLayout = memo<{
         <div className="bg-border/50 flex-1 p-3">{activityContent}</div>
       </div>
     </div>
-    <DiscordIcon />
+    {/* <DiscordIcon /> */}
   </div>
 ))
 
@@ -288,7 +296,8 @@ const DiscordPresence = () => {
   if (error || !lanyard?.data) {
     return null
   }
-
+  // print lanyard data to console
+  console.log('Lanyard Data:', lanyard.data)
   const { discord_status } = lanyard.data
 
   return (
