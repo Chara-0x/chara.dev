@@ -6,10 +6,23 @@ import Footer from '@/components/Footer.astro'
 import Head from '@/components/Head.astro'
 import Header from '@/components/Header.astro'
 import { SITE } from '@/consts'
+
+import { cn } from '@/lib/utils'
+
+interface Props {
+  class?: string
+}
+
+const { class: className } = Astro.props
 ---
 
 <!doctype html>
 <html class="bg-background text-foreground" lang={SITE.locale}>
+  <!-- <html
+  class="bg-background text-foreground scheme-dark"
+  lang={SITE.locale}
+  data-theme="dark"
+> -->
   <Head>
     <slot name="head" />
   </Head>
@@ -23,11 +36,16 @@ import { SITE } from '@/consts'
         <slot name="table-of-contents" />
       </div>
       <main class="grow">
-        <div class="mx-auto flex max-w-3xl grow flex-col gap-y-6 px-4">
+        <div class={cn(
+          "mx-auto flex grow flex-col gap-y-6 px-4",
+          Astro.url.pathname !== "/" && "max-w-3xl"
+        )}>
           <slot />
         </div>
       </main>
+
       <Footer />
     </div>
   </body>
 </html>
+
