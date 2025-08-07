@@ -27,12 +27,12 @@ const MAX_RETRIES = 3
 const SpotifyPresence = () => {
   // ─── 1. All hooks at the top ──────────────────────────────────
   const [displayData, setDisplayData] = useState<Track | null>(null)
-  const [isLoading, setIsLoading]       = useState(true)
-  const [error, setError]               = useState<string | null>(null)
-  const [bgStyle, setBgStyle]           = useState<React.CSSProperties>({})
+  const [isLoading, setIsLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [bgStyle, setBgStyle] = useState<React.CSSProperties>({})
 
-  const retryCountRef    = useRef(0)
-  const fetchTimeoutRef  = useRef<NodeJS.Timeout | null>(null)
+  const retryCountRef = useRef(0)
+  const fetchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
 
   // ─── 2. Cache helpers ────────────────────────────────────────
   const getCachedData = (): Track | null => {
@@ -84,7 +84,7 @@ const SpotifyPresence = () => {
       setError(null)
       retryCountRef.current = 0
     } catch (err) {
-      console.error(`Fetch #${retryCount+1} failed:`, err)
+      console.error(`Fetch #${retryCount + 1} failed:`, err)
       if (retryCount < MAX_RETRIES) {
         retryCountRef.current = retryCount + 1
         fetchTimeoutRef.current = setTimeout(
@@ -106,7 +106,7 @@ const SpotifyPresence = () => {
     if (cached) {
       setDisplayData(cached)
       setIsLoading(false)
-      fetchWithRetry().catch(() => {})
+      fetchWithRetry().catch(() => { })
     } else {
       fetchWithRetry()
     }
@@ -167,54 +167,54 @@ const SpotifyPresence = () => {
   const { name: song, artist, album, image, url } = displayData
 
   return (
-    <div className="relative flex w-full h-full" style={bgStyle}>
-    <div
-      className="relative flex w-full flex-col justify-between gap-4 p-6 bg-cover bg-center"
-    >
+    <div className="relative flex w-full h-full py-6" style={bgStyle}>
       <div
-        className="aspect-square min-h-0 max-w-[60%] flex-shrink border bg-cover bg-center"
-        style={{ backgroundImage: `url(${image[3]['#text']})` }}
-        role="img"
-        aria-label="Album art"
-      />
-      <div className="flex min-h-0 flex-shrink-0 flex-col justify-end">
-        <div className="mr-8 flex flex-col">
-          <span className="mb-2 flex items-center gap-2">
-            <AudioLines size={16} className="text-primary" />
-            <span className="text-primary text-sm">
-              {displayData['@attr']?.nowplaying === 'true'
-                ? 'Now playing...'
-                : 'Last played...'}
-            </span>
-          </span>
-          <span className="text-md mb-2 line-clamp-2 leading-tight font-medium">
-            {song}
-          </span>
-          <span className="text-muted-foreground line-clamp-1 text-xs">
-            by {artist['#text']}
-          </span>
-          <span className="text-muted-foreground line-clamp-1 text-xs">
-            on {album['#text']}
-          </span>
-        </div>
-      </div>
-      <div className="text-primary absolute top-0 right-0 m-3">
-        <FaSpotify size={56} />
-      </div>
-      <a
-        href={url}
-        aria-label="View on last.fm"
-        title="View on last.fm"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="bg-border/50 text-primary ring-ring group/spotify-link absolute end-0 bottom-0 m-3 rounded-full p-3 transition-[box-shadow] duration-300 hover:ring-2 focus-visible:ring-2"
+        className="relative flex w-full flex-col justify-between gap-4 p-6 mx-5 bg-cover bg-center"
       >
-        <MoveUpRight
-          size={16}
-          className="transition-transform duration-300 group-hover/spotify-link:rotate-12"
+        <div
+          className="aspect-square min-h-0 max-w-[60%] flex-shrink border bg-cover bg-center"
+          style={{ backgroundImage: `url(${image[3]['#text']})` }}
+          role="img"
+          aria-label="Album art"
         />
-      </a>
-    </div>
+        <div className="flex min-h-0 flex-shrink-0 flex-col justify-end">
+          <div className="mr-8 flex flex-col">
+            <span className="mb-2 flex items-center gap-2">
+              <AudioLines size={16} className="text-primary" />
+              <span className="text-primary text-sm">
+                {displayData['@attr']?.nowplaying === 'true'
+                  ? 'Now playing...'
+                  : 'Last played...'}
+              </span>
+            </span>
+            <span className="text-md mb-2 line-clamp-2 leading-tight font-medium">
+              {song}
+            </span>
+            <span className="text-muted-foreground line-clamp-1 text-xs">
+              by {artist['#text']}
+            </span>
+            <span className="text-muted-foreground line-clamp-1 text-xs">
+              on {album['#text']}
+            </span>
+          </div>
+        </div>
+        <div className="text-primary absolute top-0 right-0 m-3">
+          <FaSpotify size={56} />
+        </div>
+        <a
+          href={url}
+          aria-label="View on last.fm"
+          title="View on last.fm"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bg-border/50 text-primary ring-ring group/spotify-link absolute end-0 bottom-0 m-3 rounded-full p-3 transition-[box-shadow] duration-300 hover:ring-2 focus-visible:ring-2"
+        >
+          <MoveUpRight
+            size={16}
+            className="transition-transform duration-300 group-hover/spotify-link:rotate-12"
+          />
+        </a>
+      </div>
     </div>
   )
 }

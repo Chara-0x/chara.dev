@@ -197,14 +197,14 @@ const latestPost = blog.at(0)
 
     {/* Spotify presence */}
     <div class="aspect-square p-2 [grid-area:g]">
-      <Card data-trigger class="size-full w-full py-0 overflow-hidden">
+      <Card data-trigger className=" py-0 overflow-hidden">
         <div
           class="group/spotify relative size-full bg-[url('/static/bento/spotify-background.png')] bg-cover bg-center bg-no-repeat"
         >
           <div
             class="absolute size-full bg-[url('/static/bento/spotify-foreground.png')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 sm:opacity-0 sm:group-hover/spotify:opacity-100"
           />
-          <div class="flex size-full items-center justify-center p-4">
+          <div class="flex size-full items-center justify-center">
             <SpotifyPresence client:load />
           </div>
         </div>

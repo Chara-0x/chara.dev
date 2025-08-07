@@ -2,24 +2,70 @@ import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
 import { Vibrant } from "node-vibrant/browser";
 
+
 /**
- * Given an image URL, extracts two complementary palette colors
- * and returns a CSS linear-gradient.
+ * Linearly mix a hex color toward white by `amount` (0→original, 1→white).
  */
+function lightenHex(hex: string, amount: number): string {
+  // strip “#” and parse
+  const num = parseInt(hex.slice(1), 16)
+  let r = (num >> 16) & 0xff
+  let g = (num >> 8) & 0xff
+  let b = num & 0xff
+
+  // move each channel toward 255
+  r = Math.round(r + (255 - r) * amount)
+  g = Math.round(g + (255 - g) * amount)
+  b = Math.round(b + (255 - b) * amount)
+
+  // reassemble and pad
+  return `#${((1 << 24) | (r << 16) | (g << 8) | b)
+    .toString(16)
+    .slice(1)}`
+}
+
 export async function getImageGradient(imageUrl: string): Promise<string> {
   try {
-    const palette = await Vibrant.from(imageUrl).getPalette();
-    // pick two swatches; fall back to hex black/white if missing
-    const primary   = palette.Vibrant?.hex   ?? '#000000';
-    const secondary = palette.Muted?.hex     ?? '#FFFFFF';
-    // 135deg gives a nice diagonal sweep
-    return `linear-gradient(135deg, ${primary}, ${secondary})`;
+    // lower quality & fewer clusters → faster palette extraction
+    const palette = await Vibrant
+      .from(imageUrl)
+      .quality(1)           // sample every 1px instead of default 10px
+      .maxColorCount(16)    // cluster into just 16 colors
+      .getPalette()
+
+    // fallbacks:
+    const rawPrimary   = palette.Vibrant?.hex   ?? '#000000'
+    const rawSecondary = palette.Muted?.hex     ?? '#FFFFFF'
+
+    // lighten more toward white (0.0–1.0)
+    const primary   = lightenHex(rawPrimary,   0.8)
+    const secondary = lightenHex(rawSecondary, 0.9  )
+
+    return `linear-gradient(135deg, ${primary}, ${secondary})`
   } catch (e) {
-    console.error('Gradient generation failed', e);
-    // sensible default
-    return 'linear-gradient(135deg, #333, #777)';
+    console.error('Gradient generation failed', e)
+    return 'linear-gradient(135deg, #333, #777)'
   }
 }
+
+// /**
+//  * Given an image URL, extracts two complementary palette colors
+//  * and returns a CSS linear-gradient.
+//  */
+// export async function getImageGradient(imageUrl: string): Promise<string> {
+//   try {
+//     const palette = await Vibrant.from(imageUrl).getPalette();
+//     // pick two swatches; fall back to hex black/white if missing
+//     const primary   = palette.Vibrant?.hex   ?? '#000000';
+//     const secondary = palette.Muted?.hex     ?? '#FFFFFF';
+//     // 135deg gives a nice diagonal sweep
+//     return `linear-gradient(135deg, ${primary}, ${secondary})`;
+//   } catch (e) {
+//     console.error('Gradient generation failed', e);
+//     // sensible default
+//     return 'linear-gradient(135deg, #333, #777)';
+//   }
+// }
 
 
 
