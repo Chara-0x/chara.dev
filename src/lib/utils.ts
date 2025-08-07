@@ -1,5 +1,27 @@
 import { type ClassValue, clsx } from 'clsx'
 import { twMerge } from 'tailwind-merge'
+import { Vibrant } from "node-vibrant/browser";
+
+/**
+ * Given an image URL, extracts two complementary palette colors
+ * and returns a CSS linear-gradient.
+ */
+export async function getImageGradient(imageUrl: string): Promise<string> {
+  try {
+    const palette = await Vibrant.from(imageUrl).getPalette();
+    // pick two swatches; fall back to hex black/white if missing
+    const primary   = palette.Vibrant?.hex   ?? '#000000';
+    const secondary = palette.Muted?.hex     ?? '#FFFFFF';
+    // 135deg gives a nice diagonal sweep
+    return `linear-gradient(135deg, ${primary}, ${secondary})`;
+  } catch (e) {
+    console.error('Gradient generation failed', e);
+    // sensible default
+    return 'linear-gradient(135deg, #333, #777)';
+  }
+}
+
+
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs))

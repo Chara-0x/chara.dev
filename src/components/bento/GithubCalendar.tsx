@@ -18,7 +18,8 @@ async function fetchCalendarData(username: string): Promise<ApiResponse> {
     `https://github-contributions-api.jogruber.de/v4/${username}?y=last`,
   )
   const data: ApiResponse | ApiErrorResponse = await response.json()
-
+  // print out username to console
+  console.log('GitHub Username:', username)
   if (!response.ok) {
     throw Error(
       `Fetching GitHub contribution data for "${username}" failed: ${

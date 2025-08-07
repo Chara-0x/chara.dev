@@ -162,13 +162,20 @@ const DiscordLayout = memo<{
       <br />
       to add me!
     </p>
+<div className="rounded-[4px] bg-gradient-to-t from-[#6ee0ff] to-[#bdeaff] p-1">
     <div className="grid size-full grid-rows-4">
       <div className="bg-border/25 bg-[url('/static/bento/discord-banner.png')] bg-cover bg-center bg-no-repeat" />
-      <div className="bg-muted row-span-3 flex flex-col gap-3 p-3">
+      
+      {/* <div className="bg-gradient-to-t from-[rgba(0%,78.4%,100%,0.5)] to-[#c5ebfc] row-span-3 flex flex-col gap-3 p-3"> */}
+      <div className="bg-gradient-to-t from-[#bee8fd] to-[#e7f6fe] row-span-3 flex flex-col gap-3 p-3">
+      {/* <div
+        className="row-span-3 flex flex-col gap-3 p-3
+                   bg-gradient-to-r from-[#00c8ff] to-[#bdeaff]" > */}
         <AvatarSection statusIndicator={statusIndicator} />
         <UserInfo />
         <div className="bg-border/50 flex-1 p-3">{activityContent}</div>
       </div>
+    </div>
     </div>
     {/* <DiscordIcon /> */}
   </div>
@@ -193,7 +200,7 @@ const ActivityDisplay = memo<{
   const displayActivity = activity || {
     name: 'No status',
     details: "I'm probably sleeping...",
-    state: 'Enjoy your stay!',
+    state: 'Zzzzz',
   }
 
   const displayElapsedTime = elapsedTime || '∞:00 elapsed'

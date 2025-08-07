@@ -190,14 +190,14 @@ const latestPost = blog.at(0)
           </div>
         </div>
         <CardContent class="flex size-full items-center justify-center p-8">
-          <GithubCalendar username={SOCIAL_LINKS.find(l => l.label === 'GitHub')?.username ?? 'your-username'} client:load />
+          <GithubCalendar username={SOCIAL_LINKS.find(l => l.label === 'GitHub')?.username ?? 'chara-0x'} client:load />
         </CardContent>
       </Card>
     </div>
 
     {/* Spotify presence */}
     <div class="aspect-square p-2 [grid-area:g]">
-      <Card data-trigger class="size-full overflow-hidden">
+      <Card data-trigger class="size-full w-full py-0 overflow-hidden">
         <div
           class="group/spotify relative size-full bg-[url('/static/bento/spotify-background.png')] bg-cover bg-center bg-no-repeat"
         >

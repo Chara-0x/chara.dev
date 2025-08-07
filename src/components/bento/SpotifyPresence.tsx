@@ -1,7 +1,9 @@
+// SpotifyPresence.tsx
 import { useEffect, useState, useRef } from 'react'
 import { FaSpotify } from 'react-icons/fa'
 import { Skeleton } from '@/components/ui/skeleton'
 import { MoveUpRight, AudioLines } from 'lucide-react'
+import { getImageGradient } from '@/lib/utils'
 
 interface Track {
   name: string
@@ -19,28 +21,31 @@ interface CachedData {
 
 const CACHE_KEY = 'spotify-presence-cache'
 const CACHE_DURATION = 5 * 60 * 1000 // 5 minutes
-const RETRY_DELAY = 2000 // 2 seconds
+const RETRY_DELAY = 2000              // 2 seconds
 const MAX_RETRIES = 3
 
 const SpotifyPresence = () => {
+  // ─── 1. All hooks at the top ──────────────────────────────────
   const [displayData, setDisplayData] = useState<Track | null>(null)
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState<string | null>(null)
-  const retryCountRef = useRef(0)
-  const fetchTimeoutRef = useRef<NodeJS.Timeout | null>(null)
+  const [isLoading, setIsLoading]       = useState(true)
+  const [error, setError]               = useState<string | null>(null)
+  const [bgStyle, setBgStyle]           = useState<React.CSSProperties>({})
 
+  const retryCountRef    = useRef(0)
+  const fetchTimeoutRef  = useRef<NodeJS.Timeout | null>(null)
+
+  // ─── 2. Cache helpers ────────────────────────────────────────
   const getCachedData = (): Track | null => {
     try {
-      const cached = localStorage.getItem(CACHE_KEY)
-      if (cached) {
-        const parsedCache: CachedData = JSON.parse(cached)
-        const isExpired = Date.now() - parsedCache.timestamp > CACHE_DURATION
-        if (!isExpired) {
-          return parsedCache.track
+      const raw = localStorage.getItem(CACHE_KEY)
+      if (raw) {
+        const { track, timestamp }: CachedData = JSON.parse(raw)
+        if (Date.now() - timestamp <= CACHE_DURATION) {
+          return track
         }
       }
-    } catch (error) {
-      console.warn('Failed to parse cached data:', error)
+    } catch (e) {
+      console.warn('Cache read failed:', e)
       localStorage.removeItem(CACHE_KEY)
     }
     return null
@@ -48,58 +53,43 @@ const SpotifyPresence = () => {
 
   const setCachedData = (track: Track) => {
     try {
-      const cacheData: CachedData = {
-        track,
-        timestamp: Date.now(),
-      }
-      localStorage.setItem(CACHE_KEY, JSON.stringify(cacheData))
-    } catch (error) {
-      console.warn('Failed to cache data:', error)
+      localStorage.setItem(
+        CACHE_KEY,
+        JSON.stringify({ track, timestamp: Date.now() })
+      )
+    } catch (e) {
+      console.warn('Cache write failed:', e)
     }
   }
 
+  // ─── 3. Fetch + retry logic ───────────────────────────────────
   const fetchWithRetry = async (retryCount = 0): Promise<void> => {
     try {
       const controller = new AbortController()
       const timeoutId = setTimeout(() => controller.abort(), 10000)
 
-      const response = await fetch(
-        'https://lastfm-last-played.biancarosa.com.br/enscribe/latest-song',
-        {
-          signal: controller.signal,
-          headers: {
-            'Cache-Control': 'no-cache',
-          },
-        },
+      const res = await fetch(
+        'https://lastfm-last-played.biancarosa.com.br/chara0x/latest-song',
+        { signal: controller.signal, headers: { 'Cache-Control': 'no-cache' } }
       )
-
       clearTimeout(timeoutId)
 
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}: ${response.statusText}`)
-      }
+      if (!res.ok) throw new Error(`HTTP ${res.status}`)
 
-      const data = await response.json()
+      const json = await res.json()
+      if (!json.track) throw new Error('No track data')
 
-      if (data.track) {
-        setDisplayData(data.track)
-        setCachedData(data.track)
-        setError(null)
-        retryCountRef.current = 0
-      } else {
-        throw new Error('No track data received')
-      }
-    } catch (fetchError) {
-      console.error(`Fetch attempt ${retryCount + 1} failed:`, fetchError)
-
+      setDisplayData(json.track)
+      setCachedData(json.track)
+      setError(null)
+      retryCountRef.current = 0
+    } catch (err) {
+      console.error(`Fetch #${retryCount+1} failed:`, err)
       if (retryCount < MAX_RETRIES) {
         retryCountRef.current = retryCount + 1
-
         fetchTimeoutRef.current = setTimeout(
-          () => {
-            fetchWithRetry(retryCount + 1)
-          },
-          RETRY_DELAY * (retryCount + 1),
+          () => fetchWithRetry(retryCount + 1),
+          RETRY_DELAY * (retryCount + 1)
         )
       } else {
         setError('Failed to load music data')
@@ -110,25 +100,31 @@ const SpotifyPresence = () => {
     }
   }
 
+  // ─── 4. Initial load ─────────────────────────────────────────
   useEffect(() => {
-    const cachedTrack = getCachedData()
-    if (cachedTrack) {
-      setDisplayData(cachedTrack)
+    const cached = getCachedData()
+    if (cached) {
+      setDisplayData(cached)
       setIsLoading(false)
-      setError(null)
-
       fetchWithRetry().catch(() => {})
     } else {
       fetchWithRetry()
     }
-
     return () => {
-      if (fetchTimeoutRef.current) {
-        clearTimeout(fetchTimeoutRef.current)
-      }
+      if (fetchTimeoutRef.current) clearTimeout(fetchTimeoutRef.current)
     }
   }, [])
 
+  // ─── 5. Generate gradient whenever the image changes ────────
+  useEffect(() => {
+    if (!displayData) return
+    const url = displayData.image[3]['#text']
+    getImageGradient(url).then(gradient => {
+      setBgStyle({ backgroundImage: gradient })
+    })
+  }, [displayData])
+
+  // ─── 6. Loading / no-data states ────────────────────────────
   if (isLoading && !displayData) {
     return (
       <div className="relative flex h-full w-full flex-col justify-between p-6">
@@ -154,12 +150,9 @@ const SpotifyPresence = () => {
       <div className="relative flex h-full w-full flex-col justify-between p-6">
         <div className="flex h-full items-center justify-center">
           <div className="text-center">
-            <FaSpotify
-              size={48}
-              className="text-muted-foreground mx-auto mb-4"
-            />
+            <FaSpotify size={48} className="text-muted-foreground mx-auto mb-4" />
             <p className="text-muted-foreground text-sm">
-              No music data available
+              {error ?? 'No music data available'}
             </p>
           </div>
         </div>
@@ -170,40 +163,39 @@ const SpotifyPresence = () => {
     )
   }
 
+  // ─── 7. Main render ──────────────────────────────────────────
   const { name: song, artist, album, image, url } = displayData
 
   return (
-    <>
-      <div className="relative flex size-full flex-col justify-between gap-4 p-6">
-        <div
-          className="aspect-square min-h-0 max-w-[60%] flex-shrink border bg-cover bg-center grayscale sepia-50"
-          style={{
-            backgroundImage: `url(${image[3]['#text']})`,
-          }}
-          role="img"
-          aria-label="Album art"
-        />
-        <div className="flex min-h-0 flex-shrink-0 flex-col justify-end">
-          <div className="mr-8 flex flex-col">
-            <span className="mb-2 flex items-center gap-2">
-              <AudioLines size={16} className="text-primary" />
-              <span className="text-primary text-sm">
-                {displayData['@attr']?.nowplaying === 'true'
-                  ? 'Now playing...'
-                  : 'Last played...'}
-              </span>
+    <div className="relative flex w-full h-full" style={bgStyle}>
+    <div
+      className="relative flex w-full flex-col justify-between gap-4 p-6 bg-cover bg-center"
+    >
+      <div
+        className="aspect-square min-h-0 max-w-[60%] flex-shrink border bg-cover bg-center"
+        style={{ backgroundImage: `url(${image[3]['#text']})` }}
+        role="img"
+        aria-label="Album art"
+      />
+      <div className="flex min-h-0 flex-shrink-0 flex-col justify-end">
+        <div className="mr-8 flex flex-col">
+          <span className="mb-2 flex items-center gap-2">
+            <AudioLines size={16} className="text-primary" />
+            <span className="text-primary text-sm">
+              {displayData['@attr']?.nowplaying === 'true'
+                ? 'Now playing...'
+                : 'Last played...'}
             </span>
-            <span className="text-md mb-2 line-clamp-2 leading-tight font-medium">
-              {song}
-            </span>
-            <span className="text-muted-foreground line-clamp-1 text-xs">
-              <span className="text-muted-foreground">by</span>{' '}
-              {artist['#text']}
-            </span>
-            <span className="text-muted-foreground line-clamp-1 text-xs">
-              <span className="text-muted-foreground">on</span> {album['#text']}
-            </span>
-          </div>
+          </span>
+          <span className="text-md mb-2 line-clamp-2 leading-tight font-medium">
+            {song}
+          </span>
+          <span className="text-muted-foreground line-clamp-1 text-xs">
+            by {artist['#text']}
+          </span>
+          <span className="text-muted-foreground line-clamp-1 text-xs">
+            on {album['#text']}
+          </span>
         </div>
       </div>
       <div className="text-primary absolute top-0 right-0 m-3">
@@ -222,7 +214,8 @@ const SpotifyPresence = () => {
           className="transition-transform duration-300 group-hover/spotify-link:rotate-12"
         />
       </a>
-    </>
+    </div>
+    </div>
   )
 }
 
