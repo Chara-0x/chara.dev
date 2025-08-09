@@ -1,5 +1,5 @@
 import { useMemo, useState, useEffect, useCallback, memo } from 'react'
-import { FaDiscord } from 'react-icons/fa'
+import { FaDiscord, FaSpotify } from 'react-icons/fa'
 import { useLanyard } from 'react-use-lanyard'
 import { Skeleton } from '@/components/ui/skeleton'
 import { cn, getElapsedTime } from '@/lib/utils'
@@ -79,38 +79,43 @@ const StatusIndicator = memo<{ status: LanyardData['discord_status'] }>(
   },
 )
 
+
 const DecorativeBadges = memo(() => {
+  // size-* exists, but these icons are tiny; bump to size-4 for visibility
   const badgeStyles = useMemo(
     () => [
-      'size-3 rounded-full bg-purple-200/75 sepia-50',
-      'size-3 bg-violet-200/75 sepia-50 rounded-xs',
-      'size-3 rounded-xs bg-emerald-200/75 sepia-50',
-      'size-3 bg-fuchsia-200/75 sepia-50',
-      'size-3 rounded-full bg-teal-200/75 sepia-50',
-      'size-3 rounded-full bg-transparent ring-2 ring-sky-200/75 sepia-50 ring-inset',
+      'size-5 px-4',
+      'size-6',
+      'size-7',
+      'size-6',
     ],
     [],
   )
 
-  const clipPaths = useMemo(
+  // Just store the paths; we'll wrap them in url(...) below
+  const badgeUrls = useMemo(
     () => [
-      undefined,
-      'polygon(50% 100%, 100% 50%, 100% 0%, 0% 0%, 0% 50%)',
-      undefined,
-      'polygon(50% 0%, 85% 0%, 100% 35%, 85% 55%, 50% 100%, 15% 55%, 0% 35%, 15% 0%)',
-      undefined,
-      undefined,
+      '/static/badges/1.png',
+      '/static/badges/2.png',
+      '/static/badges/3.png',
+      '/static/badges/4.png',
     ],
     [],
   )
 
   return (
-    <div className="bg-[#000000]/3 rounded flex items-center gap-1.5 px-2">
-      {badgeStyles.map((style, index) => (
+    <div className="bg-[#000000]/3 rounded flex items-center gap-0.5 px-2 py-1">
+      {badgeUrls.map((src, i) => (
         <div
-          key={index}
-          className={style}
-          style={clipPaths[index] ? { clipPath: clipPaths[index] } : undefined}
+          key={i}
+          className={badgeStyles[i]}
+          style={{
+            backgroundImage: `url('${src}')`,
+            backgroundRepeat: 'no-repeat',
+            backgroundPosition: 'center',
+            backgroundSize: 'contain',
+          }}
+          aria-label={`badges-${i + 1}`}
         />
       ))}
     </div>
@@ -145,22 +150,12 @@ const AvatarSection = memo<{
   </div>
 ))
 
-// const DiscordIcon = memo(() => (
-//   <div className="bg-primary absolute top-0 right-0 m-3 flex size-14 items-center justify-center rounded-full">
-//     <FaDiscord className="text-background size-10" />
-//   </div>
-// ))
-
 const DiscordLayout = memo<{
   statusIndicator: React.ReactNode
   activityContent: React.ReactNode
-}>(({ statusIndicator, activityContent }) => (
+  children?: React.ReactNode
+}>(({ statusIndicator, activityContent, children }) => (
   <div data-trigger className="group/discord relative size-full overflow-hidden">
-    {/* <p className="text-foreground/80 bg-muted absolute top-4 left-30 hidden border p-2 text-xs opacity-0 transition-opacity duration-200 group-hover/discord:opacity-100 sm:block">
-      Feel free
-      <br />
-      to add me!
-    </p> */}
     <div className="rounded-xl bg-gradient-to-t from-[#6ee0ff] to-[#bdeaff] p-1">
       <div className="grid size-full grid-rows-1">
         <div
@@ -168,13 +163,15 @@ const DiscordLayout = memo<{
           style={{ minHeight: 100, height: 100 }}
         />
       </div>
-      <div className="rounded-b-xl bg-gradient-to-t from-[#bee8fd] to-[#e7f6fe] row-span-3 flex flex-col gap-3 p-3">
+      <div className="rounded-b-xl bg-gradient-to-t from-[#bee8fd] to-[#e7f6fe] flex flex-col gap-3 p-3">
         <AvatarSection statusIndicator={statusIndicator} />
         <UserInfo />
-        <div className="bg-[#000000]/3 rounded  flex-1 p-3">{activityContent}</div>
+        {/* Status box */}
+        <div className="bg-[#000000]/3 rounded p-3">{activityContent}</div>
+        {/* Anything after status box */}
+        {children}
       </div>
     </div>
-    {/* <DiscordIcon /> */}
   </div>
 ))
 
@@ -311,25 +308,91 @@ const AdditionalActivities = memo<{
   )
 })
 
-const SpotifyStatusBar = memo<{ profile: BuiltDiscordProfile | null }>(
-  ({ profile }) => {
+/** NEW: Spotify card UI matching the screenshot + live progress via timestamps */
+const SpotifyNowPlayingCard = memo<{
+  profile: BuiltDiscordProfile | null
+  onForceRefresh?: () => void
+}>(({ profile, onForceRefresh }) => {
     const sp = profile?.spotify
     if (!sp) return null
 
-    const pct = Math.max(0, Math.min(1, sp.progress.percent))
+        // Drive progress from timestamps so it animates without a refetch
+    const startAt = profile?.spotify?.timestamps.start ?? 0
+    const endAt = profile?.spotify?.timestamps.end ?? Date.now() + 720000 // default to 1 hour if no end time
+    const [now, setNow] = useState<number>(startAt) // deterministic on SSR
+
+    useEffect(() => {
+      // tick every second on the client
+      const id = setInterval(() => setNow(Date.now()), 1000)
+      return () => clearInterval(id)
+    }, [])
+
+    // use startAt for the first pass to avoid SSR/client drift
+    const duration = Math.max(0, endAt - startAt)
+    const elapsed = Math.min(duration, Math.max(0, (now ?? startAt) - startAt))
+    const pct = duration > 0 ? elapsed / duration : 0
     const width = `${Math.round(pct * 100)}%`
 
+    const fmt = (ms: number) => {
+      const sTotal = Math.floor(ms / 1000)
+      const m = Math.floor((sTotal % 3600) / 60)
+      const s = sTotal % 60
+      return `${m}:${String(s).padStart(2, '0')}`
+    }
+
+
+    useEffect(() => {
+  if (!profile?.spotify) return
+
+  const endAt = profile.spotify.timestamps.end
+  const delay = endAt - Date.now()
+
+  if (delay <= 0) {
+    // Track already past end: trigger an immediate revalidate once
+    onForceRefresh?.()
+    return
+  }
+
+  const t = setTimeout(() => {
+    onForceRefresh?.() // force SWR to fetch the next track right when this one ends
+  }, delay + 250) // tiny buffer to avoid edge timing issues
+
+  return () => clearTimeout(t)
+}, [profile?.spotify?.timestamps.end, onForceRefresh])
+
     return (
-      <div className="mt-2">
-        <div className="text-[11px] leading-none mb-1 text-muted-foreground line-clamp-1">
-          Listening: <span className="text-foreground">{sp.song}</span> — {sp.artist}
+      <div className="mt-3 rounded-xl bg-white/60 p-3 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] backdrop-blur-md">
+        {/* Header */}
+        <div className="mb-3 flex items-center justify-between">
+          <div className="flex items-center gap-2 text-sm font-medium">
+            <FaSpotify className="opacity-80" />
+            <span className="tracking-tight">Listening to Spotify</span>
+          </div>
+          <div className="text-muted-foreground -mr-1 select-none px-2 text-xl leading-none">⋯</div>
         </div>
-        <div className="h-1 w-full rounded-full bg-black/20 overflow-hidden">
-          <div className="h-full bg-black/60" style={{ width }} />
-        </div>
-        <div className="mt-1 flex justify-between text-[11px] text-muted-foreground leading-none">
-          <span>{sp.progress.elapsedLabel}</span>
-          <span>{sp.progress.totalLabel}</span>
+
+        {/* Body */}
+        <div className="flex items-center gap-3">
+          {/* Album art */}
+          <img
+            src={sp.album_art_url}
+            alt={`${sp.album} cover`}
+            className="size-14 rounded-md object-cover"
+          />
+
+          {/* Track info + progress */}
+          <div className="min-w-0 flex-1">
+            <div className="truncate text-sm font-semibold leading-tight">{sp.song}</div>
+            <div className="text-muted-foreground truncate text-xs">{sp.artist}</div>
+
+            <div className="mt-2 flex items-center gap-2">
+              <span className="text-muted-foreground text-[11px] tabular-nums">{fmt(elapsed)}</span>
+              <div className="relative h-[3px] flex-1 rounded-full bg-black/15">
+                <div className="absolute inset-y-0 left-0 rounded-full bg-black/60" style={{ width }} />
+              </div>
+              <span className="text-muted-foreground text-[11px] tabular-nums">{fmt(duration)}</span>
+            </div>
+          </div>
         </div>
       </div>
     )
@@ -341,19 +404,28 @@ const SpotifyStatusBar = memo<{ profile: BuiltDiscordProfile | null }>(
    ======================= */
 
 const DiscordPresence = () => {
-  const {
-    data: lanyard,
-    isLoading,
-    error,
-  } = useLanyard({
+  // NEW: tick that bumps on every successful refresh to force a re-render
+  const [refreshTick, setRefreshTick] = useState(0)
+
+const {
+  data: lanyard,
+  isLoading,
+  error,
+  mutate, // NEW
+} = useLanyard({
     userId: DISCORD_USER_ID,
-  })
+    refreshInterval: 10000,           // refresh every 10s
+    dedupingInterval: 0,              // NEW: don’t coalesce refreshes
+    revalidateOnFocus: true,          // optional: update on focus
+    refreshWhenHidden: true,          // optional: keep updating in bg
+    onSuccess: () => setRefreshTick(t => t + 1), // NEW: force rerender on fetch
+  } as any)
 
   const mainActivity = useMemo(() => {
     if (!lanyard?.data?.activities) return null
     return (
       lanyard.data.activities.find(
-        (activity) => activity.type === 0 && !!activity.assets,
+      (activity: Activity) => activity.type === 0 && !!activity.assets,
       ) || null
     )
   }, [lanyard?.data?.activities])
@@ -390,14 +462,14 @@ const DiscordPresence = () => {
         } as any)
         if (mounted) setProfile(enriched)
       } catch (e) {
-        // swallow – we don't want to change existing behavior
         if (mounted) setProfile(null)
       }
     })()
     return () => {
       mounted = false
     }
-  }, [lanyard?.data])
+    // NEW: re-build on every successful refresh as well
+  }, [lanyard?.data, refreshTick])
 
   if (isLoading) {
     return <LoadingSkeleton />
@@ -409,7 +481,6 @@ const DiscordPresence = () => {
 
   // print lanyard data to console
   console.log('Lanyard Data:', lanyard.data)
-  // NEW: also log enriched profile for debugging added features
   if (profile) console.log('Enriched Discord Profile:', profile)
 
   const { discord_status } = lanyard.data
@@ -418,14 +489,16 @@ const DiscordPresence = () => {
     <DiscordLayout
       statusIndicator={<StatusIndicator status={discord_status} />}
       activityContent={
-        <>
-          <ActivityDisplay activity={mainActivity} elapsedTime={elapsedTime} />
-          {/* NEW: optional extras (do not affect existing behavior) */}
-          <SpotifyStatusBar profile={profile} />
-          <AdditionalActivities profile={profile} mainActivity={mainActivity} />
-        </>
+        <ActivityDisplay activity={mainActivity} elapsedTime={elapsedTime} />
       }
-    />
+    >
+      {/* New child after status box */}
+<SpotifyNowPlayingCard
+  key={profile?.spotify?.track_id ?? 'no-track'}
+  profile={profile}
+  onForceRefresh={() => mutate()}
+/>      <AdditionalActivities profile={profile} mainActivity={mainActivity} />
+    </DiscordLayout>
   )
 }
 

@@ -172,7 +172,7 @@ const SpotifyPresence = () => {
         className="relative flex w-full flex-col justify-between gap-4 p-6 mx-5 bg-cover bg-center"
       >
         <div
-          className="aspect-square min-h-0 max-w-[60%] flex-shrink border bg-cover bg-center"
+          className="aspect-square min-h-0 max-w-[60%] flex-shrink border bg-cover bg-center rounded-sm"
           style={{ backgroundImage: `url(${image[3]['#text']})` }}
           role="img"
           aria-label="Album art"
