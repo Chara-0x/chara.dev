@@ -5,6 +5,9 @@ import { Skeleton } from '@/components/ui/skeleton'
 import { cn, getElapsedTime } from '@/lib/utils'
 import AvatarComponent from '@/components/ui/avatar'
 
+/** NEW: use the enriched profile builder */
+import { buildDiscordProfile, type BuiltDiscordProfile } from '@/lib/discordUtils'
+
 const DISCORD_USER_ID = '640550361853198348'
 
 interface Activity {
@@ -40,7 +43,8 @@ const STATUS_CONFIGS = {
         className="bg-white-100 size-[10px] rounded-full"
         style={{
           clipPath: 'circle(50% at 50% 50%)',
-          background: 'radial-gradient(circle at 20% 20%, transparent 40%, currentColor 50%)',
+          background:
+            'radial-gradient(circle at 20% 20%, transparent 40%, currentColor 50%)',
         }}
       />
     ),
@@ -101,7 +105,7 @@ const DecorativeBadges = memo(() => {
   )
 
   return (
-    <div className="bg-border/50 flex items-center gap-1.5 px-2">
+    <div className="bg-[#000000]/3 rounded flex items-center gap-1.5 px-2">
       {badgeStyles.map((style, index) => (
         <div
           key={index}
@@ -114,11 +118,9 @@ const DecorativeBadges = memo(() => {
 })
 
 const UserInfo = memo(() => (
-  <div className="bg-border/50 flex flex-col gap-y-1 p-3">
+  <div className="bg-[#000000]/4 flex flex-col gap-y-1 p-3 rounded-md">
     <span className="text-base leading-none">Chara</span>
-    <span className="text-muted-foreground text-xs leading-none">
-      @chara0x
-    </span>
+    <span className="text-muted-foreground text-xs leading-none">@chara0x</span>
   </div>
 ))
 
@@ -153,29 +155,24 @@ const DiscordLayout = memo<{
   statusIndicator: React.ReactNode
   activityContent: React.ReactNode
 }>(({ statusIndicator, activityContent }) => (
-  <div
-    data-trigger
-    className="group/discord relative size-full overflow-hidden"
-  >
-    <p className="text-foreground/80 bg-muted absolute top-4 left-30 hidden border p-2 text-xs opacity-0 transition-opacity duration-200 group-hover/discord:opacity-100 sm:block">
+  <div data-trigger className="group/discord relative size-full overflow-hidden">
+    {/* <p className="text-foreground/80 bg-muted absolute top-4 left-30 hidden border p-2 text-xs opacity-0 transition-opacity duration-200 group-hover/discord:opacity-100 sm:block">
       Feel free
       <br />
       to add me!
-    </p>
-<div className="rounded-[4px] bg-gradient-to-t from-[#6ee0ff] to-[#bdeaff] p-1">
-    <div className="grid size-full grid-rows-4">
-      <div className="bg-border/25 bg-[url('/static/bento/discord-banner.png')] bg-cover bg-center bg-no-repeat" />
-      
-      {/* <div className="bg-gradient-to-t from-[rgba(0%,78.4%,100%,0.5)] to-[#c5ebfc] row-span-3 flex flex-col gap-3 p-3"> */}
-      <div className="bg-gradient-to-t from-[#bee8fd] to-[#e7f6fe] row-span-3 flex flex-col gap-3 p-3">
-      {/* <div
-        className="row-span-3 flex flex-col gap-3 p-3
-                   bg-gradient-to-r from-[#00c8ff] to-[#bdeaff]" > */}
+    </p> */}
+    <div className="rounded-xl bg-gradient-to-t from-[#6ee0ff] to-[#bdeaff] p-1">
+      <div className="grid size-full grid-rows-1">
+        <div
+          className="rounded-t-xl bg-border/25 bg-[url('/static/bento/discord-banner.png')] bg-cover bg-center bg-no-repeat"
+          style={{ minHeight: 100, height: 100 }}
+        />
+      </div>
+      <div className="rounded-b-xl bg-gradient-to-t from-[#bee8fd] to-[#e7f6fe] row-span-3 flex flex-col gap-3 p-3">
         <AvatarSection statusIndicator={statusIndicator} />
         <UserInfo />
-        <div className="bg-border/50 flex-1 p-3">{activityContent}</div>
+        <div className="bg-[#000000]/3 rounded  flex-1 p-3">{activityContent}</div>
       </div>
-    </div>
     </div>
     {/* <DiscordIcon /> */}
   </div>
@@ -259,6 +256,90 @@ const LoadingSkeleton = memo(() => (
   />
 ))
 
+/* =======================
+   NEW: helpers for more activities + spotify
+   We DO NOT change existing behavior; we only add optional renderers.
+   ======================= */
+
+const AdditionalActivities = memo<{
+  profile: BuiltDiscordProfile | null
+  mainActivity: Activity | null
+}>(({ profile, mainActivity }) => {
+  if (!profile?.activities?.length) return null
+
+  // Exclude the already-shown main activity (match by name/details/state where possible)
+  const others = profile.activities
+    .map((a) => a.activity)
+    .filter((a) => a.type !== 4) // ignore custom status here
+    .filter((a) => {
+      if (!mainActivity) return true
+      return !(
+        a.name === mainActivity.name &&
+        a.details === mainActivity.details &&
+        a.state === mainActivity.state
+      )
+    })
+    .slice(0, 3) // show up to 3 extras to keep layout tidy
+
+  if (!others.length) return null
+
+  return (
+    <div className="mt-2 flex items-center gap-2">
+      {others.map((a, idx) => {
+        const hasSmall = a.assets?.small_image && a.application_id
+        const hasLarge = a.assets?.large_image && a.application_id
+        const src = hasSmall
+          ? `https://cdn.discordapp.com/app-assets/${a.application_id}/${a.assets!.small_image}.png`
+          : hasLarge
+            ? `https://cdn.discordapp.com/app-assets/${a.application_id}/${a.assets!.large_image}.png`
+            : '/static/bento/bento-discord-futon.svg'
+
+        return (
+          <div key={idx} className="flex items-center gap-1.5">
+            <img
+              src={src}
+              alt={a.name ?? 'Activity'}
+              className="size-6 rounded-sm grayscale sepia-50"
+            />
+            <span className="text-muted-foreground text-[11px] leading-none line-clamp-1">
+              {a.name ?? 'Activity'}
+            </span>
+          </div>
+        )
+      })}
+    </div>
+  )
+})
+
+const SpotifyStatusBar = memo<{ profile: BuiltDiscordProfile | null }>(
+  ({ profile }) => {
+    const sp = profile?.spotify
+    if (!sp) return null
+
+    const pct = Math.max(0, Math.min(1, sp.progress.percent))
+    const width = `${Math.round(pct * 100)}%`
+
+    return (
+      <div className="mt-2">
+        <div className="text-[11px] leading-none mb-1 text-muted-foreground line-clamp-1">
+          Listening: <span className="text-foreground">{sp.song}</span> — {sp.artist}
+        </div>
+        <div className="h-1 w-full rounded-full bg-black/20 overflow-hidden">
+          <div className="h-full bg-black/60" style={{ width }} />
+        </div>
+        <div className="mt-1 flex justify-between text-[11px] text-muted-foreground leading-none">
+          <span>{sp.progress.elapsedLabel}</span>
+          <span>{sp.progress.totalLabel}</span>
+        </div>
+      </div>
+    )
+  },
+)
+
+/* =======================
+   Component
+   ======================= */
+
 const DiscordPresence = () => {
   const {
     data: lanyard,
@@ -278,7 +359,6 @@ const DiscordPresence = () => {
   }, [lanyard?.data?.activities])
 
   const [elapsedTime, setElapsedTime] = useState('')
-
   const updateElapsedTime = useCallback(() => {
     if (mainActivity?.timestamps?.start) {
       setElapsedTime(getElapsedTime(mainActivity.timestamps.start))
@@ -290,11 +370,34 @@ const DiscordPresence = () => {
       setElapsedTime('')
       return
     }
-
     updateElapsedTime()
     const intervalId = setInterval(updateElapsedTime, 1000)
     return () => clearInterval(intervalId)
   }, [mainActivity?.timestamps?.start, updateElapsedTime])
+
+  /* NEW: build enriched profile (user, all activities, spotify progress, etc.) */
+  const [profile, setProfile] = useState<BuiltDiscordProfile | null>(null)
+  useEffect(() => {
+    let mounted = true
+    ;(async () => {
+      if (!lanyard?.data) {
+        if (mounted) setProfile(null)
+        return
+      }
+      try {
+        const enriched = await buildDiscordProfile(lanyard.data as any, {
+          optimized: true,
+        } as any)
+        if (mounted) setProfile(enriched)
+      } catch (e) {
+        // swallow – we don't want to change existing behavior
+        if (mounted) setProfile(null)
+      }
+    })()
+    return () => {
+      mounted = false
+    }
+  }, [lanyard?.data])
 
   if (isLoading) {
     return <LoadingSkeleton />
@@ -303,15 +406,24 @@ const DiscordPresence = () => {
   if (error || !lanyard?.data) {
     return null
   }
+
   // print lanyard data to console
   console.log('Lanyard Data:', lanyard.data)
+  // NEW: also log enriched profile for debugging added features
+  if (profile) console.log('Enriched Discord Profile:', profile)
+
   const { discord_status } = lanyard.data
 
   return (
     <DiscordLayout
       statusIndicator={<StatusIndicator status={discord_status} />}
       activityContent={
-        <ActivityDisplay activity={mainActivity} elapsedTime={elapsedTime} />
+        <>
+          <ActivityDisplay activity={mainActivity} elapsedTime={elapsedTime} />
+          {/* NEW: optional extras (do not affect existing behavior) */}
+          <SpotifyStatusBar profile={profile} />
+          <AdditionalActivities profile={profile} mainActivity={mainActivity} />
+        </>
       }
     />
   )

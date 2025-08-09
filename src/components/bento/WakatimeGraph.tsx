@@ -96,23 +96,23 @@ const CustomYAxisTick = ({ x, y, payload }: any) => {
   )
 }
 
-const LoadingSkeleton = () => (
-  <div className="size-full rounded-3xl p-6">
-    <div className="space-y-1.5">
-      {Array.from({ length: MAX_LANGUAGES }).map((_, index) => (
-        <div key={index} className="flex items-center gap-x-2">
-          <Skeleton className="size-8" />
-          <div className="flex-1">
-            <Skeleton
-              className="h-8"
-              style={{ width: `${100 * Math.pow(0.75, index)}%` }}
-            />
-          </div>
-        </div>
-      ))}
-    </div>
-  </div>
-)
+// const LoadingSkeleton = () => (
+//   <div className="size-full rounded-3xl p-6">
+//     <div className="space-y-1.5">
+//       {Array.from({ length: MAX_LANGUAGES }).map((_, index) => (
+//         <div key={index} className="flex items-center gap-x-2">
+//           <Skeleton className="size-8" />
+//           <div className="flex-1">
+//             <Skeleton
+//               className="h-8"
+//               style={{ width: `${100 * Math.pow(0.75, index)}%` }}
+//             />
+//           </div>
+//         </div>
+//       ))}
+//     </div>
+//   </div>
+// )
 
 const useWakatimeData = (omitLanguages: string[]) => {
   const [languages, setLanguages] = useState<Language[]>([])
@@ -158,7 +158,7 @@ const useWakatimeData = (omitLanguages: string[]) => {
 const WakatimeGraph = ({ omitLanguages = [] }: Props) => {
   const { languages, isLoading, error } = useWakatimeData(omitLanguages)
 
-  if (isLoading) return <LoadingSkeleton />
+  // if (isLoading) return <LoadingSkeleton />
   if (error) {
     return (
       <div className="flex h-full items-center justify-center rounded-3xl p-4">
