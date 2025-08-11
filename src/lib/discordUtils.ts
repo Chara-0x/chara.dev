@@ -29,6 +29,16 @@ export function getUserBadges(publicFlags: number | undefined): BadgeKey[] {
   return keys.filter((k) => (publicFlags & BADGE_BITS[k]) === BADGE_BITS[k])
 }
 
+export async function resolveAppIconViaEndpoint(appId: string, endpoint = '/api/discord-app-icon'): Promise<string | null> {
+  try {
+    const r = await fetch(`${endpoint}?id=${encodeURIComponent(appId)}`)
+    if (!r.ok) return null
+    const { url } = (await r.json()) as { url?: string }
+    return url ?? null
+  } catch { return null }
+}
+
+
 /** Formats ms → "mm:ss" (or "h:mm:ss" if ≥ 1h). */
 function msToLabel(ms: number): string {
   const sTotal = Math.max(0, Math.floor(ms / 1000))
@@ -204,11 +214,19 @@ export async function buildDiscordProfile(
     let smallB64: string | null = null
 
     const largeUrl = resolveActivityAssetUrl(act, 'large_image')
-    if (largeUrl) {
-      largeB64 = await encodeBase64(largeUrl, ImageSize.ACTIVITY_LARGE, settings.theme)
+    const smallUrl = resolveActivityAssetUrl(act, 'small_image')
+
+    // Fallback: if there are no assets but we have an application_id, try to get the public app icon
+    let fallbackLargeUrl: string | null = null
+    if (!largeUrl && !smallUrl && act.application_id) {
+      fallbackLargeUrl = await resolveAppIconViaEndpoint(String(act.application_id))
     }
 
-    const smallUrl = resolveActivityAssetUrl(act, 'small_image')
+    if (largeUrl || fallbackLargeUrl) {
+      const u = largeUrl ?? fallbackLargeUrl!
+      largeB64 = await encodeBase64(u, ImageSize.ACTIVITY_LARGE, settings.theme)
+    }
+
     if (smallUrl) {
       smallB64 = await encodeBase64(smallUrl, ImageSize.ACTIVITY_SMALL, settings.theme)
     }
