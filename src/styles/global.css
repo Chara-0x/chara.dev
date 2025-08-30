@@ -38,6 +38,8 @@
 
   --color-icon-muted-foreground: var(--icon-muted-foreground);
   --color-icon-foreground: var(--icon-foreground);
+
+  --color-green: var(--green);
 }
 
 @font-face {
@@ -90,6 +92,24 @@
   --border: oklch(89.44% 0.0181 64.776);
   /*   --border: oklch(0.90 0.01 80);     */
   --ring: oklch(0.708 0 0);
+
+
+   /* Discord card: outer border glow */
+  --discord-frame-from: #bdeaff;   /* #bdeaff-ish */
+  --discord-frame-to:   #6ee0ff;   /* #6ee0ff-ish */
+
+  /* Card body gradient */
+  --discord-body-from:  #bee8fd;
+  --discord-body-to:    #e7f6fe;
+
+  /* Banner scrim over image */
+  --discord-banner-scrim: color-mix(in oklch, var(--border) 25%, transparent);
+
+  /* Sub-panels (badges/status box) */
+  --discord-panel:        color-mix(in oklch, var(--foreground) 6%, transparent);
+  --discord-panel-strong: color-mix(in oklch, var(--foreground) 8%, transparent);
+
+  --green: rgb(21, 116, 78);
 }
 
 [data-theme="dark"] {
@@ -106,7 +126,8 @@
   /* --icon-foreground: oklch(65.878% 0.09487 61.187); */
   /* --icon-foreground: oklch(71.323% 0.05311 73.621); */
   --icon-muted-foreground: oklch(56.378% 0.03661 60.91);
-  
+    --icon-muted-foreground: oklch(56.378% 0.03661 60.91);
+
   
   --muted: oklch(0.23 0.01 80);             /* muted panels */
   --muted-foreground: oklch(0.75 0.02 80);
@@ -123,6 +144,24 @@
 
   --border: oklch(92.492% 0.04442 53.931 / 0.12);             /* subtle hairline */
   --ring: oklch(0.78 0.16 55);              /* orange focus */
+
+
+  /* Slightly dimmer/cooler frame for dark */
+  --discord-frame-from: oklch(49.714% 0.08456 229.691);
+  --discord-frame-to:   oklch(0.55 0.10 220);
+  /* Card body gradient */
+  --discord-body-from:  #1b5f81;
+  --discord-body-to:    #4b8db0;
+
+  /* Banner scrim stronger on dark */
+  --discord-banner-scrim: color-mix(in oklch, var(--border) 35%, transparent);
+
+  /* Panels use foreground on dark for alpha blending */
+  --discord-panel:        color-mix(in oklch, var(--foreground) 12%, transparent);
+  --discord-panel-strong: color-mix(in oklch, var(--foreground) 16%, transparent);
+
+    --green: rgb(49, 191, 134);
+
 }
 
 @layer base {
@@ -134,3 +173,4 @@
     @apply border-border outline-ring/50 tracking-tight;
   }
 }
+

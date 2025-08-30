@@ -69,7 +69,7 @@ const StatusIndicator = memo<{ status: LanyardData['discord_status'] }>(
     return (
       <div
         className={cn(
-          'ring-muted absolute right-1 bottom-1 size-4 rounded-full ring-6',
+          'ring-muted absolute right-0.5 bottom-2 size-3 rounded-full ring-6',
           config.bgClass,
           config.hasIndicator && 'flex items-center justify-center',
         )}
@@ -124,7 +124,7 @@ const DecorativeBadges = memo(() => {
 })
 
 const UserInfo = memo(() => (
-  <div className="bg-[#000000]/4 flex flex-col gap-y-1 p-3 rounded-md">
+  <div className="bg-[#000000]/8 flex flex-col gap-y-1 p-3 rounded-md">
     <span className="text-base leading-none">Chara</span>
     <span className="text-muted-foreground text-xs leading-none">@chara0x</span>
   </div>
@@ -151,30 +151,44 @@ const AvatarSection = memo<{
   </div>
 ))
 
+
 const DiscordLayout = memo<{
   statusIndicator: React.ReactNode
   activityContent: React.ReactNode
   children?: React.ReactNode
 }>(({ statusIndicator, activityContent, children }) => (
   <div data-trigger className="group/discord relative size-full overflow-hidden">
-    <div className="rounded-xl bg-gradient-to-t from-[#6ee0ff] to-[#bdeaff] p-1">
+    {/* Outer “frame/glow” */}
+    <div className="rounded-xl bg-gradient-to-t from-[var(--discord-frame-to)] to-[var(--discord-frame-from)] p-1">
       <div className="grid size-full grid-rows-1">
         <div
-          className="rounded-t-xl bg-border/25 bg-[url('/static/bento/discord-banner.png')] bg-cover bg-center bg-no-repeat"
-          style={{ minHeight: 100, height: 100 }}
+          className="rounded-t-xl bg-[url('/static/bento/discord-banner.png')] bg-cover bg-center bg-no-repeat"
+          style={{
+            minHeight: 100,
+            height: 100,
+            /* soft scrim so text/icons stay legible in both themes */
+            backgroundBlendMode: 'multiply',
+            backgroundColor: 'var(--discord-banner-scrim)',
+          }}
         />
       </div>
-      <div className="rounded-b-xl bg-gradient-to-t from-[#bee8fd] to-[#e7f6fe] flex flex-col gap-3 p-3">
+
+      {/* Card body */}
+      <div className="rounded-b-xl bg-gradient-to-t from-[var(--discord-body-from)] to-[var(--discord-body-to)] flex flex-col gap-3 p-3">
         <AvatarSection statusIndicator={statusIndicator} />
         <UserInfo />
         {/* Status box */}
-        <div className="bg-[#000000]/3 rounded p-3">{activityContent}</div>
+        <div className="rounded p-3" style={{ background: 'var(--discord-panel)' }}>
+          {activityContent}
+        </div>
         {/* Anything after status box */}
         {children}
       </div>
     </div>
   </div>
 ))
+
+
 const ActivityDisplay = memo<{
   activity: Activity | null
   elapsedTime: string
@@ -297,7 +311,7 @@ const ActivityDisplay = memo<{
 
           {/* Elapsed time (green) */}
           {elapsedTime && (
-            <div className="mt-2 text-[11px] font-medium leading-none text-emerald-700 tabular-nums">
+            <div className="mt-2 text-[11px] font-medium leading-none text-green tabular-nums">
               {elapsedTime}
             </div>
           )}
