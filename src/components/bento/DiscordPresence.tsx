@@ -1,6 +1,6 @@
-import { useMemo, useState, useEffect, useCallback, memo } from 'react'
-import { FaDiscord, FaSpotify } from 'react-icons/fa'
-import { useLanyard } from 'react-use-lanyard'
+import { useMemo, useState, useEffect, useCallback, useRef, memo } from 'react'
+import { FaSpotify } from 'react-icons/fa'
+import { useLanyard, type LanyardResponse } from 'react-use-lanyard'
 import { Skeleton } from '@/components/ui/skeleton'
 import { cn, getElapsedTime } from '@/lib/utils'
 import AvatarComponent from '@/components/ui/avatar'
@@ -439,7 +439,7 @@ const SpotifyNowPlayingCard = memo<{
   }, [profile?.spotify?.timestamps.end, onForceRefresh])
 
   return (
-    <div className="rounded-xl bg-white/60 p-3 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] backdrop-blur-md">
+    <div className="rounded-xl bg-white/30 p-3 shadow-[inset_0_0_0_1px_rgba(0,0,0,0.06)] backdrop-blur-md">
       {/* Header */}
       <div className="mb-3 flex items-center justify-between">
         <div className="flex items-center gap-2 text-sm font-medium">
@@ -484,20 +484,29 @@ const SpotifyNowPlayingCard = memo<{
 const DiscordPresence = () => {
   // NEW: tick that bumps on every successful refresh to force a re-render
   const [refreshTick, setRefreshTick] = useState(0)
+  const lastResponseRef = useRef<LanyardResponse['data'] | null>(null)
 
-  const {
-    data: lanyard,
-    isLoading,
-    error,
-    mutate, // NEW
-  } = useLanyard({
+  const { data: lanyard, isLoading, error, mutate } = useLanyard({
     userId: DISCORD_USER_ID,
-    refreshInterval: 10000,           // refresh every 10s
-    dedupingInterval: 0,              // NEW: don’t coalesce refreshes
-    revalidateOnFocus: true,          // optional: update on focus
-    refreshWhenHidden: true,          // optional: keep updating in bg
-    onSuccess: () => setRefreshTick(t => t + 1), // NEW: force rerender on fetch
-  } as any)
+  })
+
+  // Manually revalidate on an interval so the UI stays fresh even when hidden.
+  useEffect(() => {
+    const id = setInterval(() => {
+      void mutate()
+    }, 10_000)
+
+    return () => clearInterval(id)
+  }, [mutate])
+
+  useEffect(() => {
+    if (!lanyard?.data) return
+    if (lastResponseRef.current === lanyard.data) {
+      return
+    }
+    lastResponseRef.current = lanyard.data
+    setRefreshTick((tick) => tick + 1)
+  }, [lanyard?.data])
 
   const mainActivity = useMemo(() => {
     if (!lanyard?.data?.activities) return null
@@ -575,7 +584,8 @@ const DiscordPresence = () => {
         key={profile?.spotify?.track_id ?? 'no-track'}
         profile={profile}
         onForceRefresh={() => mutate()}
-      />      <AdditionalActivities profile={profile} mainActivity={mainActivity} />
+      />
+      <AdditionalActivities profile={profile} mainActivity={mainActivity} />
     </DiscordLayout>
   )
 }

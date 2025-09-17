@@ -2,346 +2,79 @@
 import Layout from '@/layouts/Layout.astro'
 import PageHead from '@/components/PageHead.astro'
 import Link from '@/components/Link.astro'
+import { SITE } from '@/consts'
 import { cn } from '@/lib/utils'
-import { SITE, SOCIAL_LINKS } from '@/consts'
-import { getCollection } from 'astro:content'
-import { Icon } from 'astro-icon/components'
-
-// shadcn/ui
-import { buttonVariants } from '@/components/ui/button'
-import {
-  Card,
-  CardContent,
-  CardHeader,
-  CardTitle,
-  CardDescription,
-} from '@/components/ui/card'
-
-// Client components
 import DiscordPresence from '@/components/bento/DiscordPresence.tsx'
-import GithubCalendar from '@/components/bento/GithubCalendar.tsx'
-import SpotifyPresence from '@/components/bento/SpotifyPresence.tsx'
-import WakatimeGraph from '@/components/bento/WakatimeGraph.tsx'
-
-// Latest posts (keep your original logic)
-const blog = (await getCollection('blog'))
-  .filter((post) => !post.data.draft)
-  .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf())
-  .slice(0, SITE.NUM_POSTS_ON_HOMEPAGE)
-
-const latestPost = blog.at(0)
+import { buttonVariants } from '@/components/ui/button'
 ---
 
-<Layout class="px-2" gap="none">
-  <PageHead slot="head" title="Home" description={SITE.DESCRIPTION} />
+<Layout class="px-2" gap="none" smooth>
+  <PageHead slot="head" title="Home" description={SITE.description} />
 
-  <!--
-    ================
-    STICKY INTRO HERO
-    ================
-    Plays the Apple-style animation and then docks into the About tile below.
-  -->
-  <section id="sticky-hero" class="relative [height:calc(170svh-var(--header-h,0px))]">
-    <div
-      class="sticky [top:var(--header-h,0px)] mx-auto grid [min-height:calc(100svh-var(--header-h,0px))] w-full max-w-7xl grid-cols-1 gap-3 px-2 py-6 sm:grid-cols-3"
-      aria-label="Welcome"
-    >
-      <!-- LEFT (2/3): origin wrapper so Flip can put it back when you scroll up -->
-      <div class="sm:col-span-2 flex items-center">
-        <div id="hero-origin" class="w-full">
-          <!-- The frame that fades in as you scroll; GSAP drives --p 0→1 -->
-          <div
-            id="intro-frame"
-            class="relative w-full rounded-xl p-0"
-            style="
-              --p: 0;
-              border: 1px solid color-mix(in oklab, var(--border) calc(var(--p)*100%), transparent);
-              background: color-mix(in oklab, var(--secondary) calc(var(--p)*18%), transparent);
-              box-shadow: 0 8px 24px rgba(0,0,0,calc(var(--p)*.08));
-              opacity: calc(clamp(var(--p)*1.2 -.15, 0, 1));
-              transition: opacity .2s linear;
-            "
-          >
-            <div class="relative overflow-visible">
-              <!-- faint decorative whisper -->
-              <div
-                class="pointer-events-none absolute inset-0 bg-[radial-gradient(260px_180px_at_12%_18%,color-mix(in_oklab,var(--secondary)_18%,transparent),transparent)]"
-                aria-hidden="true"
-                id="intro-whisper"
-              />
-              <!-- This group is animated by GSAP (scale/translate/padding) -->
-              <div id="intro-group" class="relative flex flex-col justify-center will-change-transform p-[clamp(16px,3vw,36px)]">
-                <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Haiiiiii! ^-^</h1>
-                <p class="text-muted-foreground mt-3 text-lg sm:text-xl">
-                  My name is <span class="font-medium">Chara</span>! Nice to meet you.
-                </p>
-                <div class="mt-5 flex gap-2">
-                  <Link href="/about" class={cn(buttonVariants({ variant: 'default', size: 'sm' }))}>About me</Link>
-                  <Link href="/projects" class={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}>Projects</Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- RIGHT (1/3): Discord -->
-      <div class="sm:col-span-1 flex items-center">
-        <div class="w-full">
-          <DiscordPresence client:load />
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--
-    ==========
-    BENTO GRID
-    ==========
-    We’ll dock the intro into the About tile (grid-area:a) at scroll-end.
-    The about tile contains a #about-dock container as the Flip destination.
-  -->
-  <section
-    class={cn(
-      'mx-auto grid min-w-xs sm:has-[[data-trigger]:hover]:*:first:[&_[data-overlay]]:opacity-0',
-      'max-w-sm grid-cols-1 gap-2 [grid-template-areas:"a""b""e""h""i""c""k""d""g""f""j"]',
-      'sm:max-w-2xl sm:grid-cols-2 sm:[grid-template-areas:"a_a""b_d""e_e""j_g""h_i""h_c""k_c""f_f"]',
-      'lg:max-w-5xl lg:grid-cols-3 lg:[grid-template-areas:"a_a_b""d_e_e""h_f_f""h_i_g""k_c_j"]',
-      'xl:max-w-7xl xl:grid-cols-4 xl:[grid-template-areas:"a_a_b_c""d_e_e_c""h_f_f_g""h_i_j_k"]',
-    )}
+  <!-- HERO (GSAP will pin/scrub this section) -->
+<section id="hero-pin" class="relative">
+  <div
+    class="mx-auto grid w-full max-w-6xl grid-cols-1 gap-3 px-2 py-6 sm:grid-cols-3
+           [min-height:calc(100svh-var(--header-h,0px))] items-center"
+    aria-label="Welcome"
   >
-    {/* About panel (Flip destination) */}
-    <div class="aspect-[3/4] p-2 [grid-area:a] sm:aspect-[2/1] xl:aspect-[2/1]">
-      <Card class="size-full overflow-hidden">
-        <div
-          class="size-full bg-[url('/static/bento/about-background-square.png')] bg-cover bg-center bg-no-repeat sm:bg-[url('/static/bento/about-background.png')]"
-        >
+    <!-- LEFT 2/3 -->
+    <div class="sm:col-span-2 flex items-center">
+      <div
+        id="intro-frame"
+        class="relative w-full rounded-xl p-0"
+        style="
+          --p: 0;
+          border: 1px solid color-mix(in oklab, var(--border) calc(var(--p)*100%), transparent);
+          background: color-mix(in oklab, var(--secondary) calc(var(--p)*18%), transparent);
+          box-shadow: 0 8px 24px rgba(0,0,0,calc(var(--p)*.08));
+          opacity: calc(clamp(var(--p)*1.2 -.15, 0, 1));
+          transition: opacity .2s linear;
+        "
+      >
+        <div class="relative overflow-visible">
           <div
-            data-overlay
-            class="size-full bg-[url('/static/bento/about-foreground-square.png')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 sm:bg-[url('/static/bento/about-foreground.png')]"
-          >
-            <!-- Flip will move #intro-frame into this dock when the animation finishes -->
-            <div id="about-dock" class="flex size-full items-center p-4">
-              <!-- Fallback content if JS disabled -->
-              <noscript>
-                <div class="space-y-4 sm:w-2/3">
-                  <Card class="border">
-                    <CardContent class="p-3">
-                      <p class="text-foreground/80 text-sm">
-                        Hey, I’m {SITE?.AUTHOR ?? 'me'}! Welcome to my corner of the internet.
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <Card class="border">
-                    <CardContent class="p-3">
-                      <p class="text-foreground/80 text-sm">
-                        I love building delightful web experiences and sharing write-ups
-                        on engineering, tooling, and productivity.
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <div class="flex gap-2">
-                    <Link href="/about" class={cn(buttonVariants({ variant: 'default', size: 'sm' }))}>
-                      About me
-                    </Link>
-                    <Link href="/projects" class={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}>
-                      Projects
-                    </Link>
-                  </div>
-                </div>
-              </noscript>
+            id="intro-whisper"
+            class="pointer-events-none absolute inset-0 bg-[radial-gradient(260px_180px_at_12%_18%,color-mix(in_oklab,var(--secondary)_18%,transparent),transparent)]"
+            aria-hidden="true"
+          />
+          <div id="intro-group" class="relative flex flex-col justify-center will-change-transform p-[clamp(16px,3vw,36px)]">
+            <h1 class="text-4xl font-semibold leading-tight sm:text-5xl">Haiiiiii! ^-^</h1>
+            <p class="text-muted-foreground mt-3 text-lg sm:text-xl">
+              My name is <span class="font-medium">Chara</span>! Nice to meet you.
+            </p>
+            <div class="mt-5 flex gap-2">
+              <Link href="/about" class={cn(buttonVariants({ variant: 'default', size: 'sm' }))}>About me</Link>
+              <Link href="/projects" class={cn(buttonVariants({ variant: 'outline', size: 'sm' }))}>Projects</Link>
             </div>
           </div>
         </div>
-      </Card>
+      </div>
     </div>
 
-    {/* Details hover note */}
-    <div class="aspect-square p-2 [grid-area:b]">
-      <Card data-trigger class="size-full overflow-hidden">
-        <div class="size-full bg-[url('/static/bento/details-background.png')] bg-cover bg-center bg-no-repeat">
-          <div class="relative size-full bg-[url('/static/bento/details-foreground.png')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 sm:opacity-0 sm:hover:opacity-100">
-            <p class="text-foreground/80 bg-background absolute top-1/2 left-0 mr-24 ml-4 -translate-y-1/2 border p-3 text-xs text-pretty">
-              Explore interactive widgets and recent posts below.
-            </p>
-          </div>
-        </div>
-      </Card>
+    <!-- RIGHT 1/3 -->
+    <div class="sm:col-span-1 flex items-center">
+      <div class="w-full">
+        <DiscordPresence client:load />
+      </div>
     </div>
+  </div>
+</section>
 
-    {/* Image */}
-    <div class="aspect-square p-2 [grid-area:c] sm:aspect-[1/2] lg:aspect-square xl:aspect-[1/2]">
-      <Card class="size-full overflow-hidden">
-        <div class="size-full bg-[url('/static/bento/image-1.png')] bg-cover bg-center bg-no-repeat" />
-      </Card>
-    </div>
-
-    {/* Discord presence (tile) */}
-    <div class="aspect-auto p-2 [grid-area:d] sm:aspect-square">
-      <Card className="py-0 border-none">
-        <CardContent className="flex size-full items-center justify-center p-0 py-0">
-          <DiscordPresence client:load />
-        </CardContent>
-      </Card>
-    </div>
-<!-- 
-    {/* Latest blog post */}
-    <div class="aspect-[6/5] p-2 [grid-area:e] sm:aspect-[2/1]">
-      <Card data-trigger class="size-full overflow-hidden">
-        <div class="group/blog relative size-full bg-[url('/static/bento/blog-background-square.png')] bg-cover bg-center bg-no-repeat sm:bg-[url('/static/bento/blog-background.png')]">
-          <div class="absolute size-full bg-[url('/static/bento/blog-foreground-square.png')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 sm:bg-[url('/static/bento/blog-foreground.png')] sm:opacity-0 sm:group-hover/blog:opacity-100">
-            <p class="text-foreground/80 bg-background absolute bottom-4 left-16 border p-2 text-xs text-pretty sm:top-[42.5%] sm:right-4 sm:bottom-[inherit] sm:left-[inherit] sm:-translate-y-1/2">
-              Read my latest<br /> blog post!
-            </p>
-          </div>
-          <div class="p-3 sm:size-full sm:p-6">
-            {latestPost && (
-              <Link href={`/blog/${latestPost.slug ?? latestPost.id}`} class="flex h-full">
-                <img
-                  src={latestPost.data.image?.src ?? '#'}
-                  alt={`Featured image for: ${latestPost.data.title}`}
-                  class="h-full border"
-                  loading="lazy"
-                />
-              </Link>
-            )}
-          </div>
-          {latestPost && (
-            <Link
-              href={`/blog/${latestPost.slug ?? latestPost.id}`}
-              title={`Read latest: ${latestPost.data.title}`}
-              aria-label={`Read latest: ${latestPost.data.title}`}
-              class="bg-border/50 text-primary ring-ring absolute end-0 bottom-0 m-3 rounded-full p-3 transition-[box-shadow,transform] duration-300 hover:ring-2 focus-visible:ring-2 hover:rotate-6"
-            >
-              <Icon name="lucide:move-up-right" size={16} />
-            </Link>
-          )}
-        </div>
-      </Card>
-    </div>
-
-    {/* GitHub calendar */}
-    <div class="aspect-square p-2 [grid-area:f] sm:aspect-[2/1]">
-      <Card data-trigger class="relative size-full overflow-hidden">
-        <div class="absolute size-full bg-[url('/static/bento/calendar-background.png')] bg-cover bg-left bg-no-repeat">
-          <div class="absolute size-full bg-[url('/static/bento/calendar-foreground.png')] bg-cover bg-left bg-no-repeat transition-opacity duration-200 sm:opacity-0 sm:hover:opacity-100">
-            <p class="text-foreground/80 bg-background absolute top-[37.5%] left-4 -translate-y-1/2 border p-2 text-xs text-pretty">
-              Check out my GitHub calendar!
-            </p>
-          </div>
-        </div>
-        <CardContent class="flex size-full items-center justify-center p-8">
-          <GithubCalendar username={SOCIAL_LINKS.find(l => l.label === 'GitHub')?.username ?? 'chara-0x'} client:load />
-        </CardContent>
-      </Card>
-    </div>
-
-    {/* Spotify presence */}
-    <div class="aspect-square p-2 [grid-area:g]">
-      <Card data-trigger className="py-0 overflow-hidden">
-        <div class="flex size-full items-center justify-center">
-          <SpotifyPresence client:load />
-        </div>
-      </Card>
-    </div>
-
-    {/* Decorative image */}
-    <div class="aspect-square p-2 [grid-area:h] sm:aspect-[1/2]">
-      <Card class="size-full overflow-hidden">
-        <div class="size-full bg-[url('/static/bento/image-2.png')] bg-cover bg-center bg-no-repeat" />
-      </Card>
-    </div>
-
-    {/* GitHub link card */}
-    <div class="aspect-square p-2 [grid-area:i]">
-      <Card class="size-full overflow-hidden">
-        <div class="group/github relative flex size-full items-center justify-center bg-[url('/static/bento/github-background.png')] bg-cover bg-center bg-no-repeat">
-          <div class="size-full bg-[url('/static/bento/github-foreground.png')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 sm:opacity-0 sm:group-hover/github:opacity-100" aria-hidden="true" />
-          <Icon name="mdi:github" class="text-primary absolute size-1/2 sm:size-24" aria-hidden="true" />
-          <Link
-            href={SOCIAL_LINKS.find((link) => link.label === 'GitHub')?.href || '#'}
-            title="Visit my GitHub profile"
-            aria-label="Visit my GitHub profile"
-            external
-            class="bg-border/50 text-primary ring-ring absolute end-0 bottom-0 m-3 rounded-full p-3 transition-[box-shadow,transform] duration-300 hover:ring-2 focus-visible:ring-2 hover:rotate-6"
-          >
-            <Icon name="lucide:move-up-right" size={16} />
-          </Link>
-        </div>
-      </Card>
-    </div>
-
-    {/* Wakatime graph */}
-    <div class="aspect-square p-2 [grid-area:j]">
-      <Card class="size-full">
-        <CardContent class="p-0">
-          <WakatimeGraph omitLanguages={['Markdown', 'JSON']} client:load />
-        </CardContent>
-      </Card>
-    </div>
-
-    {/* Twitter/X link card */}
-    <div class="aspect-square p-2 [grid-area:k]">
-      <Card data-trigger class="size-full overflow-hidden">
-        <div class="group/twitter relative flex size-full items-center justify-center bg-[url('/static/bento/twitter-background.png')] bg-cover bg-center bg-no-repeat">
-          <div class="size-full bg-[url('/static/bento/twitter-foreground.png')] bg-cover bg-center bg-no-repeat transition-opacity duration-200 sm:opacity-0 sm:group-hover/twitter:opacity-100" aria-hidden="true">
-            <p class="text-foreground/80 bg-background absolute bottom-4 left-4 hidden border p-2 text-xs text-pretty sm:block">
-              Follow for updates and dev tips!
-            </p>
-          </div>
-          <Icon name="mdi:twitter" class="text-primary absolute size-1/2 sm:size-24" aria-hidden="true" />
-          <Link
-            href={SOCIAL_LINKS.find((link) => link.label === 'Twitter')?.href || '#'}
-            title="Visit my Twitter profile"
-            aria-label="Visit my Twitter profile"
-            external
-            class="bg-border/50 text-primary ring-ring absolute end-0 bottom-0 m-3 rounded-full p-3 transition-[box-shadow,transform] duration-300 hover:ring-2 focus-visible:ring-2"
-          >
-            <Icon name="lucide:move-up-right" size={16} />
-          </Link>
-        </div>
-      </Card>
-    </div>
+  <!-- Below-the-fold content -->
+  <section class="mx-auto mt-6 w-full max-w-6xl px-2">
+    <h2 class="font-semibold tracking-tight">Hello from below 👋</h2>
+    <p class="text-muted-foreground">Add the rest of your homepage content here.</p>
   </section>
-
-  {/* Latest posts */}
-  <section class="mx-auto mt-8 w-full max-w-3xl px-2">
-    <div class="mb-3 flex items-center justify-between">
-      <h2 class="font-semibold tracking-tight">Latest posts</h2>
-      <Link href="/blog" class={cn(buttonVariants({ variant: 'ghost', size: 'sm' }))}>
-        See all
-      </Link>
-    </div>
-    <div class="grid gap-3 sm:grid-cols-2">
-      {blog.map((post) => (
-        <Card>
-          <CardHeader>
-            <CardTitle class="line-clamp-1">{post.data.title}</CardTitle>
-            <CardDescription class="line-clamp-2">
-              {post.data.description ?? ''}
-            </CardDescription>
-          </CardHeader>
-          <CardContent class="flex items-center justify-between">
-            <Link href={`/blog/${post.slug ?? post.id}`} class={cn(buttonVariants({ size: 'sm' }))}>
-              Read
-            </Link>
-            <span class="text-muted-foreground text-xs">
-              {post.data.date?.toLocaleDateString?.() ?? ''}
-            </span>
-          </CardContent>
-        </Card>
-      ))}
-    </div>
-  </section> -->
 </Layout>
 
 <style is:inline>
-  /* Crisp transforms on Safari/iOS */
   #intro-group { backface-visibility: hidden; }
+  html, body { overflow-x: hidden; }
 </style>
 
 <script is:inline>
-  // Keep header height in a CSS var so the hero starts perfectly aligned.
+  // Keep header height in a CSS var.
   (function setHeaderVar() {
     const apply = () => {
       const stickyBar = document.querySelector('div.sticky.top-0')
@@ -355,88 +88,55 @@ const latestPost = blog.at(0)
   })();
 </script>
 
-<!-- GSAP: ScrollTrigger + Flip (CDN ESM). Switch to npm imports if you prefer. -->
 <script type="module" is:inline>
-  import gsap from 'https://esm.sh/gsap@3.12.5'
-  import ScrollTrigger from 'https://esm.sh/gsap@3.12.5/ScrollTrigger'
-  import Flip from 'https://esm.sh/gsap@3.12.5/Flip'
-  // NPM alternative:
-  // import gsap from 'gsap'
-  // import ScrollTrigger from 'gsap/ScrollTrigger'
-  // import Flip from 'gsap/Flip'
+  import gsap from 'https://esm.sh/gsap@3.13.0'
+  import ScrollTrigger from 'https://esm.sh/gsap@3.13.0/ScrollTrigger'
+  import ScrollSmoother from 'https://esm.sh/gsap@3.13.0/ScrollSmoother'
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
 
   if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-    gsap.registerPlugin(ScrollTrigger, Flip)
+    const wrapper = document.getElementById('smooth-wrapper')
+    const content = document.getElementById('smooth-content')
 
-    const hero      = document.getElementById('sticky-hero')
-    const origin    = document.getElementById('hero-origin')
-    const frame     = document.getElementById('intro-frame')
-    const group     = document.getElementById('intro-group')
-    const whisper   = document.getElementById('intro-whisper')
-    const aboutDock = document.getElementById('about-dock')
-
-    if (hero && origin && frame && group && aboutDock) {
-      // Timeline scrubs 0 → 1 while the sticky section plays
-      const tl = gsap.timeline({
-        defaults: { ease: 'none' },
-        scrollTrigger: {
-          trigger: hero,
-          start: 'top top',     // hero reaches top of viewport
-          end: 'bottom top',    // when sticky section ends
-          scrub: 0.6,
-          // markers: true,     // debug if needed
-          onLeave: dockToAbout,     // finished → dock into grid
-          onEnterBack: undockToHero // scrolling back up → return
-        }
+    if (wrapper && content) {
+      ScrollSmoother.create({
+        wrapper,
+        content,
+        smooth: 1.2,
+        effects: true,
+        normalizeScroll: true,
       })
 
-      // 1) Drive CSS var --p for frame fade/border/background
-      tl.to(frame, { '--p': 1, duration: 1 }, 0)
+      const hero    = document.getElementById('hero-pin')
+      const frame   = document.getElementById('intro-frame')
+      const group   = document.getElementById('intro-group')
+      const whisper = document.getElementById('intro-whisper')
 
-      // 2) Shrink & nudge the content slightly
-      tl.to(group, {
-        scale: 0.72,
-        x: -8,
-        y: -18,
-        duration: 1
-      }, 0)
-
-      // 3) Whisper overlay subtle fade
-      if (whisper) tl.to(whisper, { opacity: 0.4, duration: 1 }, 0)
-
-      let docked = false
-
-      function dockToAbout() {
-        if (docked) return
-        docked = true
-        // Lock end-state styles before Flip (so the look matches)
-        gsap.set(frame, { '--p': 1 })
-        gsap.set(group, { clearProps: 'x,y,scale' }) // let Flip handle final geometry
-
-        const state = Flip.getState(frame)
-        aboutDock.appendChild(frame)
-        Flip.from(state, {
-          duration: 0.8,
-          ease: 'power2.inOut'
+      if (hero && frame && group) {
+        const tl = gsap.timeline({
+          defaults: { ease: 'none' },
+          scrollTrigger: {
+            trigger: hero,
+            start: 'top top',   // header offset already applied by padding-top
+            end: '+=120%',
+            scrub: 0.6,
+            pin: true,
+            pinSpacing: true,
+          },
         })
-      }
 
-      function undockToHero(self) {
-        if (!docked) return
-        docked = false
-        const state = Flip.getState(frame)
-        origin.appendChild(frame)
-        Flip.from(state, {
-          duration: 0.8,
-          ease: 'power2.inOut'
-        })
-        // Restore scroll-driven transforms
-        gsap.set(group, { clearProps: 'all' }) // timeline will re-apply on scrub
-      }
+        tl.to(frame, { '--p': 1, duration: 1 }, 0)
+        tl.to(group, { scale: 0.72, x: -8, y: -18, duration: 1 }, 0)
+        if (whisper) tl.to(whisper, { opacity: 0.4, duration: 1 }, 0)
 
-      const refresh = () => ScrollTrigger.refresh()
-      window.addEventListener('resize', refresh, { passive: true })
-      document.addEventListener('astro:after-swap', refresh)
+        const refresh = () => ScrollTrigger.refresh()
+        window.addEventListener('resize', refresh, { passive: true })
+        document.addEventListener('astro:after-swap', refresh)
+      }
     }
   }
 </script>
+<style is:inline>
+  #intro-group { backface-visibility: hidden; }
+  html, body { overflow-x: hidden; }
+</style>

@@ -3,7 +3,7 @@ import { UnknownIconDark, UnknownIconLight } from "./badges.ts";
 
 export const encodeBase64 = async (
   url: string,
-  size: number,
+  _size: number,
   theme: string = "dark"
 ): Promise<string> => {
   try {
