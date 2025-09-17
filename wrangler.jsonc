@@ -3,7 +3,7 @@
     "name": "Charas dev",
     "compatibility_date": "2025-09-17",
     "assets": {
-      "directory": "./dist",
+      "directory": "./dist"
     //   "not_found_handling": "404-page" // If you have a custom `src/pages/404.astro` page
     }
   }
