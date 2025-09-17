@@ -84,6 +84,11 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
+  image: {
+    service: {
+      entrypoint: 'astro/assets/services/noop',
+    },
+  },
   server: {
     port: 1234,
     host: true,
