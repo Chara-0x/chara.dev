@@ -400,9 +400,12 @@ const SpotifyNowPlayingCard = memo<{
   const [now, setNow] = useState<number>(startAt) // deterministic on SSR
 
   useEffect(() => {
+    if (typeof window === 'undefined') {
+      return undefined
+    }
     // tick every second on the client
-    const id = setInterval(() => setNow(Date.now()), 1000)
-    return () => clearInterval(id)
+    const id = window.setInterval(() => setNow(Date.now()), 1000)
+    return () => window.clearInterval(id)
   }, [])
 
   // use startAt for the first pass to avoid SSR/client drift
@@ -492,11 +495,14 @@ const DiscordPresence = () => {
 
   // Manually revalidate on an interval so the UI stays fresh even when hidden.
   useEffect(() => {
-    const id = setInterval(() => {
+    if (typeof window === 'undefined') {
+      return undefined
+    }
+    const id = window.setInterval(() => {
       void mutate()
     }, 10_000)
 
-    return () => clearInterval(id)
+    return () => window.clearInterval(id)
   }, [mutate])
 
   useEffect(() => {
@@ -530,8 +536,11 @@ const DiscordPresence = () => {
       return
     }
     updateElapsedTime()
-    const intervalId = setInterval(updateElapsedTime, 1000)
-    return () => clearInterval(intervalId)
+    if (typeof window === 'undefined') {
+      return undefined
+    }
+    const intervalId = window.setInterval(updateElapsedTime, 1000)
+    return () => window.clearInterval(intervalId)
   }, [mainActivity?.timestamps?.start, updateElapsedTime])
 
   /* NEW: build enriched profile (user, all activities, spotify progress, etc.) */
