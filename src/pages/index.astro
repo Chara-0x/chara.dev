@@ -32,6 +32,12 @@ const blog = (await getCollection('blog'))
 const latestPost = blog.at(0)
 ---
 
+<!-- TODO:
+  I want to implement a animation when I scroll down the text goes smaller and goes inside this box. As I scroll down the box will sloly fade, and the texts will transform, like what apple is doing on their website, https://www.apple.com/mac/.
+when I scroll down the content box wtill become smaller and everything inside is relative to the size. Im using gsap to make this animation style. Right now it does has a nice little shrink animation. 
+ -->
+
+
 <Layout class="px-2" gap="none" smooth>
   <PageHead slot="head" title="Home" description={SITE.DESCRIPTION} />
 
@@ -124,25 +130,20 @@ const latestPost = blog.at(0)
           >
             <!-- Flip will move #intro-frame into this dock when the animation finishes -->
             <div id="about-dock" class="flex size-full items-center p-4">
-              <!-- Fallback content if JS disabled -->
-              <noscript>
-                <div class="space-y-4 sm:w-2/3">
-                  <Card class="border">
-                    <CardContent class="p-3">
-                      <p class="text-foreground/80 text-sm">
-                        Hey, I’m {SITE?.AUTHOR ?? 'me'}! Welcome to my corner of the internet.
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <Card class="border">
-                    <CardContent class="p-3">
-                      <p class="text-foreground/80 text-sm">
-                        I love building delightful web experiences and sharing write-ups
-                        on engineering, tooling, and productivity.
-                      </p>
-                    </CardContent>
-                  </Card>
-                  <div class="flex gap-2">
+              <div
+                id="about-anchor"
+                data-state="idle"
+                class="relative flex w-full flex-col gap-4 text-left text-sm text-foreground/80 sm:w-2/3 sm:text-base"
+              >
+                <div data-dock-fallback class="space-y-4 leading-relaxed">
+                  <p>
+                    Hey, I’m {SITE?.AUTHOR ?? 'me'}! Welcome to my corner of the internet.
+                  </p>
+                  <p>
+                    I love building delightful web experiences and sharing write-ups on engineering,
+                    tooling, and productivity.
+                  </p>
+                  <div class="flex flex-wrap gap-2">
                     <Link href="/about" class={cn(buttonVariants({ variant: 'default', size: 'sm' }))}>
                       About me
                     </Link>
@@ -151,7 +152,7 @@ const latestPost = blog.at(0)
                     </Link>
                   </div>
                 </div>
-              </noscript>
+              </div>
             </div>
           </div>
         </div>
@@ -362,12 +363,47 @@ const latestPost = blog.at(0)
   import gsap from 'https://esm.sh/gsap@3.13.0'
   import ScrollTrigger from 'https://esm.sh/gsap@3.13.0/ScrollTrigger'
   import ScrollSmoother from 'https://esm.sh/gsap@3.13.0/ScrollSmoother'
-  gsap.registerPlugin(ScrollTrigger, ScrollSmoother)
+  import Flip from 'https://esm.sh/gsap@3.13.0/Flip'
 
-  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  gsap.registerPlugin(ScrollTrigger, ScrollSmoother, Flip)
+
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)')
+  const state = {
+    timeline: null,
+    docked: false,
+    elements: {
+      hero: null,
+      frame: null,
+      group: null,
+      whisper: null,
+      origin: null,
+      anchor: null,
+      fallback: null,
+    },
+  }
+
+  const scaleForViewport = () => {
+    const width = window.innerWidth
+    if (width >= 1536) return 0.42
+    if (width >= 1280) return 0.46
+    if (width >= 1024) return 0.52
+    if (width >= 640) return 0.68
+    return 0.9
+  }
+
+  const xPercentForViewport = () => {
+    const width = window.innerWidth
+    if (width >= 1024) return -14
+    if (width >= 640) return -6
+    return 0
+  }
+
+  const yPercentForViewport = () => (window.innerWidth >= 640 ? -12 : -6)
+
+  const ensureSmoother = () => {
+    if (prefersReducedMotion.matches || ScrollSmoother.get()) return
     const wrapper = document.getElementById('smooth-wrapper')
     const content = document.getElementById('smooth-content')
-
     if (wrapper && content) {
       ScrollSmoother.create({
         wrapper,
@@ -376,37 +412,175 @@ const latestPost = blog.at(0)
         effects: true,
         normalizeScroll: true,
       })
-
-      const hero    = document.getElementById('hero-pin')
-      const frame   = document.getElementById('intro-frame')
-      const group   = document.getElementById('intro-group')
-      const whisper = document.getElementById('intro-whisper')
-
-      if (hero && frame && group) {
-        const tl = gsap.timeline({
-          defaults: { ease: 'none' },
-          scrollTrigger: {
-            trigger: hero,
-            start: 'top top',   // header offset already applied by padding-top
-            end: '+=120%',
-            scrub: 0.6,
-            pin: true,
-            pinSpacing: true,
-          },
-        })
-
-        tl.to(frame, { '--p': 1, duration: 1 }, 0)
-        tl.to(group, { scale: 0.72, x: -8, y: -18, duration: 1 }, 0)
-        if (whisper) tl.to(whisper, { opacity: 0.4, duration: 1 }, 0)
-
-        const refresh = () => ScrollTrigger.refresh()
-        window.addEventListener('resize', refresh, { passive: true })
-        document.addEventListener('astro:after-swap', refresh)
-      }
     }
   }
+
+  const moveFrame = (toDock) => {
+    const { frame, origin, anchor, fallback, group } = state.elements
+    if (!frame || !origin || !anchor || state.docked === toDock) return
+
+    const container = toDock ? anchor : origin
+    const flipState = Flip.getState(frame)
+    container.prepend(frame)
+
+    state.docked = toDock
+    frame.dataset.docked = toDock ? 'true' : 'false'
+    anchor.dataset.state = toDock ? 'docked' : 'idle'
+
+    if (fallback) {
+      fallback.hidden = toDock
+      fallback.setAttribute('aria-hidden', toDock ? 'true' : 'false')
+    }
+
+    gsap.set(frame, { clearProps: 'transform,opacity' })
+    if (group) {
+      gsap.set(group, { clearProps: 'transform' })
+    }
+
+    Flip.from(flipState, {
+      duration: 0.65,
+      ease: 'power2.inOut',
+      absolute: true,
+      nested: true,
+      onComplete: () => ScrollTrigger.refresh(),
+    })
+  }
+
+  const initHeroSequence = () => {
+    if (prefersReducedMotion.matches) {
+      moveFrame(false)
+      state.timeline?.scrollTrigger?.kill()
+      state.timeline?.kill()
+      state.timeline = null
+      return
+    }
+
+    const hero = document.getElementById('hero-pin')
+    const frame = document.getElementById('intro-frame')
+    const group = document.getElementById('intro-group')
+    const whisper = document.getElementById('intro-whisper')
+    const origin = document.getElementById('hero-origin')
+    const anchor = document.getElementById('about-anchor')
+
+    if (!hero || !frame || !group || !origin || !anchor) {
+      state.timeline?.scrollTrigger?.kill()
+      state.timeline?.kill()
+      state.timeline = null
+      return
+    }
+
+    const fallback = anchor.querySelector('[data-dock-fallback]') ?? null
+
+    state.elements = { hero, frame, group, whisper, origin, anchor, fallback }
+    state.docked = false
+
+    anchor.dataset.state = 'idle'
+    if (fallback) {
+      fallback.hidden = false
+      fallback.setAttribute('aria-hidden', 'false')
+    }
+
+    state.timeline?.scrollTrigger?.kill()
+    state.timeline?.kill()
+
+    gsap.set(frame, { transformOrigin: 'center top' })
+    gsap.set(group, { transformOrigin: 'center top' })
+
+    const timeline = gsap.timeline({
+      defaults: { ease: 'none' },
+      scrollTrigger: {
+        id: 'hero-scroll-trigger',
+        trigger: hero,
+        start: 'top top',
+        end: () => `+=${Math.max(window.innerHeight * 1.1, hero.offsetHeight * 1.25)}`,
+        scrub: 0.6,
+        pin: true,
+        pinSpacing: true,
+        onLeave: () => moveFrame(true),
+        onEnterBack: () => moveFrame(false),
+      },
+    })
+
+    timeline.to(frame, { '--p': 1, duration: 0.9 }, 0)
+    timeline.to(frame, { opacity: 0.72, duration: 0.9 }, 0)
+    timeline.to(frame, { borderRadius: '26px', duration: 0.9 }, 0)
+    timeline.to(group, {
+      scale: () => scaleForViewport(),
+      xPercent: () => xPercentForViewport(),
+      yPercent: () => yPercentForViewport(),
+      duration: 0.9,
+    }, 0)
+    if (whisper) {
+      timeline.to(whisper, { opacity: 0.55, duration: 0.9 }, 0)
+    }
+
+    timeline.add(() => {
+      if (!state.docked && timeline.scrollTrigger?.progress >= 0.98) {
+        moveFrame(true)
+      }
+    })
+
+    state.timeline = timeline
+
+    requestAnimationFrame(() => ScrollTrigger.refresh())
+  }
+
+  const bootstrap = () => {
+    ensureSmoother()
+    initHeroSequence()
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', bootstrap, { once: true })
+  } else {
+    bootstrap()
+  }
+
+  const registerListeners = () => {
+    if (window.__heroScrollRegistered) return
+    window.__heroScrollRegistered = true
+
+    const onResize = () => {
+      state.timeline?.invalidate()
+      ScrollTrigger.refresh()
+    }
+
+    window.addEventListener('resize', onResize, { passive: true })
+
+    const rerun = () => {
+      requestAnimationFrame(() => {
+        ensureSmoother()
+        initHeroSequence()
+      })
+    }
+
+    document.addEventListener('astro:after-swap', rerun)
+    document.addEventListener('astro:page-load', rerun)
+
+    const prefersHandler = () => {
+      if (prefersReducedMotion.matches) {
+        state.timeline?.scrollTrigger?.kill()
+        state.timeline?.kill()
+        state.timeline = null
+        moveFrame(false)
+      } else {
+        ensureSmoother()
+        initHeroSequence()
+      }
+    }
+
+    if (typeof prefersReducedMotion.addEventListener === 'function') {
+      prefersReducedMotion.addEventListener('change', prefersHandler)
+    } else if (typeof prefersReducedMotion.addListener === 'function') {
+      prefersReducedMotion.addListener(prefersHandler)
+    }
+  }
+
+  registerListeners()
 </script>
 <style is:inline>
   #intro-group { backface-visibility: hidden; }
   html, body { overflow-x: hidden; }
+  #intro-frame[data-docked="true"] { opacity: 1 !important; transform: none !important; }
+  #about-anchor[data-state="docked"] [data-dock-fallback] { display: none; }
 </style>
