@@ -371,6 +371,7 @@ when I scroll down the content box wtill become smaller and everything inside is
   const state = {
     timeline: null,
     docked: false,
+    dockOffsets: { x: 0, y: 0 },
     elements: {
       hero: null,
       frame: null,
@@ -415,7 +416,7 @@ when I scroll down the content box wtill become smaller and everything inside is
     }
   }
 
-  const moveFrame = (toDock, { animate = true, force = false } = {}) => {
+  const moveFrame = (toDock, { animate = true, force = false, preserveTransform = false } = {}) => {
     const { frame, origin, anchor, fallback, group } = state.elements
     if (!frame || !origin || !anchor || (!force && state.docked === toDock)) return
 
@@ -432,7 +433,10 @@ when I scroll down the content box wtill become smaller and everything inside is
       fallback.setAttribute('aria-hidden', toDock ? 'true' : 'false')
     }
 
-    gsap.set(frame, { clearProps: 'transform,opacity' })
+    if (!preserveTransform) {
+      gsap.set(frame, { clearProps: 'transform' })
+    }
+    gsap.set(frame, { clearProps: 'opacity' })
     if (group) {
       gsap.set(group, { clearProps: 'transform' })
     }
@@ -450,24 +454,48 @@ when I scroll down the content box wtill become smaller and everything inside is
 
   const computeDockVector = () => {
     const { frame, anchor } = state.elements
-    if (!frame || !anchor) return { x: 0 }
+    if (!frame || !anchor) return { x: 0, y: 0 }
 
     const prefersStack = window.innerWidth < 640
-    if (prefersStack) return { x: 0 }
+    if (prefersStack) return { x: 0, y: 0 }
+
+    const prevTransform = frame.style.transform
+    frame.style.transform = 'none'
 
     const frameRect = frame.getBoundingClientRect()
     const anchorRect = anchor.getBoundingClientRect()
+
+    frame.style.transform = prevTransform
     const frameCenter = frameRect.left + frameRect.width / 2
     const anchorCenter = anchorRect.left + anchorRect.width / 2
+    const frameMiddle = frameRect.top + frameRect.height / 2
+    const anchorMiddle = anchorRect.top + anchorRect.height / 2
 
     return {
       x: anchorCenter - frameCenter,
+      y: anchorMiddle - frameMiddle,
     }
+  }
+
+  const refreshDockOffsets = () => {
+    if (state.docked) return
+    state.dockOffsets = computeDockVector()
+  }
+
+  const applyFrameProgress = (progress) => {
+    const { frame } = state.elements
+    if (!frame || state.docked) return
+
+    const { x, y } = state.dockOffsets
+    gsap.set(frame, {
+      x: x * progress,
+      y: y * progress,
+    })
   }
 
   const initHeroSequence = () => {
     if (prefersReducedMotion.matches) {
-      moveFrame(false, { animate: false })
+      moveFrame(false, { animate: false, preserveTransform: true })
       state.timeline?.scrollTrigger?.kill()
       state.timeline?.kill()
       state.timeline = null
@@ -493,7 +521,7 @@ when I scroll down the content box wtill become smaller and everything inside is
     state.elements = { hero, frame, group, whisper, origin, anchor, fallback }
     state.docked = false
 
-    moveFrame(false, { animate: false, force: true })
+    moveFrame(false, { animate: false, force: true, preserveTransform: true })
 
     anchor.dataset.state = 'idle'
     if (fallback) {
@@ -507,6 +535,9 @@ when I scroll down the content box wtill become smaller and everything inside is
     gsap.set(frame, { transformOrigin: 'center top' })
     gsap.set(group, { transformOrigin: 'center top' })
 
+    refreshDockOffsets()
+    applyFrameProgress(0)
+
     const timeline = gsap.timeline({
       defaults: { ease: 'none' },
       scrollTrigger: {
@@ -517,16 +548,33 @@ when I scroll down the content box wtill become smaller and everything inside is
         scrub: 0.6,
         pin: true,
         pinSpacing: true,
-        onLeave: () => {
-          moveFrame(true, { animate: false })
-          requestAnimationFrame(() => ScrollTrigger.refresh())
+        onUpdate: (self) => {
+          if (state.docked) return
+          applyFrameProgress(self.progress)
         },
-        onEnterBack: () => {
-          moveFrame(false, { animate: false })
-          requestAnimationFrame(() => ScrollTrigger.refresh())
+        onLeave: () => {
+          refreshDockOffsets()
+          applyFrameProgress(1)
+          moveFrame(true, { animate: true, force: true })
+        },
+        onEnterBack: (self) => {
+          moveFrame(false, { animate: true, force: true, preserveTransform: true })
+          refreshDockOffsets()
+          applyFrameProgress(self.progress)
+        },
+        onRefreshInit: () => {
+          refreshDockOffsets()
+          if (!state.docked) {
+            applyFrameProgress(timeline.scrollTrigger?.progress ?? 0)
+          }
         },
         onRefresh: () => {
-          if (state.docked) moveFrame(true, { animate: false, force: true })
+          if (state.docked) {
+            moveFrame(true, { animate: false, force: true })
+          } else {
+            refreshDockOffsets()
+            applyFrameProgress(timeline.scrollTrigger?.progress ?? 0)
+          }
         },
       },
     })
@@ -534,11 +582,6 @@ when I scroll down the content box wtill become smaller and everything inside is
     timeline.to(frame, { '--p': 1, duration: 0.9 }, 0)
     timeline.to(frame, { opacity: 0.72, duration: 0.9 }, 0)
     timeline.to(frame, { borderRadius: '26px', duration: 0.9 }, 0)
-    timeline.to(frame, {
-      x: () => computeDockVector().x,
-      duration: 0.9,
-      ease: 'none',
-    }, 0)
     timeline.to(group, {
       scale: () => scaleForViewport(),
       xPercent: () => xPercentForViewport(),
@@ -591,7 +634,7 @@ when I scroll down the content box wtill become smaller and everything inside is
         state.timeline?.scrollTrigger?.kill()
         state.timeline?.kill()
         state.timeline = null
-        moveFrame(false, { animate: false })
+        moveFrame(false, { animate: false, preserveTransform: true })
       } else {
         ensureSmoother()
         initHeroSequence()
