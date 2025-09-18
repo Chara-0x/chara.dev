@@ -398,7 +398,7 @@ when I scroll down the content box wtill become smaller and everything inside is
     return 0
   }
 
-  const yPercentForViewport = () => (window.innerWidth >= 640 ? -12 : -6)
+  const yPercentForViewport = () => 0
 
   const ensureSmoother = () => {
     if (prefersReducedMotion.matches || ScrollSmoother.get()) return
@@ -415,9 +415,9 @@ when I scroll down the content box wtill become smaller and everything inside is
     }
   }
 
-  const moveFrame = (toDock) => {
+  const moveFrame = (toDock, { animate = true, force = false } = {}) => {
     const { frame, origin, anchor, fallback, group } = state.elements
-    if (!frame || !origin || !anchor || state.docked === toDock) return
+    if (!frame || !origin || !anchor || (!force && state.docked === toDock)) return
 
     const container = toDock ? anchor : origin
     const flipState = Flip.getState(frame)
@@ -438,17 +438,36 @@ when I scroll down the content box wtill become smaller and everything inside is
     }
 
     Flip.from(flipState, {
-      duration: 0.65,
-      ease: 'power2.inOut',
+      duration: animate ? 0.55 : 0,
+      ease: animate ? 'power2.inOut' : 'none',
       absolute: true,
       nested: true,
-      onComplete: () => ScrollTrigger.refresh(),
+      onComplete: () => {
+        if (animate) ScrollTrigger.refresh()
+      },
     })
+  }
+
+  const computeDockVector = () => {
+    const { frame, anchor } = state.elements
+    if (!frame || !anchor) return { x: 0 }
+
+    const prefersStack = window.innerWidth < 640
+    if (prefersStack) return { x: 0 }
+
+    const frameRect = frame.getBoundingClientRect()
+    const anchorRect = anchor.getBoundingClientRect()
+    const frameCenter = frameRect.left + frameRect.width / 2
+    const anchorCenter = anchorRect.left + anchorRect.width / 2
+
+    return {
+      x: anchorCenter - frameCenter,
+    }
   }
 
   const initHeroSequence = () => {
     if (prefersReducedMotion.matches) {
-      moveFrame(false)
+      moveFrame(false, { animate: false })
       state.timeline?.scrollTrigger?.kill()
       state.timeline?.kill()
       state.timeline = null
@@ -474,6 +493,8 @@ when I scroll down the content box wtill become smaller and everything inside is
     state.elements = { hero, frame, group, whisper, origin, anchor, fallback }
     state.docked = false
 
+    moveFrame(false, { animate: false, force: true })
+
     anchor.dataset.state = 'idle'
     if (fallback) {
       fallback.hidden = false
@@ -496,14 +517,28 @@ when I scroll down the content box wtill become smaller and everything inside is
         scrub: 0.6,
         pin: true,
         pinSpacing: true,
-        onLeave: () => moveFrame(true),
-        onEnterBack: () => moveFrame(false),
+        onLeave: () => {
+          moveFrame(true, { animate: false })
+          requestAnimationFrame(() => ScrollTrigger.refresh())
+        },
+        onEnterBack: () => {
+          moveFrame(false, { animate: false })
+          requestAnimationFrame(() => ScrollTrigger.refresh())
+        },
+        onRefresh: () => {
+          if (state.docked) moveFrame(true, { animate: false, force: true })
+        },
       },
     })
 
     timeline.to(frame, { '--p': 1, duration: 0.9 }, 0)
     timeline.to(frame, { opacity: 0.72, duration: 0.9 }, 0)
     timeline.to(frame, { borderRadius: '26px', duration: 0.9 }, 0)
+    timeline.to(frame, {
+      x: () => computeDockVector().x,
+      duration: 0.9,
+      ease: 'none',
+    }, 0)
     timeline.to(group, {
       scale: () => scaleForViewport(),
       xPercent: () => xPercentForViewport(),
@@ -513,12 +548,6 @@ when I scroll down the content box wtill become smaller and everything inside is
     if (whisper) {
       timeline.to(whisper, { opacity: 0.55, duration: 0.9 }, 0)
     }
-
-    timeline.add(() => {
-      if (!state.docked && timeline.scrollTrigger?.progress >= 0.98) {
-        moveFrame(true)
-      }
-    })
 
     state.timeline = timeline
 
@@ -562,7 +591,7 @@ when I scroll down the content box wtill become smaller and everything inside is
         state.timeline?.scrollTrigger?.kill()
         state.timeline?.kill()
         state.timeline = null
-        moveFrame(false)
+        moveFrame(false, { animate: false })
       } else {
         ensureSmoother()
         initHeroSequence()
