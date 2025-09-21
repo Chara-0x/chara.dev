@@ -55,10 +55,12 @@ import { Icon } from 'astro-icon/components'
 </script>
 
 <script>
+  type Theme = 'light' | 'dark'
+
   let isNoteVisible = false
-  let outsideClickHandler = null
-  let outsideMoveHandler = null
-  let hideNoteTimeout = null
+  let outsideClickHandler: ((event: PointerEvent) => void) | null = null
+  let outsideMoveHandler: ((event: PointerEvent) => void) | null = null
+  let hideNoteTimeout: number | null = null
 
   function showThemeNote() {
     const note = document.getElementById('theme-toggle-note')
@@ -66,7 +68,7 @@ import { Icon } from 'astro-icon/components'
     if (!note || !toggle || isNoteVisible) return
 
     if (hideNoteTimeout) {
-      clearTimeout(hideNoteTimeout)
+      window.clearTimeout(hideNoteTimeout)
       hideNoteTimeout = null
     }
 
@@ -76,11 +78,12 @@ import { Icon } from 'astro-icon/components'
     isNoteVisible = true
 
     if (!outsideClickHandler) {
-      outsideClickHandler = (event) => {
-        if (
-          note.contains(event.target) ||
-          toggle.contains(event.target)
-        ) {
+      outsideClickHandler = (event: PointerEvent) => {
+        const target = event.target
+        if (!(target instanceof Node)) {
+          return
+        }
+        if (note.contains(target) || toggle.contains(target)) {
           return
         }
         hideThemeNote()
@@ -89,11 +92,12 @@ import { Icon } from 'astro-icon/components'
     }
 
     if (!outsideMoveHandler) {
-      outsideMoveHandler = (event) => {
-        if (
-          note.contains(event.target) ||
-          toggle.contains(event.target)
-        ) {
+      outsideMoveHandler = (event: PointerEvent) => {
+        const target = event.target
+        if (!(target instanceof Node)) {
+          return
+        }
+        if (note.contains(target) || toggle.contains(target)) {
           return
         }
         hideThemeNote()
@@ -128,7 +132,7 @@ import { Icon } from 'astro-icon/components'
     }
   }
 
-  function applyTheme(newTheme) {
+  function applyTheme(newTheme: Theme) {
     const element = document.documentElement
 
     element.classList.add('[&_*]:transition-none')
