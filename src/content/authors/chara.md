@@ -6,5 +6,5 @@ bio: 'Haiiiiii! ^-^'
 website: 'https://chara.dev'
 twitter: 'https://twitter.com/chara0x00'
 github: 'https://github.com/chara-0x'
-mail: 'chara@chara.dev'
+mail: 'chara@chara.email'
 ---
