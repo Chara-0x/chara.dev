@@ -1,0 +1,147 @@
+---
+import Layout from '@/layouts/Layout.astro'
+import PageHead from '@/components/PageHead.astro'
+import Link from '@/components/Link.astro'
+import { Badge } from '@/components/ui/badge'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
+
+const courses = [
+  {
+    title: 'Linear Algebra Notability Notes',
+    code: 'MATH-4A',
+    description:
+      'Math 4a linear algebra notes. Just some simple definiations that I took on class. I\'ll add more stuff later. ',
+    resource: {
+      label: 'Download PDF',
+      href: 'https://drive.google.com/file/d/1PFGjiXJb-wsTCnUI-Gy5CdGz48cNmRVS/view?usp=sharing',
+      external: true,
+    },
+    progress: '1 lecture behind',
+    lastUpdated: 'Sep 30, 2025',
+    icon: 'lucide:sigma',
+  },
+  {
+    title: 'Computer Science 16 Notes',
+    code: 'CMPSC-16',
+    description:
+      'Lecture summaries, code snippets, and problem-solving strategies from CS16. I\'ll have a seperate repo for all my codes notes later on.',
+    resource: {
+      label: 'Open Notion page',
+      href: 'https://chara0x.notion.site/CMPCS-16-27f5a6775fc18047b069e13316143dcb',
+      external: true,
+    },
+    progress: 'Missing lecture 1',
+    lastUpdated: 'Oct 1, 2024',
+    icon: 'lucide:laptop-minimal',
+  },
+  {
+    title: 'Psychology 1 Notes',
+    code: 'PSY-1',
+    description:
+      'Comprehensive notes covering key concepts, theories, and studies in introductory psychology. Lecture pdf included in the notion page head.',
+    resource: {
+      label: 'Open Notion page',
+      href: 'https://chara0x.notion.site/Psy-27e5a6775fc1808fb7bbe5063da7f4f8',
+      external: true,
+    },
+    progress: 'Up to date',
+    lastUpdated: 'Oct 2, 2025',
+    icon: 'lucide:library',
+  },
+  {
+    title: 'English 22 Lecture Handouts',
+    code: 'ENGL-22',
+    description:
+      'I only have teacher\'s lecture notes for English 22. It\'s not a class worth to make notes so I\'ll just upload the handouts here.', 
+    resource: {
+      label: 'Coming soon',
+      href: '',
+      external: false,
+    },
+    progress: 'N/A',
+    lastUpdated: 'N/A',
+    icon: 'lucide:book-open'
+  }
+]
+---
+
+<Layout>
+  <PageHead
+    slot="head"
+    title="Class Notes"
+    description="A growing hub with all of my class notes, organized course by course."
+  />
+
+  <section class="mt-12 flex flex-col gap-6 text-center sm:text-left">
+    <div class="mx-auto flex max-w-2xl flex-col gap-4">
+      <Badge variant="secondary" className="mx-auto w-fit sm:mx-0">
+        <Icon name="lucide:notebook-pen" class="size-3" aria-hidden="true" />
+        Study corner
+      </Badge>
+      <h1 class="text-4xl font-semibold tracking-tight sm:text-5xl">Class Notes UCSB-25F</h1>
+      <p class="text-muted-foreground text-base sm:text-lg">
+        Here is where I stash everything from lectures, readings, and problem sets. I only have
+        three classes right now, but this list will keep growing as new semesters roll in.
+      </p>
+    </div>
+  </section>
+
+  <section class="mt-12">
+    <div class="grid gap-6 md:grid-cols-2">
+      {courses.map((course) => (
+        <article
+          class="group relative flex h-full flex-col justify-between gap-5 rounded-2xl border border-border/60 bg-background/70 p-6 text-left shadow-[0_18px_45px_-25px_rgba(15,23,42,0.35)] transition hover:border-primary/50 hover:shadow-[0_24px_55px_-30px_rgba(15,23,42,0.55)]"
+        >
+          <div class="flex flex-col gap-4">
+            <div class="flex items-start justify-between gap-4">
+              <div class="flex items-center gap-3">
+                <span class="rounded-xl bg-secondary/60 p-2">
+                  <Icon name={course.icon} class="size-5 text-primary" aria-hidden="true" />
+                </span>
+                <div class="flex flex-col gap-1">
+                  <span class="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+                    {course.code}
+                  </span>
+                  <h2 class="text-2xl font-semibold leading-tight">{course.title}</h2>
+                </div>
+              </div>
+            </div>
+
+            <p class="text-muted-foreground text-sm leading-relaxed">
+              {course.description}
+            </p>
+          </div>
+
+          <div class="flex flex-wrap items-center gap-3 pt-2">
+            {course.resource.href ? (
+              <Link
+                href={course.resource.href}
+                external={course.resource.external}
+                class={cn(
+                  buttonVariants({ variant: 'outline', size: 'sm' }),
+                  'inline-flex'
+                )}
+              >
+                {course.resource.label}
+              </Link>
+            ) : (
+              <button
+                class={cn(
+                  buttonVariants({ variant: 'outline', size: 'sm' }),
+                  'cursor-not-allowed opacity-70'
+                )}
+                disabled
+              >
+                {course.resource.label}
+              </button>
+            )}
+            <span class="text-xs font-medium text-primary/80">{course.progress}</span>
+            <span class="text-xs text-muted-foreground">Last updated {course.lastUpdated}</span>
+          </div>
+        </article>
+      ))}
+    </div>
+  </section>
+</Layout>
