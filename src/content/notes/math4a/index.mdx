@@ -1,0 +1,89 @@
+---
+title: 'Math 4a Class Notes'
+description: 'Comprehensive notes for Math 4a covering key concepts, definitions, and problem-solving strategies.'  
+date: 2025-10-03
+tags: ['v1.0.0']
+image: './banner.png'
+authors: ['chara0x']
+---
+
+## Developer Experience Features
+
+- **shadcn/ui theming**: use semantic Tailwind colors (`bg-background text-foreground`) instead of raw `dark:` styles.
+- **Typography**: wrap prose in `prose` for styling instead of relying on Tailwind Typography overrides.
+- **Expressive Code**: configurable code blocks with Shiki highlighting.
+
+  ````mdx showLineNumbers=false collapse={2-42}
+  ```ts title="example.ts" showLineNumbers startLineNumber=100 ins={3} del={4} {5} {"Interesting code":12-16} ins={"Added cool code":18-25} del={"Deleted dangerous code":27-33} collapse={37-40} "awesome" ins="added" del="deleted"
+  function demonstrateFeatures() {
+    console.log('Hello world!')
+    return true
+  }
+`````
+
+````
+
+Terminal frame example:
+
+```console title="Installing dependencies with pnpm"
+$ pnpm install @astrojs/mdx @astrojs/react @astrojs/sitemap astro-icon
+```
+
+- **Inline highlighting**: use `rehype-pretty-code` for inline code like `console.log('Hello world!'){:js}`.
+- **Class name utility**: `cn()` combines `clsx` + `tailwind-merge`.
+
+```tsx title="src/lib/utils.ts"
+import { type ClassValue, clsx } from 'clsx'
+import { twMerge } from 'tailwind-merge'
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs))
+}
+```
+
+- Example usage in a custom Link:
+
+```astro title="src/components/Link.astro"
+---
+import { cn } from '@/lib/utils'
+const { href, external, class: className, underline, ...rest } = Astro.props
+---
+
+<a
+  href={href}
+  target={external ? '_blank' : '_self'}
+  class={cn(
+    'inline-block transition-colors duration-300 ease-in-out',
+    underline &&
+      'underline decoration-muted-foreground underline-offset-[3px] hover:decoration-foreground',
+    className,
+  )}
+  {...rest}
+>
+  <slot />
+</a>
+```
+
+---
+
+## User Experience Features
+
+- **Post images**: use frontmatter `image` for Open Graph and blog display.
+- **Theme selector**: place in header, use `sticky`.
+- **Table of Contents**: sticky `<TableOfContents>` with `IntersectionObserver` for active heading highlight.
+- **Breadcrumbs**: show hierarchy on every page (except homepage).
+- **Authors**: support multiple via frontmatter → pulls info from `Authors` collection.
+- **Tags**: each tag gets its own page.
+- **Math with KaTeX**:
+
+```latex
+\begin{vmatrix}
+1 & x_1 & x_1^2 & \dots & x_1^{n-1} \\
+1 & x_2 & x_2^2 & \dots & x_2^{n-1} \\
+\vdots & \vdots & \vdots & \ddots & \vdots \\
+1 & x_n & x_n^2 & \dots & x_n^{n-1} \\
+\end{vmatrix}
+= {\prod_{1 \leq {i,j} \leq n} {(x_i - x_j)}}
+```
+
+```
