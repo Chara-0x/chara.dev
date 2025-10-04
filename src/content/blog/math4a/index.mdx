@@ -8,10 +8,30 @@ image: './banner.png'
 authors: ['chara0x']
 ---
 
-import Link from '@/components/Link.astro'
-import { buttonVariants } from '@/components/ui/button'
-import { cn } from '@/lib/utils'
-import { Icon } from 'astro-icon/components'
+import LectureLinkCard from '@/components/LectureLinkCard.astro'
+
+{/* const lectures = [
+  {
+    href: '/blog/math4a/l1',
+    lecture: 'Lecture 1',
+    title: 'Linear Equations & Systems',
+  },
+  {
+    href: '/blog/math4a/l2',
+    lecture: 'Lecture 2',
+    title: 'Echelon Forms & RREF',
+  },
+  {
+    href: '/blog/math4a/l3',
+    lecture: 'Lecture 3',
+    title: 'Vectors & Linear Combinations',
+  },
+  {
+    href: '/blog/math4a/l4',
+    lecture: 'Lecture 4',
+    title: 'Span & Span Solutions',
+  },
+] */}
 
 ---
 
@@ -19,116 +39,11 @@ import { Icon } from 'astro-icon/components'
 
 Notes on my UCSB Math 4A (Linear Algebra) course.
 
-## Links
+## Chapter 1: Linear Equations and Matrices
 
-<a href="/blog/math4a/l1" class="text-blue-600 hover:underline">
-  Lecture 1: Linear Equations & Systems
-</a>
-
-<a href="/blog/math4a/l2" class="text-orange-300 hover:underline
-">
-  Lecture 2: Echelon Forms & RREF
-</a>
-<a href="/blog/math4a/l3" class="text-green-300 hover:underline">
-  Lecture 3: Vectors & Linear Combinations
-</a>
-
-<a href="/blog/math4a/l4" class="text-purple-300 hover:underline">
-  Lecture 4: Span & Span solutions
-</a>
-
-
-{/* 
-<div
-  class='grid gap-4 sm:grid-cols-2'
->
-   <Link
-    href="/blog/math4a/l1"
-    class={cn(
-      buttonVariants({ variant: 'outline' }),
-      'rounded-xl group flex items-center justify-end size-full',
-    )}
-    aria-disabled={false}
-  >
-    <div class="flex flex-col items-end overflow-hidden text-wrap">
-      <span class="text-muted-foreground-special text-right text-xs">
-        Next Post
-      </span>
-      <span class="w-full text-right text-sm text-balance text-ellipsis">
-        "a"
-      </span>
-    </div>
-    <Icon
-      name="lucide:arrow-right"
-      class="ml-2 size-4 transition-transform group-hover:translate-x-1"
-    />
-  </Link>
-
-
-  <Link
-    href="/blog/math4a/l2"
-    class={cn(
-      buttonVariants({ variant: 'outline' }),
-      'rounded-xl group flex items-center justify-end size-full',
-    )}
-    aria-disabled={false}
-  >
-    <div class="flex flex-col items-end overflow-hidden text-wrap">
-      <span class="text-muted-foreground-special text-right text-xs">
-        {'Next Subpost'}
-      </span>
-    </div>
-    <Icon
-      name="lucide:arrow-right"
-      class="ml-2 size-4 transition-transform group-hover:translate-x-1"
-    />
-  </Link>
-    
-</div> */}
-
-
-
-{/* 
-<div class="grid gap-4 sm:grid-cols-2">
-  <Link
-    href="/blog/math4a/l1"
-    class={cn(
-      buttonVariants({ variant: 'outline' }),
-      'group flex items-center justify-between rounded-xl p-6 text-left',
-    )}
-    aria-label="Read Lecture 1 notes"
-  >
-    <div class="flex flex-col">
-      <span class="text-muted-foreground-special text-xs uppercase tracking-wide">
-        Lecture 1
-      </span>
-      <span class="text-base font-medium">Lecture 1 Notes</span>
-    </div>
-    <Icon
-      name="lucide:arrow-right"
-      class="size-4 transition-transform group-hover:translate-x-1"
-      aria-hidden="true"
-    />
-  </Link>
-
-  <Link
-    href="/blog/math4a/l2"
-    class={cn(
-      buttonVariants({ variant: 'outline' }),
-      'group flex items-center justify-between rounded-xl p-6 text-left',
-    )}
-    aria-label="Read Lecture 2 notes"
-  >
-    <div class="flex flex-col">
-      <span class="text-muted-foreground-special text-xs uppercase tracking-wide">
-        Lecture 2
-      </span>
-      <span class="text-base font-medium">Lecture 2 Notes</span>
-    </div>
-    <Icon
-      name="lucide:arrow-right"
-      class="size-4 transition-transform group-hover:translate-x-1"
-      aria-hidden="true"
-    />
-  </Link>
-</div> */}
+<div class='col-start-2 grid grid-cols-1 gap-5 mb-6'>
+  <LectureLinkCard href="/blog/math4a/l1" lecture="Lecture 1" title="Linear Equations & Systems" />
+  <LectureLinkCard href="/blog/math4a/l2" lecture="Lecture 2" title="Echelon Forms & RREF" />
+  <LectureLinkCard href="/blog/math4a/l3" lecture="Lecture 3" title="Vectors & Linear Combinations" />
+  <LectureLinkCard href="/blog/math4a/l4" lecture="Lecture 4" title="Span & Span Solutions" />
+</div>
