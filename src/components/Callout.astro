@@ -177,7 +177,11 @@ const { title, variant = 'note', defaultOpen = true, ...rest } = Astro.props
       )}
     />
   </summary>
-  <div>
+  <div
+    class={cn(
+      variant === 'definition' && 'space-y-3 text-base leading-relaxed'
+    )}
+  >
     <slot />
   </div>
 </details>
