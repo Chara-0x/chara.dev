@@ -32,10 +32,9 @@ export default defineConfig({
   site: 'https://chara.dev',
   integrations: [
     expressiveCode({
-      themes: [ ayu_light, 'ayu-dark'],
+      themes: [ayu_light],
       plugins: [pluginCollapsibleSections(), pluginLineNumbers()],
       useDarkModeMediaQuery: false,
-      themeCssSelector: (theme) => `[data-theme="${theme.name.split('-')[1]}"]`,
       minSyntaxHighlightingColorContrast: 0,
       defaultProps: {
         wrap: true,
@@ -117,10 +116,7 @@ export default defineConfig({
       [
         rehypePrettyCode,
         {
-          theme: {
-            light: ayu_light,
-            dark: 'ayu-dark',
-          },
+          theme: ayu_light,
         },
       ],
     ],

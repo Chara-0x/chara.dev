@@ -19,7 +19,7 @@ const { class: className, gap = 'default', smooth = false } = Astro.props
 ---
 
 <!doctype html>
-<html class="bg-background text-foreground" lang={SITE.locale}>
+<html data-theme="light" class="bg-background text-foreground" lang={SITE.locale}>
   <Head><slot name="head" /></Head>
   <body class="overflow-x-hidden">
     <div class={cn(

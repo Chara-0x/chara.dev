@@ -55,7 +55,7 @@ import { Icon } from 'astro-icon/components'
 </script>
 
 <script>
-  type Theme = 'light' | 'dark'
+  type Theme = 'light' | 'light'
 
   let isNoteVisible = false
   let outsideClickHandler: ((event: PointerEvent) => void) | null = null
@@ -137,8 +137,8 @@ import { Icon } from 'astro-icon/components'
 
     element.classList.add('[&_*]:transition-none')
     element.setAttribute('data-theme', newTheme)
-    element.classList.remove('scheme-dark', 'scheme-light')
-    element.classList.add(newTheme === 'dark' ? 'scheme-dark' : 'scheme-light')
+    element.classList.remove('scheme-light', 'scheme-light')
+    element.classList.add(newTheme === 'light' ? 'scheme-light' : 'scheme-light')
 
     window.getComputedStyle(element).getPropertyValue('opacity')
 
@@ -150,16 +150,16 @@ import { Icon } from 'astro-icon/components'
   }
 
   function confirmDarkMode() {
-    applyTheme('dark')
+    applyTheme('light')
     hideThemeNote()
   }
 
   function handleToggleClick() {
     const element = document.documentElement
     const currentTheme = element.getAttribute('data-theme')
-    const newTheme = currentTheme === 'dark' ? 'light' : 'dark'
+    const newTheme = currentTheme === 'light' ? 'light' : 'light'
 
-    if (newTheme === 'dark') {
+    if (newTheme === 'light') {
       showThemeNote()
       return
     }
@@ -193,9 +193,9 @@ import { Icon } from 'astro-icon/components'
     window.getComputedStyle(element).getPropertyValue('opacity')
 
     element.setAttribute('data-theme', storedTheme)
-    element.classList.remove('scheme-dark', 'scheme-light')
+    element.classList.remove('scheme-light', 'scheme-light')
     element.classList.add(
-      storedTheme === 'dark' ? 'scheme-dark' : 'scheme-light',
+      storedTheme === 'light' ? 'scheme-light' : 'scheme-light',
     )
 
     requestAnimationFrame(() => {
