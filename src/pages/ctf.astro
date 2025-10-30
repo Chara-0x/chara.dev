@@ -1,0 +1,283 @@
+---
+import ContestTrajectoryChart from '@/components/ctf/ContestTrajectoryChart'
+import RankedFinishesTable from '@/components/ctf/RankedFinishesTable'
+import Layout from '@/layouts/Layout.astro'
+import PageHead from '@/components/PageHead.astro'
+import { Badge } from '@/components/ui/badge'
+import { Icon } from 'astro-icon/components'
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
+
+type Organizer = {
+  id: number
+  name: string
+}
+
+interface CtfEntry {
+  id: number
+  title: string
+  start: string
+  rank: number | null
+  weight?: number
+  participants?: number
+  ctftime_url?: string
+  logo?: string
+  organizers?: Organizer[]
+  format?: string
+}
+
+interface ComputedWeightEntry {
+  id: number
+  computed_weight: number
+}
+
+interface ComputedWeightPayload {
+  events: ComputedWeightEntry[]
+}
+
+const raw = await readFile(join(process.cwd(), 'public', 'output.json'), 'utf-8')
+const parsed = JSON.parse(raw) as CtfEntry[]
+
+const computedRaw = await readFile(
+  join(process.cwd(), 'public', 'per_ctf_weight.json'),
+  'utf-8',
+)
+const computedParsed = JSON.parse(computedRaw) as ComputedWeightPayload
+
+const computedWeightMap = new Map<number, number>()
+for (const entry of computedParsed.events ?? []) {
+  if (
+    entry &&
+    typeof entry.id === 'number' &&
+    Number.isFinite(entry.id) &&
+    typeof entry.computed_weight === 'number' &&
+    Number.isFinite(entry.computed_weight)
+  ) {
+    computedWeightMap.set(entry.id, entry.computed_weight)
+  }
+}
+
+const entriesWithRank = parsed.filter(
+  (entry) => typeof entry.rank === 'number' && Number.isFinite(entry.rank),
+)
+
+const normalised = entriesWithRank
+  .map((entry) => ({
+    ...entry,
+    computedWeight: computedWeightMap.get(entry.id) ?? null,
+    startDate: new Date(entry.start),
+  }))
+  .filter((entry) => !Number.isNaN(entry.startDate.valueOf()))
+
+const chronological = [...normalised].sort(
+  (a, b) => a.startDate.getTime() - b.startDate.getTime(),
+)
+
+const now = new Date()
+const completedEntries = chronological.filter((entry) => entry.startDate <= now)
+
+const weightComparator = (
+  a: typeof completedEntries[number],
+  b: typeof completedEntries[number],
+) => {
+  const weightA = typeof a.computedWeight === 'number' ? a.computedWeight : -Infinity
+  const weightB = typeof b.computedWeight === 'number' ? b.computedWeight : -Infinity
+  if (weightA !== weightB) return weightB - weightA
+  const rankA = a.rank ?? Number.POSITIVE_INFINITY
+  const rankB = b.rank ?? Number.POSITIVE_INFINITY
+  if (rankA !== rankB) return rankA - rankB
+  return b.startDate.getTime() - a.startDate.getTime()
+}
+
+const orderedEntries = [...completedEntries].sort(weightComparator)
+
+const totalPlayed = completedEntries.length
+const firstContest = completedEntries[0] ?? null
+const latestContest = completedEntries.at(-1) ?? null
+const latestWeightedContest =
+  [...completedEntries].reverse().find((entry) => typeof entry.computedWeight === 'number') ?? null
+
+const fullDateFormatter = new Intl.DateTimeFormat('en-US', {
+  month: 'short',
+  day: 'numeric',
+  year: 'numeric',
+})
+
+const monthStarts = Array.from({ length: 24 }, (_, index) =>
+  new Date(now.getFullYear(), now.getMonth() - (23 - index), 1),
+).filter((start) => start <= now)
+
+const monthlyBuckets = monthStarts.map((start) => {
+  const end = new Date(start.getFullYear(), start.getMonth() + 1, 1)
+  const entries = completedEntries.filter(
+    (entry) =>
+      entry.startDate >= start &&
+      entry.startDate < end &&
+      typeof entry.computedWeight === 'number',
+  )
+  if (!entries.length) {
+    return null
+  }
+  const averageWeight =
+    entries.reduce((sum, entry) => sum + (entry.computedWeight ?? 0), 0) / entries.length
+  return {
+    start,
+    label: new Intl.DateTimeFormat('en-US', { month: 'short' }).format(start),
+    year: start.getFullYear().toString().slice(-2),
+    averageWeight,
+    count: entries.length,
+  }
+}).filter(Boolean) as Array<{
+  start: Date
+  label: string
+  year: string
+  averageWeight: number
+  count: number
+}>
+
+const historyHasData = monthlyBuckets.length > 0
+
+const chartData = monthlyBuckets.map((bucket, index) => ({
+  index,
+  label: `${bucket.label} ${bucket.year}`,
+  weight: Number(bucket.averageWeight.toFixed(2)),
+  count: bucket.count,
+  title: `${bucket.count} events`,
+  dateLabel: `${bucket.label} ${bucket.year}`,
+}))
+
+const recentOneMonthStart = new Date(now.getFullYear(), now.getMonth() - 1, now.getDate())
+const recentEntries = completedEntries.filter(
+  (entry) =>
+    entry.startDate >= recentOneMonthStart &&
+    entry.startDate <= now &&
+    typeof entry.computedWeight === 'number',
+)
+const recentAverageComputedWeight =
+  recentEntries.length > 0
+    ? Math.round(
+        ((recentEntries.reduce((sum, entry) => sum + (entry.computedWeight ?? 0), 0) /
+          recentEntries.length) *
+          10),
+      ) / 10
+    : null
+
+const stats = [
+  {
+    label: 'Avg computed weight (30 days)',
+    value: recentAverageComputedWeight !== null ? `${recentAverageComputedWeight}` : '—',
+    icon: 'lucide:activity' as const,
+    helper:
+      recentEntries.length > 0
+        ? `Across ${recentEntries.length} events since ${fullDateFormatter.format(recentOneMonthStart)}`
+        : 'Play a CTF this month to kick off a new streak',
+  },
+  {
+    label: 'Events logged',
+    value: totalPlayed.toString(),
+    icon: 'lucide:list-checks' as const,
+    helper:
+      totalPlayed > 0 && firstContest && latestContest
+        ? `${fullDateFormatter.format(firstContest.startDate)} → ${fullDateFormatter.format(
+            latestContest.startDate,
+          )}`
+        : 'No events recorded yet',
+  },
+  {
+    label: 'Latest computed weight',
+    value: latestWeightedContest ? latestWeightedContest.computedWeight?.toFixed(1) ?? '—' : '—',
+    icon: 'lucide:trending-up' as const,
+    helper:
+      latestWeightedContest
+        ? `${latestWeightedContest.title} • ${fullDateFormatter.format(latestWeightedContest.startDate)}`
+        : 'Join an event to log your next result',
+  },
+]
+
+const tableEntries = orderedEntries.map((entry, index) => ({
+  id: entry.id ?? index,
+  rank: entry.rank as number,
+  weight: typeof entry.computedWeight === 'number' ? entry.computedWeight : null,
+  participants: typeof entry.participants === 'number' ? entry.participants : null,
+  title: entry.title,
+  ctftimeUrl: entry.ctftime_url,
+  logo: entry.logo,
+  startDateISO: entry.startDate.toISOString(),
+  startLabel: fullDateFormatter.format(entry.startDate),
+}))
+
+---
+
+<Layout class="max-w-7xl gap-y-12">
+  <PageHead
+    slot="head"
+    title="CTF Contest Log"
+    description="Scores, rankings, and notes from every capture-the-flag contest I have taken part in."
+  />
+
+  <section class="mt-12 flex flex-col gap-8">
+    <div class="rounded-3xl border border-border/60 bg-background/70 p-5 sm:p-7 shadow-[0_24px_60px_-30px_rgba(15,23,42,0.45)]">
+      <div class="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
+        <div>
+          <Badge variant="secondary" className="w-fit">
+            <Icon name="lucide:binary" class="size-3" aria-hidden="true" />
+            CTF
+          </Badge>
+        </div>
+        {latestContest && (
+          <Badge variant="outline" className="text-xs sm:text-sm">
+            <Icon name="lucide:calendar" class="size-3" aria-hidden="true" />
+            Latest: {fullDateFormatter.format(latestContest.startDate)}
+          </Badge>
+        )}
+      </div>
+
+      {historyHasData ? (
+        <div class="mt-6">
+          <ContestTrajectoryChart client:visible data={chartData} />
+        </div>
+      ) : (
+        <div class="mt-6 rounded-2xl border border-dashed border-border/60 bg-background/80 p-6 text-center text-sm text-muted-foreground">
+          No ranked finishes on record yet—time to queue a contest and plot the first point.
+        </div>
+      )}
+    </div>
+
+    <div class="grid gap-8 lg:grid-cols-[minmax(0,280px)_minmax(0,1fr)] xl:grid-cols-[minmax(0,320px)_minmax(0,1fr)]">
+      <div class="flex flex-col gap-6">
+
+      <div class="rounded-3xl border border-border/60 bg-background/70 p-5 shadow-[0_18px_45px_-25px_rgba(15,23,42,0.35)]">
+        <h2 class="text-lg font-semibold tracking-tight text-foreground sm:text-xl">Recent stats</h2>
+        <div class="mt-4 grid gap-4">
+          {stats.map((stat) => (
+            <div class="rounded-2xl border border-border/50 bg-background/60 p-4">
+        <div class="flex items-center gap-2 text-sm text-muted-foreground">
+          <Icon name={stat.icon} class="size-4 text-primary" aria-hidden="true" />
+          {stat.label}
+        </div>
+              <div class="mt-1 text-2xl font-semibold">{stat.value}</div>
+              <p class="mt-2 text-sm text-muted-foreground">{stat.helper}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-5">
+      <div>
+        <h2 class="text-3xl font-semibold tracking-tight">Ranked finishes</h2>
+        <p class="text-muted-foreground text-sm sm:text-base">
+          Sorted by highest computed weight first.
+        </p>
+      </div>
+
+      {tableEntries.length > 0 ? (
+        <RankedFinishesTable client:load entries={tableEntries} />
+      ) : (
+        <p class="rounded-3xl border border-dashed border-border/60 bg-background/60 p-6 text-center text-sm text-muted-foreground">
+          Add contests with recorded ranks to populate the table.
+        </p>
+      )}
+    </div>
+  </section>
+</Layout>

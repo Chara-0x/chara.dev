@@ -1,0 +1,184 @@
+---
+title: 'Vectors & Linear Combinations'
+description: 'Notes on pivots, pivot columns, free variables, describing all solutions, and linear combinations of vectors.'
+date: 2025-10-01
+tags: ['linear-algebra', 'lecture-3']
+image: './banner.png'
+authors: ['Chara']
+---
+
+import Callout from '@/components/Callout.astro'
+
+<Callout variant="note" title="Extra Reading">
+  3Blue1Brown's linear algebra series gives a visual intuition for **Vectors**. Start with this episode:
+
+  <div class="relative mt-4 w-full overflow-hidden rounded-xl" style="padding-top: 56.25%;">
+    <iframe
+      src="https://www.youtube.com/embed/fNk_zzaMoSs?si=H3l5mjU01iL2m5Q8"
+      title="3Blue1Brown — Essence of Linear Algebra"
+      class="absolute left-0 top-0 h-full w-full"
+      frameborder="0"
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen
+    ></iframe>
+  </div>
+</Callout>
+
+## Review from Last Time
+### Pivots, Pivot Columns, Free Variables
+
+- **Pivot**: first nonzero entry in a nonzero row.  
+- **Pivot column**: column with a pivot.  
+- **Free variable**: non-pivot column (not the last column).  
+- Number of pivots $\le$ number of rows.  
+
+**Example**
+$$
+\begin{bmatrix}
+\$ & * & * & * & * & * \\
+0 & \$ & * & * & * & * \\
+0 & 0 & 0 & \$ & * & * \\
+0 & 0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+**How to describe all solutions:**
+1. Assign free variables arbitrary values.  
+2. Express pivot variables in terms of free variables.  
+
+**Example**
+$$
+\begin{bmatrix}
+1 & 1 & 0 & 0 & | & 3/2 \\
+0 & 0 & 1 & 0 & | & 2 \\
+0 & 0 & 0 & 1 & | & 1/2 \\
+0 & 0 & 0 & 0 & | & 0
+\end{bmatrix}
+\;\;\Rightarrow\;\;
+\begin{aligned}
+x_1 + x_2 &= 3/2 \\
+x_3 &= 2 \\
+x_4 &= 1/2
+\end{aligned}
+$$
+
+Let $x_2 = s$ Then:
+$$
+x_1 = \tfrac{3}{2} - s,\;\;x_2=s,\;\;x_3=2,\;\;x_4=\tfrac{1}{2}
+$$
+
+---
+
+## Vectors
+
+An **$m$-vector** (column vector in $\mathbb{R}^m$) is an $m\times 1$ matrix:
+$$
+\vec{a}=
+\begin{bmatrix}
+a_1\\a_2\\a_3\\ \vdots \\a_m
+\end{bmatrix}
+$$
+
+- Addition:
+$$
+\begin{bmatrix}
+a_1\\a_2\\a_3\\\vdots\\a_m
+\end{bmatrix}
++
+\begin{bmatrix}
+b_1\\b_2\\b_3\\\vdots\\b_m
+\end{bmatrix}
+=
+\begin{bmatrix}
+a_1+b_1\\a_2+b_2\\a_3+b_3\\\vdots\\a_m+b_m
+\end{bmatrix}
+$$
+
+- Scalar multiplication:
+$$
+c\begin{bmatrix}
+a_1\\a_2\\a_3\\\vdots\\a_m
+\end{bmatrix}
+=
+\begin{bmatrix}
+ca_1\\ca_2\\ca_3\\\vdots\\ca_m
+\end{bmatrix}
+$$
+
+---
+
+### Solutions as Vectors
+
+Solutions of a linear system can be written as vectors.
+
+**Example**
+$$
+\begin{bmatrix}
+x_1\\x_2\\x_3\\x_4\\x_5
+\end{bmatrix}
+=
+\begin{bmatrix}
+3/2 - s - \pi t \\
+s \\
+2 - e t \\
+t \\
+1/2
+\end{bmatrix}
+=
+\begin{bmatrix}
+3/2 \\ 0 \\ 2 \\ 0 \\ 1/2
+\end{bmatrix}
++ s\begin{bmatrix}
+-1 \\ 1 \\ 0 \\ 0 \\ 0
+\end{bmatrix}
++ t\begin{bmatrix}
+-\pi \\ 0 \\ -e \\ 1 \\ 0
+\end{bmatrix}
+$$
+
+And the left hand side expression is called a linear combination.
+
+---
+
+## Linear Combination
+
+
+<Callout variant="definition" title="Linear Combination">
+  Given vectors $\vec{v}_1,\dots,\vec{v}_k$ and scalars $s_1,\dots,s_k$:
+
+  $$
+  \vec{y}=s_1\vec{v}_1+\cdots+s_k\vec{v}_k
+  $$
+
+  is called a **linear combination** of $\{\vec{v}_1,\dots,\vec{v}_k\}$
+</Callout>
+
+### Examples
+
+1. Given a vector $\vec{v}$, a linear combination of $\vec{v}$ is just a scalar multiple -> $a\vec{v}$  
+
+2. Given vectors:
+$$
+\vec{v}_1=\begin{bmatrix}1\\2\end{bmatrix},\;\;
+\vec{v}_2=\begin{bmatrix}3\\4\end{bmatrix},\;\;
+\vec{y}=\begin{bmatrix}5\\6\end{bmatrix}
+$$
+
+Check if $\vec{y}$ is a linear combination of $\vec{v}_1,\vec{v}_2$:
+
+Find $s_1,s_2$ such that
+$$
+\begin{bmatrix}5\\6\end{bmatrix}
+= s_1\begin{bmatrix}1\\2\end{bmatrix}
++ s_2\begin{bmatrix}3\\4\end{bmatrix}
+$$
+
+Equivalent to solving:
+$$
+\begin{bmatrix}1\\2\end{bmatrix}x_1+
+\begin{bmatrix}3\\4\end{bmatrix}x_2=
+\begin{bmatrix}5\\6\end{bmatrix}
+$$
+
+---

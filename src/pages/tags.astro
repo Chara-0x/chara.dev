@@ -1,0 +1,58 @@
+---
+import PageHead from '@/components/PageHead.astro'
+import Layout from '@/layouts/Layout.astro'
+import Link from '@/components/Link.astro'
+import { Icon } from 'astro-icon/components'
+---
+
+<Layout gap="default">
+  <PageHead slot="head" title="About" description="Coming soon™" />
+  <!-- <Breadcrumbs items={[{ label: 'About', icon: 'lucide:info' }]} /> -->
+
+  <section class="mt-32 rounded-3xl border border-border/60 bg-background/70 px-6 py-16 text-center shadow-[0_18px_45px_-25px_rgba(15,23,42,0.35)] sm:px-10">
+    <div class="mx-auto flex max-w-2xl flex-col items-center gap-7">
+      <span class="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/5 px-4 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-primary">
+        <Icon name="lucide:loader" class="h-4 w-4" aria-hidden="true" />
+        Coming soon
+      </span>
+      <h1 class="text-4xl font-semibold tracking-tight text-foreground sm:text-5xl">
+        Under Construction o(≧v≦)o
+      </h1>
+      <p class="max-w-xl text-base text-muted-foreground sm:text-lg">
+        My blog is not here yet, Maybe come back later!
+      </p>
+      <!-- <div class="w-full rounded-2xl border border-dashed border-border/70 bg-muted/20 p-6 text-left">
+        <div class="flex items-start gap-3">
+          <div class="rounded-full bg-primary/10 p-2">
+            <Icon name="lucide:hammer" class="h-5 w-5 text-primary" aria-hidden="true" />
+          </div>
+          <div class="space-y-4">
+            <div>
+              <h2 class="text-xs font-semibold uppercase tracking-[0.05em] text-muted-foreground">
+                Status
+              </h2>
+              <p class="mt-2 text-lg font-medium text-foreground">Blog is coming in a week</p>
+            </div>
+            <div>
+              <h2 class="text-xs font-semibold uppercase tracking-[0.25em] text-muted-foreground">
+                What to expect next
+              </h2>
+              <p class="mt-2 text-sm text-muted-foreground">
+                A deeper look at the team, our values, and the path we&apos;re building will land here soon.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div> -->
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <Link
+          href="/"
+          class="inline-flex items-center gap-2 rounded-full border border-transparent bg-primary px-5 py-2 text-sm font-medium text-primary-foreground transition hover:brightness-[1.08]"
+        >
+          <Icon name="lucide:home" class="h-4 w-4" aria-hidden="true" />
+          Back to home
+        </Link>
+      </div>
+    </div>
+  </section>
+</Layout>

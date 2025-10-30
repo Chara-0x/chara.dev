@@ -24,10 +24,10 @@ const { class: className, gap = 'default', smooth = false } = Astro.props
   <body class="overflow-x-hidden">
     <div class={cn(
       "flex h-fit min-h-screen flex-col font-sans",
-      gap === 'default' ? "gap-y-6" : "gap-y-0",
+      gap === 'default' ? "gap-y-4" : "gap-y-0",
     )}>
       <!-- HEADER stays above everything -->
-<div class="bg-background/50 fixed inset-x-0 top-0 z-[200] divide-y backdrop-blur-sm xl:divide-none">
+<div class={cn("bg-background/50 top-0 z-[200] divide-y backdrop-blur-sm xl:divide-none", gap === 'default' ? "sticky" : "fixed inset-x-0")}>
   <Header />
   <slot name="subposts-navigation" />
   <slot name="table-of-contents" />
@@ -40,13 +40,13 @@ const { class: className, gap = 'default', smooth = false } = Astro.props
       <main class="grow">
         <div class={cn(
           "mx-auto flex grow flex-col px-4",
-          Astro.url.pathname !== "/" && "max-w-3xl",
+          Astro.url.pathname !== "/" && "max-w-3xl gap-y-6",
           className
         )}>
           <slot />
         </div>
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   </div>
       ) : (
@@ -54,7 +54,7 @@ const { class: className, gap = 'default', smooth = false } = Astro.props
           <main class="grow">
             <div class={cn(
               "mx-auto flex grow flex-col px-4",
-              Astro.url.pathname !== "/" && "max-w-3xl",
+              Astro.url.pathname !== "/" && "max-w-3xl gap-y-6",
               className
             )}>
               <slot />

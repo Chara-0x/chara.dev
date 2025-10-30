@@ -85,9 +85,9 @@ const DecorativeBadges = memo(() => {
   // size-* exists, but these icons are tiny; bump to size-4 for visibility
   const badgeStyles = useMemo(
     () => [
-      'size-5 px-4',
-      'size-6',
+      'size-5.5 px-4',
       'size-7',
+      'size-7.5',
       'size-6',
     ],
     [],
@@ -242,14 +242,14 @@ const ActivityDisplay = memo<{
       <div className="flex size-full items-center gap-x-2 sm:gap-x-3">
         <div className="relative aspect-square h-full max-h-12 shrink-0 sm:max-h-16">
           <div
-            style={{ backgroundImage: `url('/static/bento/bento-discord-futon.svg')` }}
+            // style={{ backgroundImage: `url('/static/bento/bento-discord-futon.svg')` }}
             className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-60"
           />
         </div>
         <div className="flex flex-1 flex-col gap-y-1 py-1">
           <div className="mb-0.5 line-clamp-1 text-xs leading-none">No status</div>
           <div className="text-muted-foreground line-clamp-2 text-[11px] leading-none">
-            I'm probably sleeping...
+            I might be sleeping rn...
           </div>
           <div className="text-muted-foreground line-clamp-1 text-[11px] leading-none">Zzzzz</div>
           <div className="text-muted-foreground text-[11px] leading-none">∞:00 elapsed</div>

@@ -1,0 +1,2710 @@
+[
+    {
+        "organizers": [
+            {
+                "id": 551,
+                "name": "FluxFingers"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2842/",
+        "ctf_id": 8,
+        "weight": 98.02,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logo-small_1.png",
+        "id": 2842,
+        "title": "Hack.lu CTF 2025",
+        "start": "2025-10-17T18:00:00+00:00",
+        "participants": 176,
+        "location": "",
+        "finish": "2025-10-19T18:00:00+00:00",
+        "description": "Hack.​lu CTF is organized by FluxFingers, the CTF team of Ruhr-University Bochum (Germany). This will be the 15th edition.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "- 1000$ for top teams\r\n- 3 x OffensiveCon tickets for group of 3 players who submit the best writeup of a Windows kernel pwn challenge\r\n- 6 x BurpSuite Pro licenses for top teams\r\n- 5 x Binary Ninja licenses for top teams\r\n- 1 x Binary Ninja license for best writeup using Binary Ninja\r\n- HackTheBox VIP+ vouchers\r\n\r\nThe highest-ranking DACH (Germany, Austria, Switzerland) team will also qualify for DHM (Deutsche Hacking Meisterschaft).",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://flu.xxx/",
+        "public_votable": true,
+        "rank": 5
+    },
+    {
+        "organizers": [
+            {
+                "id": 5084,
+                "name": "Securinets"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2884/",
+        "ctf_id": 105,
+        "weight": 70.5,
+        "duration": {
+            "hours": 8,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/19b8d9cf1e7d16e4cb0ad2bce435fb79.png",
+        "id": 2884,
+        "title": "Securinets CTF Quals 2025",
+        "start": "2025-10-04T13:00:00+00:00",
+        "participants": 341,
+        "location": "",
+        "finish": "2025-10-05T21:00:00+00:00",
+        "description": "Securinets CTF Quals 2025 is an online jeopardy style CTF organized by Securinets INSAT.\r\n\r\nThe CTF will feature these categories: Web, Reverse Engineering, Pwn, Crypto, Forensics, OSINT, Misc, AI...\r\n\r\nOnly 10 teams will qualify to the final CTF + top 5 from north africa .\r\n\r\nRegistration will be open soon.\r\n\r\nJoin our discord server:\r\nhttps://discord.gg/Xqj6WnNmbQ\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "TBA",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://quals.securinets.tn/",
+        "public_votable": true,
+        "rank": 196
+    },
+    {
+        "organizers": [
+            {
+                "id": 2500,
+                "name": "Knightsec"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2863/",
+        "ctf_id": 137,
+        "weight": 51.65,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "https://ctftime.org/live/2863/",
+        "logo": "https://ctftime.org//media/events/sctf_logo_25.png",
+        "id": 2863,
+        "title": "SunshineCTF 2025",
+        "start": "2025-09-27T14:00:00+00:00",
+        "participants": 199,
+        "location": "",
+        "finish": "2025-09-29T14:00:00+00:00",
+        "description": "Welcome to the tenth year of SunshineCTF, hosted by Hack@UCF in affiliation with BSides Orlando 2025.\r\n\r\nSee our website for the most accurate and up to date information!",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prizes TBA",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://sunshinectf.org/",
+        "public_votable": true,
+        "rank": 4
+    },
+    {
+        "organizers": [
+            {
+                "id": 85618,
+                "name": "thehackerscrew"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2704/",
+        "ctf_id": 738,
+        "weight": 38.93,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/thc_icon_processed.png",
+        "id": 2704,
+        "title": "CrewCTF 2025",
+        "start": "2025-09-19T21:00:00+00:00",
+        "participants": 187,
+        "location": "",
+        "finish": "2025-09-21T21:00:00+00:00",
+        "description": "CrewCTF is an annual cybersecurity Capture The Flag competition hosted by TheHackersCrew. With intermediate to expert level challenges, our contests are great opportunities for students and professionals to pick up, practice, and master skills in cybersecurity. Challenge containerization provides safe, hands-on environments for all contestants.\r\n\r\nAs one of the top multinational teams, we greatly value diversity and inclusivity. Our CTFs are free and open to anyone with an internet connection.\r\n\r\nTeam size : no limit\r\n\r\nRegistration  Link: https://2025.crewc.tf/register\r\n\r\nCategories: Crypto, Misc, Rev, Pwn, Web , Blockchain , PPC , hardware.\r\n\r\ndiscord : https://discord.gg/rW3dj7GhDq\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st : 1250$ + swag\r\n2nd : 750$ + swag\r\n3rd : 500$ + swag",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2025.crewc.tf/",
+        "public_votable": true,
+        "rank": 10
+    },
+    {
+        "organizers": [
+            {
+                "id": 439,
+                "name": "NYUSEC"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2903/",
+        "ctf_id": 18,
+        "weight": 16.47,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/csaw-stars.png",
+        "id": 2903,
+        "title": "CSAW CTF Qualification Round 2025",
+        "start": "2025-09-12T16:00:00+00:00",
+        "participants": 52,
+        "location": "",
+        "finish": "2025-09-14T16:00:00+00:00",
+        "description": "NOW STARTING SATURDAY 9/13 16:00 UTC\r\n\r\nDiscord: https://discord.gg/cc6HrbAh\r\n\r\nCSAW CTF is one of the oldest and biggest CTFs with 1181 teams with 1+ points in 2024. Designed as an entry-level, jeopardy-style CTF, this competition is for students who are trying to break into the field of security, as well as for advanced students and industry professionals who want to practice their skills.\r\n\r\nOur competition occurs over two rounds: a Qualifying Round in September and a Final Round in November.\r\n\r\nConference Sponsor - DTCC\r\n\r\nRules: https://docs.google.com/document/u/2/d/e/2PACX-1vQd86UHImwnQxZoLFi8ShZ1DxP37dDegPyjWe40j9mIXlTdp5syPP5DAX0pGJXdpFxCVzklmVQ_wmld/pub",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Qualify for in-person, all-expenses paid, Finals round in New York City or regional NYU sponsored location to participate in the Cybersecurity Awareness Week.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.csaw.io/",
+        "public_votable": true,
+        "rank": 3
+    },
+    {
+        "organizers": [
+            {
+                "id": 131529,
+                "name": "[sqrt (-1) + 1]"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2799/",
+        "ctf_id": 615,
+        "weight": 66.02,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/01/81/0181968d7d5ea0b5754c0dbae9c49b23.png",
+        "id": 2799,
+        "title": "ImaginaryCTF 2025",
+        "start": "2025-09-05T19:00:00+00:00",
+        "participants": 287,
+        "location": "",
+        "finish": "2025-09-07T19:00:00+00:00",
+        "description": "ImaginaryCTF 2025 will now take place from September 5-7.\r\n\r\nImaginaryCTF 2025 is a cybersecurity CTF competition run by ImaginaryCTF with a variety of challenges for all skill levels, running from September 5-7. Teams will be challenged to discover vulnerabilities in websites, crack codes, and recover information through challenges in cryptography, binary exploitation, web exploitation, forensics, reversing, and more. We hope that you will learn something new from our challenges!",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "$200, 2x Binary Ninja\r\n$150, 2x Binary Ninja\r\n$100, 1x Binary Ninja\r\n\r\n$50 pool for best writeups\r\nBinary Ninja for best writeup using Binja\r\n",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2025.imaginaryctf.org/",
+        "public_votable": true,
+        "rank": 11
+    },
+    {
+        "organizers": [
+            {
+                "id": 8299,
+                "name": "HITCON"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2783/",
+        "ctf_id": 79,
+        "weight": 100.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/83e99b182fd8f8a8e11a44a7c2f44557.png",
+        "id": 2783,
+        "title": "HITCON CTF 2025",
+        "start": "2025-08-22T14:00:00+00:00",
+        "participants": 230,
+        "location": "",
+        "finish": "2025-08-24T14:00:00+00:00",
+        "description": "[TBD]",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st place: $5,000 USD\r\n2nd place: $2,500 USD\r\n3rd place: $1,000 USD",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf2025.hitcon.org/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 169557,
+                "name": "Project Sekai"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2683/",
+        "ctf_id": 769,
+        "weight": 55.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/sekai2_SEKAI_CTF_Square_Black_BG.r_1_1_1.png",
+        "id": 2683,
+        "title": "SekaiCTF 2025",
+        "start": "2025-08-16T01:00:00+00:00",
+        "participants": 243,
+        "location": "",
+        "finish": "2025-08-18T01:00:00+00:00",
+        "description": "SekaiCTF returns for its fourth edition! While the overall difficulty has been designed to suit intermediate and advanced participants, we've also included beginner-friendly tasks to ensure newer players can join in and enjoy the experience.\r\n\r\nSekaiCTF 2025 will serve as dual prequalifier for MaltaCTF 2025 Finals and the 10th XCTF Finals.\r\n\r\nDiscord: https://discord.gg/6gk7jhCgGX\r\n\r\n[+] Prize Pool\r\n・USD $10,000 in cash and over $15,000 worth of prizes\r\n・The top two teams will earn qualification for the following onsite events:\r\n ​ ​ ​ ​ ​ ​ ​ ​・The 10th XCTF Finals in China (2026): https://adworld.xctf.org.cn/\r\n ​ ​ ​ ​ ​ ​ ​ ​・The inaugural MaltaCTF Finals in Valletta, Malta (2025): https://2025.ctf.mt/\r\n※ The first-place team may choose their preferred event; second-place team will qualify for the other. XCTF Finals covers full flights and accommodation; MaltaCTF Finals covers €450 per person for flights and full accommodation.\r\n\r\n[+] Sponsors\r\n・OtterSec (https://osec.io/)\r\n・Zellic (https://www.zellic.io/)\r\n・Trail of Bits (https://www.trailofbits.com/)\r\n・Sec3 (https://www.sec3.dev/)\r\n・Vector 35 / Binary Ninja (https://binary.ninja/)\r\n・Hack The Box (https://www.hackthebox.com/)\r\n\r\n[+] Partners\r\n・Google Cloud (https://cloud.google.com/)\r\n・XCTF League\r\n・Friendly Maltese Citizens",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "[+] 1st Place\r\n・3,339 USD\r\n・6x Hack The Box 1-year VIP+ and 6x 3-month Prolab Bundle\r\n・3x Binary Ninja Personal License\r\n・Qualification for XCTF or MaltaCTF Finals\r\n\r\n[+] 2nd Place\r\n・2,339 USD\r\n・6x Hack The Box 1-year VIP+ and 6x 1-month Prolab Bundle\r\n・2x Binary Ninja Personal License\r\n・Qualification for XCTF or MaltaCTF Finals\r\n\r\n[+] 3rd Place\r\n・1,339 USD\r\n・6x Hack The Box 1-year VIP+\r\n・1x Binary Ninja Personal License\r\n\r\n[+] 4-5th Place\r\n・339 USD\r\n\r\n[+] Each of the four blockchain challenges has the following bounty:\r\n・1st blood: 100 USDT\r\n・2nd blood: 50 USDT\r\n・3rd blood: 30 USDT\r\n\r\n[+] Writeup prizes\r\n・8x 100 USD (2 reserved for blockchain challenges)\r\n・3x Hack The Box 6-month VIP+\r\n・1x Binary Ninja Personal License using Binja for writeup\r\n\r\n[+] Others\r\n・First blood prize for speed pwn\r\n・Random merch (Sekai stickers, Miku toys, Vocaloid badges, figures etc.) for first bloods\r\n・Additional bounties for \"0-day\" challenges",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.sekai.team/",
+        "public_votable": true,
+        "rank": 20
+    },
+    {
+        "organizers": [
+            {
+                "id": 284260,
+                "name": "ScriptSorcerers"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2792/",
+        "ctf_id": 1318,
+        "weight": 24.67,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/final_logo.png",
+        "id": 2792,
+        "title": "scriptCTF 2025",
+        "start": "2025-08-16T00:00:00+00:00",
+        "participants": 222,
+        "location": "",
+        "finish": "2025-08-18T00:00:00+00:00",
+        "description": "scriptCTF is a 48-hour jeopardy style CTF for hackers to test their skills against creative and innovative CTF challenges. We have mostly beginner friendly challenges, with a few hard ones. scriptCTF makes CTFs fun and approachable for all skill levels! This is hosted by ScriptSorcerers and some members of n00bzUnit3d (as a replacement of n00bzCTF).\r\n\r\nTeam Limit: 4 members\r\nDiscord: https://discord.gg/c9xaJFW449",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Open:\r\n\r\n- 1st: $150 + 4x zSecurity courses | 4x annual Proving Grounds subscription  (1st place picks one) |  4x HTB 1 year VIP+\r\n\r\n- 2nd: $125 + 4x zSecurity courses | 4x annual Proving Grounds subscription  (the one remaining after 1st place pick) | 4x HTB 6 months VIP+\r\n\r\n- 3rd: $100 + 4x HTB 1 month VIP+\r\n\r\nHighschool:\r\n\r\n- 1st: $150 + 4x zSecurity courses (each worth $99) |  4x HTB 1 year VIP+ | 1x Hex-Rays T-Shirt PER MEMBER | 1x Hex-Rays notebook PER MEMBER\r\n\r\n- 2nd: $125 + 4x HTB 6 months VIP+ | 1x Hex-Rays notebook PER MEMBER\r\n\r\n- 3rd: $100 + 4x HTB 1 month VIP+ | 1x Hex-Rays notebook PER MEMBER\r\n\r\n\r\nWriteup Prizes:\r\n\r\n- Best Unintended: $20 | Binary Ninja Personal License\r\n\r\n- Best Well Written: $20 | Binary Ninja Personal License\r\n\r\n- Best Technical: $20 | Binary Ninja Personal License\r\n\r\nRight now, our prize pool is over $6000!\r\n\r\nPrizes are not a 100% final and could be changed a little bit if our team feels like we need to.\r\n\r\nPlease thank our sponsors who made this CTF possible!\r\n\r\n- Ottersec\r\n- Offensive Security\r\n- ZSecurity\r\n- HackTheBox\r\n- Binary Ninja",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.scriptsorcerers.xyz/",
+        "public_votable": true,
+        "rank": 3
+    },
+    {
+        "organizers": [
+            {
+                "id": 33893,
+                "name": "justCatTheFish"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2711/",
+        "ctf_id": 399,
+        "weight": 97.2,
+        "duration": {
+            "hours": 13,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/b6f4bd9df7efba86c9b2d4eea9f8bc74.png",
+        "id": 2711,
+        "title": "justCTF 2025",
+        "start": "2025-08-02T06:00:00+00:00",
+        "participants": 262,
+        "location": "",
+        "finish": "2025-08-03T19:00:00+00:00",
+        "description": "A 2025 justCTF jeopardy competition is coming!\r\n\r\nSponsors:\r\n- Trail of Bits\r\n- OtterSec\r\n- Zellic\r\n- HexRays",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st place: 4096 USD + 3x IDA Pro + Swag\r\n2nd place: 2048 USD + 1x IDA Pro + Swag\r\n3rd place: 1024 USD + 1x IDA Pro\r\n4th place: 768 USD\r\n5th place: 512 USD\r\n6th place: 256 USD\r\n\r\n*IDA Pro is Expert-4 License\r\n**Swag means t-shirts provided by Hex-Rays and OtterSec",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "http://2025.justctf.team/",
+        "public_votable": true,
+        "rank": 8
+    },
+    {
+        "organizers": [
+            {
+                "id": 27763,
+                "name": "SIGPwny"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2640/",
+        "ctf_id": 95,
+        "weight": 91.43,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/8f/44/8f44cc2cb38ce3a8be121f45d521d902.png",
+        "id": 2640,
+        "title": "UIUCTF 2025",
+        "start": "2025-07-26T00:00:00+00:00",
+        "participants": 155,
+        "location": "",
+        "finish": "2025-07-28T00:00:00+00:00",
+        "description": "UIUCTF is an annual capture-the-flag competition hosted by SIGPwny, the cybersecurity club at the University of Illinois Urbana-Champaign (UIUC).",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st place - $2048 USD\r\n2nd place - $1024 USD\r\n3rd place - $512 USD\r\n4th-5th place - $256 USD\r\n6th-10th place - $128 USD\r\nPlus, over $1500+ USD for writeup prize pool!\r\n\r\nThank you to our sponsors:\r\n- Trail of Bits\r\n- Zellic\r\n- Google Cloud (Infra sponsored by https://goo.gle/ctfsponsorship)",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2025.uiuc.tf/",
+        "public_votable": true,
+        "rank": 2
+    },
+    {
+        "organizers": [
+            {
+                "id": 126400,
+                "name": "DownUnderCTF"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2669/",
+        "ctf_id": 481,
+        "weight": 91.66,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/2a/92/2a922627fb21f5626d8bbd926ccdf797.png",
+        "id": 2669,
+        "title": "DownUnderCTF 2025",
+        "start": "2025-07-18T09:30:00+00:00",
+        "participants": 383,
+        "location": "",
+        "finish": "2025-07-20T09:30:00+00:00",
+        "description": "DownUnderCTF is the largest online Australia and Aotearoa (NZ) run Capture The Flag (CTF) competition. This CTF aims to up-skill the next generation of Cyber Security Professionals and to grow the CTF community in the AUNZ region. DownUnderCTF is a completely free online event open to all participants around the world. Prize eligibility is restricted to Australian and Aotearoa (NZ) Secondary or Tertiary school students to encourage collaboration and healthy competitive spirit between the nations whilst also promoting cybersecurity skills to students. \r\n\r\nWith over 4600+ players and 2100+ teams in 2024 from complete beginners to seasoned CTF veterans, our diverse community is strong and we hope you can join us for 2025!",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "https://duc.tf/prizes",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2025.duc.tf/",
+        "public_votable": true,
+        "rank": 6
+    },
+    {
+        "organizers": [
+            {
+                "id": 220336,
+                "name": "L3ak"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2629/",
+        "ctf_id": 1077,
+        "weight": 24.43,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/L3akCTF_2025_Logo_750x750.png",
+        "id": 2629,
+        "title": "L3akCTF 2025",
+        "start": "2025-07-11T17:00:00+00:00",
+        "participants": 358,
+        "location": "",
+        "finish": "2025-07-13T17:00:00+00:00",
+        "description": "Beginner-friendly CTF. Challenge difficulty will range from beginner to expert.\r\n\r\n10 categories: crypto, web, rev, pwn, forensics, osint, mobile, hardware/rf, hash cracking, and misc.\r\n\r\nWe have created 60+ awesome challenges for you to enjoy with lots of prizes. Gather your hacking crew and be prepared to battle it out in the BEST CTF competition of the year! \r\n\r\nDiscord: https://discord.gg/wjSVdt3a7G\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship\r\n\r\nWe'd like to sincerely thank all our sponsors for their generous support and contribution to the prize pool:\r\n\r\nZellic\r\nOtterSec\r\nhaxo.games\r\nHackTheBox\r\nTryHackMe\r\nAltered Security\r\nGoogle (Infra)\r\nRET2 Systems\r\nCTFguide\r\nOffSec\r\nDeloitte\r\nhex-rays\r\nTrail of Bits",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st Place - $1500, 1x IDA Pro Essential License, 1x OffSec Course + Certification Exam Bundle, 5× haxo.games Vouchers (Course + Certification), 1x Gold Annual HTB Academy Subscription, 5x Annual HTB VIP+ Subscription, 5x THM 12-Month Subscription Vouchers, 1x CRTP Exam Voucher, 4x RET2 WarGames Tokens, 1x CTFGuide Voucher\r\n\r\n2nd Place - $1000, 3× haxo.games Vouchers (Course + Certification), 1x Silver Annual HTB Academy Subscription, 3x Annual HTB VIP+ Subscription, 5x THM 6-Month Subscription Vouchers, 1x CRTP Exam Voucher, 3x RET2 WarGames Tokens, 1x CTFGuide Voucher\r\n\r\n3rd Place - $500, 1× haxo.games Voucher (Course Only), 3x Annual HTB VIP+ Subscription, 5x THM 3-Month Subscription Vouchers, 1x CRTP Exam Voucher, 2x RET2 WarGames Tokens, 1x CTFGuide Voucher\r\n\r\n4th Place - $300, 1x RET2 WarGames Tokens, 1x CTFGuide Voucher\r\n\r\n5th Place - $150, 1x CTFGuide Voucher\r\n\r\nWriteup Prize Pool: \r\n5x Winners - $50 + 1 CTFGuide Voucher each",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.l3ak.team/",
+        "public_votable": true,
+        "rank": 44
+    },
+    {
+        "organizers": [
+            {
+                "id": 58979,
+                "name": "r3kapig"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2731/",
+        "ctf_id": 329,
+        "weight": 24.5,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/111_1.png",
+        "id": 2731,
+        "title": "R3CTF 2025",
+        "start": "2025-07-05T02:00:00+00:00",
+        "participants": 165,
+        "location": "",
+        "finish": "2025-07-07T02:00:00+00:00",
+        "description": "R3CTF 2025 is a online jeopardy-style CTF organized by r3kapig.\r\n\r\nCategories:\r\nPwn, Web,  Crypto, Reverse, Blockchain, Misc. Forensics and etc....\r\n\r\nSponsors:\r\nGold sponsors: OtterSec (https://osec.io/) && Offside Labs (https://offside.io/) \r\n\r\n(Listed in no particular order)\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship\r\n\r\nSupport channel ->\r\nhttps://discord.gg/zU64ekBsgA",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prize:\r\n1st $3500\r\n2nd $2000\r\n3rd: $500\r\n\r\nblockchain blood prize:\r\n1st 100 USDT\r\n2nd 50 USDT\r\n3rd 30 USDT",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf2025.r3kapig.com/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 23929,
+                "name": "Google CTF"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2718/",
+        "ctf_id": 141,
+        "weight": 97.17,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://capturetheflag.withgoogle.com/img/flag_logo.gif",
+        "id": 2718,
+        "title": "Google Capture The Flag 2025",
+        "start": "2025-06-27T18:00:00+00:00",
+        "participants": 572,
+        "location": "",
+        "finish": "2025-06-29T18:00:00+00:00",
+        "description": "categories: web, pwn, crypto, reversing, misc\r\n\r\n# Feedback \r\n\r\nIf you have suggestions on how we could improve for next year, please feel free to fill out the feedback form:  https://forms.gle/KACEBk3rb3EUtRSx9\r\n\r\n\r\nIf you have specific feedback about a challenge, fill out the task feedback form: https://forms.gle/o8aLtWTE47uH3iqn7",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "12,345 USD for the first place\r\n5,432.1 USD for the second place\r\n3,210 USD for the third place\r\n\r\nIn addition, there will be another on-site event (at a later time) that the top teams will be invited to participate for additional prizes.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://g.co/ctf",
+        "public_votable": true,
+        "rank": 3
+    },
+    {
+        "organizers": [
+            {
+                "id": 81702,
+                "name": "BCACTF"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2836/",
+        "ctf_id": 325,
+        "weight": 62.97,
+        "duration": {
+            "hours": 0,
+            "days": 3
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/bcactfVI_txt.png",
+        "id": 2836,
+        "title": "BCACTF 6.0",
+        "start": "2025-06-21T01:30:00+00:00",
+        "participants": 276,
+        "location": "",
+        "finish": "2025-06-24T01:30:00+00:00",
+        "description": "Welcome to BCACTF 6.0!!!\r\n\r\nReturning for the sixth year in a row, this highschool CTF from the Bergen County Academies presents challenges in a variety of difficulties targeting everyone from beginners to CTF veterans!\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://www.bcactf.com/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 7221,
+                "name": "KITCTF"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2694/",
+        "ctf_id": 854,
+        "weight": 46.0,
+        "duration": {
+            "hours": 12,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/2acc1e50ba516aa0bc42a61798cfa10d_1.png",
+        "id": 2694,
+        "title": "GPN CTF 2025",
+        "start": "2025-06-20T10:00:00+00:00",
+        "participants": 202,
+        "location": "",
+        "finish": "2025-06-21T22:00:00+00:00",
+        "description": "The GPN CTF 2025 is this year’s CTF edition organized by KITCTF. Play online or in person at the GPN.\r\n\r\nThis is a student run jeopardy-style CTF with challenges from the categories crypto, pwn, reversing, web and misc (including some more exotic ones). Featuring both a range of easy challenges from each category and a majority of hard challenges it will be a great CTF for beginners and experienced players alike.\r\n\r\nCommunication channels: https://discord.gg/TxPA4ZVUnm\r\n\r\nThank you to our sponsors for supporting the CTF!\r\n* Main & Prize Sponsor: GitHub Security Lab\r\n* Writeup Sponsor: Zellic\r\n* Infrastructure Sponsor: TelemaxX Telekommunikation GmbH\r\n\r\nLearn more about our sponsors and opportunities they have: https://gpn23.ctf.kitctf.de/#sponsors",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prizes\r\n1st place: $750\r\n2nd place: $450\r\n3rd place: $300\r\nWriteup prizes\r\nBest overall writeup: $200 (1 time)\r\nBest unintentional solution: $50 (1 time)\r\nBest writeup of the pwn, rev, misc, crypto, web category: $150 (5 times)\r\nWe cannot give prizes to individuals on the U.S. sanctions list, or any individual residing in any U.S.-sanctioned country.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://gpn23.ctf.kitctf.de/",
+        "public_votable": true,
+        "rank": 10
+    },
+    {
+        "organizers": [
+            {
+                "id": 53812,
+                "name": "tjcsc"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2809/",
+        "ctf_id": 144,
+        "weight": 51.29,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logo_96_1.png",
+        "id": 2809,
+        "title": "TJCTF 2025",
+        "start": "2025-06-06T12:00:00+00:00",
+        "participants": 49,
+        "location": "",
+        "finish": "2025-06-08T12:00:00+00:00",
+        "description": "TJCTF is an international cybersecurity competition hosted by TJ Computer Security Club (TJCSC), a group of students from Thomas Jefferson High School for Science and Technology in Northern Virginia.\r\n\r\nPrizes are sponsored by Trail of Bits and Zellic.\r\n\r\nTwitter: https://twitter.com/tjctf\r\nEmail: contact@tjctf.org\r\nDiscord: https://discord.gg/w5xapGP\r\n\r\nCompetition is online.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "The US High School Division has a prize pool of $2,250:\r\n1. $1,000\r\n2. $750\r\n3. $500\r\n\r\nThe Open Division has a prize pool of $500:\r\n1. $250\r\n2. $150\r\n3. $100\r\n\r\nThe Writeup Contest has a prize pool of $250.\r\n\r\nTo be eligible for High School or Open Division prizes, teams must consist of no more than 5 members.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://tjctf.org/",
+        "public_votable": true,
+        "rank": 5
+    },
+    {
+        "organizers": [
+            {
+                "id": 3208,
+                "name": "HackingForSoju"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2632/",
+        "ctf_id": 246,
+        "weight": 53.0,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/midnightsun_2024_log_TRIMMEDo_1.png",
+        "id": 2632,
+        "title": "Midnight Sun CTF 2025 Quals",
+        "start": "2025-05-17T12:00:00+00:00",
+        "participants": 296,
+        "location": "",
+        "finish": "2025-05-18T12:00:00+00:00",
+        "description": "THe Midnight Sun CTF Qualifier event is mostly designed to be accessible to beginners and students with a few things to give the professionals to chew on.\r\n\r\nThis qualifier event will allow 10 teams qualify for the on-site finals in Stockholm Sweden in June.\r\n\r\nhttps://discord.gg/xMuRxub4CX",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://midnightsunctf.com/",
+        "public_votable": true,
+        "rank": 15
+    },
+    {
+        "organizers": [
+            {
+                "id": 155711,
+                "name": "BYU Cyberia"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2715/",
+        "ctf_id": 768,
+        "weight": 36.94,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/byuctf.jpg",
+        "id": 2715,
+        "title": "BYUCTF 2025",
+        "start": "2025-05-17T02:00:00+00:00",
+        "participants": 205,
+        "location": "",
+        "finish": "2025-05-18T02:00:00+00:00",
+        "description": "BYUCTF will be held for its fourth year! It is 24 hours long with beginner- and intermediate-level challenges in a variety of categories, including web, rev, pwn, OSINT, crypto, forensics, and misc. There is no team size limit.\r\n\r\nDiscord - https://discord.gg/Fe6896KEZk",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctfd.cyberjousting.com/",
+        "public_votable": true,
+        "rank": 18
+    },
+    {
+        "organizers": [
+            {
+                "id": 53791,
+                "name": "polygl0ts"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2568/",
+        "ctf_id": 818,
+        "weight": 36.0,
+        "duration": {
+            "hours": 8,
+            "days": 0
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/5ee3dccc1b28b5f04bdf2f7b871b1d07.png",
+        "id": 2568,
+        "title": "LakeCTF Finals 24-25",
+        "start": "2025-05-09T08:00:00+00:00",
+        "participants": 30,
+        "location": "EPFL Lausanne",
+        "finish": "2025-05-09T16:00:00+00:00",
+        "description": "The 10 qualified teams from LakeCTF Quals 24-25 (academic bracket) are invited to play the finals at EPFL.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "TBD",
+        "format_id": 1,
+        "onsite": true,
+        "restrictions": "Open",
+        "url": "https://lakectf.epfl.ch/",
+        "public_votable": true,
+        "rank": 4
+    },
+    {
+        "organizers": [
+            {
+                "id": 87711,
+                "name": "UMDCSEC"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2563/",
+        "ctf_id": 444,
+        "weight": 70.86,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logo-cropped.png",
+        "id": 2563,
+        "title": "UMDCTF 2025",
+        "start": "2025-04-25T22:00:00+00:00",
+        "participants": 173,
+        "location": "",
+        "finish": "2025-04-27T22:00:00+00:00",
+        "description": "UMDCTF 2025 is the ninth annual competition hosted by the cybersecurity club at the University of Maryland, College Park!\r\n\r\nThe CTF will run for a period of 48 hours and has two player divisions: open and academic. Challenges will feature all the categories you know and love: pwn, rev, web, crypto, osint, and most importantly, misc.\r\n\r\nJoin our Discord! https://discord.gg/n65kg6KuYH\r\n\r\nOf course, a huge thank you to our incredible sponsors: Trail of Bits, Zellic, OtterSec, ZTC, and Vector35 <3\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Open division:\r\n1st place: $1200 + 1 Binary Ninja Personal License\r\n2nd place: $800 + 1 Binary Ninja Personal License\r\n3rd place: $400\r\n4th place: $200\r\n\r\nStudent division:\r\n1st place: $750 + 1 Binary Ninja Personal License\r\n2nd place: $500 + 1 Binary Ninja Personal License\r\n3rd place: $250 + 1 Binary Ninja Personal License\r\n\r\nOther:\r\n$150 split among the best writeups\r\nBest Binary Ninja Writeup: 1 Binary Ninja Personal License\r\n\r\nThe top US-based team will also receive a special mystery prize...",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://umdctf.io/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 287896,
+                "name": "HACK@CIT"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2759/",
+        "ctf_id": 1109,
+        "weight": 24.57,
+        "duration": {
+            "hours": 22,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/CTF-CIT-ctftime_2.png",
+        "id": 2759,
+        "title": "CTF@CIT 2025",
+        "start": "2025-04-25T21:00:00+00:00",
+        "participants": 174,
+        "location": "",
+        "finish": "2025-04-27T19:00:00+00:00",
+        "description": "Join us for the second annual CTF@CIT!\r\n\r\nRunning from April 25th @ 5PM EDT until April 27th @ 3PM EDT\r\n\r\nJoin our new Discord for updates: https://discord.gg/s6gXMAc95P\r\n\r\nChallenges from topics such as forensics, steganography, reverse, OSINT, and misc.\r\n\r\nOver $46,000 in prizes available for students!\r\n\r\nSponsored by: Hex-Rays, OffSec, TCM Security, Malcore, Electronic Frontier Foundation & Binary Ninja",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st Place Prizes:\r\n\r\n- TCM Security: 12-month TCM Academy vouchers (1 per person)\r\n- OffSec: 1-Year Proving Grounds Practice Access (1 per team)\r\n- Hex-Rays: IDA Pro Expert-2 license (1 per team)\r\n- Hex-Rays: Starter/Advanced Training Course (1 per person)\r\n- Malcore: Lifetime Basic Plan (1 per person)\r\n- Binary Ninja: Binary Ninja Personal License (1 per team)\r\n\r\n2nd Place Prizes:\r\n\r\n- TCM Security: 6-month TCM Academy vouchers (1 per person)\r\n- OffSec: 1-Year Proving Grounds Practice Access (1 per team)\r\n- Hex-Rays: IDA Pro Expert-2 license (1 per team)\r\n- Hex-Rays: Starter/Advanced Training Course (1 per person)\r\n- Malcore: Lifetime Basic Plan (1 per person)\r\n- Binary Ninja: Binary Ninja Personal License (1 per team)\r\n\r\n3rd Place Prizes:\r\n\r\n- TCM Security: 3-month TCM Academy vouchers (1 per person)\r\n- OffSec: 1-Year Proving Grounds Practice Access (1 per team)\r\n- Hex-Rays: IDA Pro Expert-2 license (1 per team)\r\n- Hex-Rays: Starter/Advanced Training Course (1 per person)\r\n- Malcore: Lifetime Basic Plan (1 per person)\r\n- Binary Ninja: Binary Ninja Personal License (1 per team)\r\n\r\nAdditional Prizes:\r\n\r\n- Hex-Rays: 2× IDA Pro Expert-2 licenses\r\n- OffSec: 2× 1-Year Proving Grounds Practice Access\r\n\r\nNote: The distribution of these additional prizes will be announced throughout the competition. Expect them to be given out in recognition of exceptional challenges or creative problem solving during the event. More information will be posted in the announcements channel on our Discord.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.cyber-cit.club/",
+        "public_votable": true,
+        "rank": 62
+    },
+    {
+        "organizers": [
+            {
+                "id": 11464,
+                "name": "b01lers"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2652/",
+        "ctf_id": 408,
+        "weight": 44.5,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/b01lers-griffen_2.png",
+        "id": 2652,
+        "title": "b01lers CTF 2025",
+        "start": "2025-04-18T23:00:00+00:00",
+        "participants": 59,
+        "location": "",
+        "finish": "2025-04-20T23:00:00+00:00",
+        "description": "b01lers CTF is the public competitive CTF hosted by the b01lers CTF team at Purdue University.\r\n\r\nRegistration will open approximately 2 weeks prior to the event. Join our discord at discord.gg/tBMqujE and look out for further info at https://b01lersc.tf\r\n\r\nWe aim to have a wide array of challenges ensuring that beginner and expert CTF players everywhere will enjoy! Hope to see ya there!\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prizes TBD!",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://b01lersc.tf/",
+        "public_votable": true,
+        "rank": 3
+    },
+    {
+        "organizers": [
+            {
+                "id": 78233,
+                "name": "SavedByTheShell"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2653/",
+        "ctf_id": 598,
+        "weight": 48.38,
+        "duration": {
+            "hours": 6,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/889a1e484f0b51dd3d865b3a53b26200_1.jpg",
+        "id": 2653,
+        "title": "UMassCTF 2025",
+        "start": "2025-04-18T18:00:00+00:00",
+        "participants": 75,
+        "location": "",
+        "finish": "2025-04-21T00:00:00+00:00",
+        "description": "UMass CTF is running again this year!\r\n\r\nWe'll have awesome challenges in:\r\n\r\nReverse Engineering\r\nCryptography\r\nForensics\r\nBinary Exploitation\r\nHardware and RF\r\nWeb Exploitation\r\nOSINT\r\nand a bunch of misc!\r\n\r\nDiscord: https://discord.gg/YNr9qKpDf3\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship!",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "General Winner 1st place - $500, 1x Annual Proving Ground Subscription, 4x monthly VIP HTB\r\nGeneral Winner 2nd place - $250, 1x Annual Proving Ground Subscription, 4x monthly VIP HTB\r\nGeneral Winner 3nd place - $150, 4x monthly VIP HTB\r\n\r\nUMass Winner 1st Place - $150, 1x Ida Classroom License, Offsec Courses, 4x Caesar Creek t-shirt\r\nUMass Winner 2nd Place - $100, 1x Ida Classroom License, Offsec Courses, 4x Caesar Creek t-shirt\r\nUMass Winner 3rd Place - $50, 4x Caesar Creek t-shirt\r\n\r\nMonetary rewards can only be sent in the form of gift cards for specific vendors.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.umasscybersec.org/",
+        "public_votable": true,
+        "rank": 91
+    },
+    {
+        "organizers": [
+            {
+                "id": 181536,
+                "name": "Nautilus Institute"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2604/",
+        "ctf_id": 1,
+        "weight": 69.44,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://raw.githubusercontent.com/Chara-0x/ML-Final/refs/heads/main/dc33-logo-transp.webp",
+        "id": 2604,
+        "title": "DEF CON CTF Qualifier 2025",
+        "start": "2025-04-12T00:00:00+00:00",
+        "participants": 194,
+        "location": "",
+        "finish": "2025-04-14T00:00:00+00:00",
+        "description": "On-line, open-registration.\r\n\r\nFinals will be held August 2025 at DEF CON in Las Vegas.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://nautilus.institute/",
+        "public_votable": true,
+        "rank": 10
+    },
+    {
+        "organizers": [
+            {
+                "id": 333,
+                "name": "CSG"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2736/",
+        "ctf_id": 926,
+        "weight": 31.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/b6/bf/b6bf6d03a88471eb663e7e890fd238f4.png",
+        "id": 2736,
+        "title": "Texas Security Awareness Week 2025",
+        "start": "2025-04-11T19:00:00+00:00",
+        "participants": 81,
+        "location": "",
+        "finish": "2025-04-13T19:00:00+00:00",
+        "description": "14th Annual Texas Security Awareness Week 2025 - Capture The Flag Competition set up entirely by students at the University of Texas at Dallas. This CTF is targeted for beginner to advanced level students interested in testing their knowledge in cybersecurity.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.texsaw.org/",
+        "public_votable": true,
+        "rank": 22
+    },
+    {
+        "organizers": [
+            {
+                "id": 201730,
+                "name": "squ1rrel"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2708/",
+        "ctf_id": 1110,
+        "weight": 24.25,
+        "duration": {
+            "hours": 18,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/squ1rrel_logo.png",
+        "id": 2708,
+        "title": "squ1rrel CTF 2025",
+        "start": "2025-04-04T23:00:00+00:00",
+        "participants": 117,
+        "location": "",
+        "finish": "2025-04-06T17:00:00+00:00",
+        "description": "Another edition of squ1rrel CTF hosted by the squ1rrel CTF team at Vanderbilt University! 42 hours of jeopardy-style CTF with challenges ranging from beginner-friendly to intermediate and advanced with a primary target of university students.\r\n\r\nPrizes will be awarded for General Division teams, University Division teams, and for spectacular writeups.\r\n\r\nJoin our discord for more information: https://discord.gg/A6dTKTXNDD",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "The Open category is open to any and all competitors while the Student category is open to US-based University or High School students.\r\n\r\nStudent\r\n1st: $200\r\n2nd: $150\r\n3rd: $100\r\n\r\nOpen\r\n1st: $200\r\n2nd: $150\r\n3rd: $100\r\n\r\nadditional $50 prizes for writeups of our choosing",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.squ1rrel.dev/",
+        "public_votable": true,
+        "rank": 5
+    },
+    {
+        "organizers": [
+            {
+                "id": 284,
+                "name": "Plaid Parliament of Pwning"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2508/",
+        "ctf_id": 10,
+        "weight": 100.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/a3/83/a383e768fac0ebb6e84275dcb5ece2fa.png",
+        "id": 2508,
+        "title": "PlaidCTF 2025",
+        "start": "2025-04-04T21:00:00+00:00",
+        "participants": 306,
+        "location": "",
+        "finish": "2025-04-06T21:00:00+00:00",
+        "description": "Plaid CTF :: Hosted by Plaid Parliament of Pwning\r\n\r\nApril 4 21:00 UTC - April 6 21:00 UTC",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "TBD",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://plaidctf.com/",
+        "public_votable": true,
+        "rank": 2
+    },
+    {
+        "organizers": [
+            {
+                "id": 173925,
+                "name": "Highlander Hackers"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2667/",
+        "ctf_id": 724,
+        "weight": 24.73,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/jctfv_hat_1.png",
+        "id": 2667,
+        "title": "JerseyCTF V",
+        "start": "2025-03-29T19:00:00+00:00",
+        "participants": 37,
+        "location": "Newark, NJ",
+        "finish": "2025-03-30T19:00:00+00:00",
+        "description": "Registration is now live!\r\n\r\nhttps://ctf.jerseyctf.com/register\r\n\r\nLocations:\r\n- Online if unable to attend in-person\r\n- In-Person @ NJIT Naimoli Tennis Center, Newark, New Jersey\r\n\r\nJerseyCTF is a beginner-friendly Capture the Flag competition that aims to inspire interest in cybersecurity. This competition is hosted by the NJIT Information & Cybersecurity Club, the NJIT Chapter of ACM, and the NJIT SCI program. \r\n\r\nIt is geared towards students, beginners, and professionals alike. JerseyCTF provides participants with jeopardy-style questions in categories including cryptography, forensics, binary exploitation/reversing, open-source intelligence, and web exploitation. \r\n\r\nHelp our heroes (and anti-heroes) get to the bottom of the case in this noir-styled CTF that builds upon the plot and story found in previous iterations of SpringForwardCTF, SpookyCTF, of course, JerseyCTF! \r\n\r\nJerseyCTF features a track parallel to the CTF competition, consisting of presentations and panels with renowned speakers from industry and government. Past sponsors include NJCCIC, FRSecure, Google, CrowdStrike, Palo Alto Networks, Lutron, KnowBe4, SpecterOps, DigitalOcean, SecurityInnovation, and Contrast Security.\r\n\r\nThis CTF is held hybridly - with attendance virtually or in-person on NJIT's campus in Newark, New Jersey, USA. In-person attendees will have food provided and may receive special prizes unavailable to online-only attendees such as t-shirts, stickers, and more!",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Student and Open Division Prizes:\r\n\r\n<b>First Place:</b>\r\n<ul>\r\n<li> First Choice from Prize Pool </li>\r\n<li>$1,000 cash for entire team</li>\r\n</ul>\r\n\r\n<b>Second Place:</b>\r\n<ul>\r\n<li> Second Choice from Prize Pool </li>\r\n<li>$750 cash for entire team</li>\r\n</ul>\r\n\r\n<b>Third Place:</b>\r\n<ul>\r\n<li> Third Choice from Prize Pool </li>\r\n<li>$500 cash for entire team</li>\r\n</ul>\r\n\r\n<b>Prize Pool:</b>\r\n<ul>\r\n<li>CyberSecurity Conference FutureCon Virtual Conference Voucher for each teammate </li>\r\n<li>Choice of 1 CompTIA Certification Basic Bundle (Security+, PenTest+, CySA+, or CASP+) for each teammate</li>\r\n<li>TryHackMe 6-month Subscription for each teammate</li>\r\n</ul>\r\n\r\n<b>US Participants - In Person Only:</b>\r\nFree JerseyCTF V T-Shirt!\r\n\r\n* Prize pool will scale to a max of 4",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.jerseyctf.com/",
+        "public_votable": true,
+        "rank": 16
+    },
+    {
+        "organizers": [
+            {
+                "id": 109452,
+                "name": "DiceGang"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2617/",
+        "ctf_id": 568,
+        "weight": 81.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/dicectf_2_1_1_1.png",
+        "id": 2617,
+        "title": "DiceCTF 2025 Quals",
+        "start": "2025-03-28T21:00:00+00:00",
+        "participants": 245,
+        "location": "",
+        "finish": "2025-03-30T21:00:00+00:00",
+        "description": "Play DiceCTF 2025 by DiceGang! We'll be inviting (with travel reimbursement!) top teams to compete at DiceCTF Finals!\r\n\r\nMore details to be announced soon.\r\n\r\nRegister your team now: https://ctf.dicega.ng/\r\n\r\nJoin our Discord server: https://discord.gg/dicectf\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "To be announced!",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.dicega.ng/",
+        "public_votable": true,
+        "rank": 4
+    },
+    {
+        "organizers": [
+            {
+                "id": 69010,
+                "name": "hhh_"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2641/",
+        "ctf_id": 281,
+        "weight": 67.21,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/Illustration.png",
+        "id": 2641,
+        "title": "UTCTF 2025",
+        "start": "2025-03-14T23:00:00+00:00",
+        "participants": 267,
+        "location": "",
+        "finish": "2025-03-16T23:00:00+00:00",
+        "description": "Online, jeopardy-style CTF. Free to play, with prizes TBA.\r\n\r\nOpen to all! Problems will span difficulties ranging from beginner-friendly to challenging.\r\n\r\nRun by Information & Systems Security Society team at The University of Texas at Austin.\r\n\r\nThank you to Zellic for sponsoring UTCTF\r\n\r\nMore information:\r\n- List of ISSS sponsors: https://www.isss.io/\r\n- ISSS (organization): https://www.isss.io/",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "The top 3 teams will each win up to $200 worth of prizes. Additionally, each winner of the writeup contest will win up to $50 worth of prizes. The CTF and writeup contest will be open to anyone around the world, but only teams that have an address within the United States will be eligible for prizes. There is no limit to team sizes, but we will only be shipping enough prizes for 4 people for each winning team ($50 per team member). Team members do not need to be from the same location; however, prizes will only be shipped to one location.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://utctf.live/",
+        "public_votable": true,
+        "rank": 45
+    },
+    {
+        "organizers": [
+            {
+                "id": 200877,
+                "name": "PHREAKS 2600"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2658/",
+        "ctf_id": 1141,
+        "weight": 24.95,
+        "duration": {
+            "hours": 22,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/PWNME_ReseauxPP1_1.jpg",
+        "id": 2658,
+        "title": "PwnMe CTF Quals 2025",
+        "start": "2025-02-28T20:00:00+00:00",
+        "participants": 102,
+        "location": "",
+        "finish": "2025-03-02T18:00:00+00:00",
+        "description": "Qualifications for third edition of PwnMe CTF.\r\n\r\nCategories:\r\n- Pwn\r\n- Reverse\r\n- Crypto\r\n- Web\r\n- Misc\r\n\r\nSponsored by :\r\n• Gold : Green IT Solutions\r\n• Silver : Epieos, FuzzingLabs, Synacktiv, Orange Cyberdefense and OtterSec\r\n• Bronze : Quarkslab, IDEMIA Public Security, Epsilon, OffSec, Thales Cyber Solutions and Salut Les Noobs\r\n\r\nDiscord: https://discord.gg/9K33exqAG5",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Academic bracket\r\nTop 3 academic: accommodation paid for the CTF finals\r\nTop 8 academic: invited to PwnMe CTF finals\r\n\r\nProfessional bracket\r\nTop 3 professional: accommodation paid for the CTF finals\r\nTop 8 professional: invited to PwnMe CTF finals\r\n\r\nFor the best writeup :\r\nCourse and Cert Exam Bundle (OSCP or OSEP) x1\r\n\r\nFor the finalists :\r\n- Hack The Box Silver Annual x8\r\n- Hack The Box VIP+ x8\r\n- Hack The Box Store £100 x8\r\n- HydraBus v1 Rev1.5 x4\r\n- 50$ Hack5 x4\r\n- And much more...",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://pwnme.phreaks.fr/",
+        "public_votable": true,
+        "rank": 8
+    },
+    {
+        "organizers": [
+            {
+                "id": 22546,
+                "name": "Codefest"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2668/",
+        "ctf_id": 1251,
+        "weight": 21.9,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logo_105.png",
+        "id": 2668,
+        "title": "Kashi CTF 2025",
+        "start": "2025-02-22T12:00:00+00:00",
+        "participants": 172,
+        "location": "",
+        "finish": "2025-02-23T12:00:00+00:00",
+        "description": "IIT(BHU)CyberSec is thrilled to announce Kashi CTF 2025, the first iteration of Kashi CTF, our annual CTF.\r\nThe CTF is aimed at intermediate players (with good number of beginner and hard challenges as well). The CTF will include all general categories and will be a fun and learning experience for all participants!\r\n\r\nJoin discord for all announcements - https://discord.gg/SFPasJjaYQ\r\n\r\nBig thanks to our sponsors for supporting the event:\r\n- APISec Unversity\r\n- Altered Security\r\n- Burp Bounty\r\n- gen.xyz\r\n- IITB Trust Lab\r\n- LetsDefend\r\n- OtterSec",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st Place -\r\n- $250\r\n- 1 x CRTP Certificate Voucher\r\n- 1 x Burp Bounty Pro Annual License with 4 activations\r\n- 1 x LetsDefend 1 month VIP Voucher\r\n- 1 x ASCP Certificate Voucher\r\n- 1 .xyz domain for 1 year\r\n\r\n2nd Place -\r\n- $ 100\r\n- 1 x Burp Bounty Pro Annual License with 4 activations\r\n- 1 x LetsDefend 1 month VIP Voucher\r\n- 1 x ASCP Certificate Voucher\r\n- 1 .xyz domain for 1 year\r\n\r\n3rd Place - \r\n- $50\r\n- 1 x Burp Bounty Pro Annual License with 4 activations\r\n- 1 x LetsDefend 1 month VIP Voucher\r\n- 1 x ASCP Certificate Voucher\r\n- 1 .xyz domain for 1 year\r\n\r\n4th - 5th:\r\n- 1 x ASCP Certificate Voucher\r\n- 1 x LetsDefend 1 month VIP Voucher\r\n- 1.xyz domain for 1 year\r\n\r\n5th-20th:\r\n- 1 x CASA Certificate Voucher\r\n- 1 .xyz domain for 1 year\r\n\r\n21st-25th:\r\n- 1 .xyz domain for 1 year\r\n\r\nTop 4 writeups will be given $25 each.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://kashictf.iitbhucybersec.in/",
+        "public_votable": true,
+        "rank": 4
+    },
+    {
+        "organizers": [
+            {
+                "id": -1,
+                "name": "Alibaba Cloud"
+            }
+        ],
+        "ctftime_url": "",
+        "ctf_id": -1,
+        "weight": 95.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://avatars.githubusercontent.com/u/941070?s=200&v=4",
+        "id": -1,
+        "title": "Aliyun CTF 2025",
+        "start": "2025-02-20T10:00:00+00:00",
+        "participants": 1242,
+        "location": "",
+        "finish": "2025-02-22T10:00:00+00:00",
+        "description": "",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "team_points": 5242,
+        "best_points": 9974,
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Individual",
+        "url": "",
+        "public_votable": false,
+        "rank": 3
+    },
+    {
+        "organizers": [
+            {
+                "id": 112673,
+                "name": "BroncoSec"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2657/",
+        "ctf_id": 1017,
+        "weight": 22.51,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/69/db/69dbb47e8451dc42975142ee51659751.png",
+        "id": 2657,
+        "title": "BroncoCTF 2025",
+        "start": "2025-02-15T19:00:00+00:00",
+        "participants": 269,
+        "location": "",
+        "finish": "2025-02-16T19:00:00+00:00",
+        "description": "BroncoCTF is a CTF hosted by BroncoSec, Santa Clara University's cybersecurity club.  \r\n\r\nIt is aimed at undergraduate and graduate students with challenges ranging from beginner to advanced. That being said, it is open to all. \r\n\r\nThe CTF starts at February 15th at 11am and ends February 16th at 11am (Pacific Time). Times are subject to revision before the event. \r\n\r\nChallenges will be a variety of Crypto, Reversing, Forensics, OSINT, and more.\r\n\r\nDiscord: discord.gg/td5n8uyYJD\r\n\r\nCTFd: https://ctfd.broncoctf.xyz/",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Must be a Santa Clara University (SCU) Student to claim a prize in this year's event.\r\n\r\n1st place: $300\r\n2nd place: $200\r\n3rd place: $100",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctfd.broncoctf.xyz/",
+        "public_votable": true,
+        "rank": 3
+    },
+    {
+        "organizers": [
+            {
+                "id": 186494,
+                "name": "PBR | UCLA"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2592/",
+        "ctf_id": 820,
+        "weight": 36.7,
+        "duration": {
+            "hours": 18,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/lactf-square-logo_1_1.png",
+        "id": 2592,
+        "title": "LA CTF 2025",
+        "start": "2025-02-08T04:00:00+00:00",
+        "participants": 162,
+        "location": "",
+        "finish": "2025-02-09T22:00:00+00:00",
+        "description": "**LA CTF 2025 is a DiceCTF Finals pre-qualifier! The top scoring team will automatically be offered a spot in DiceCTF's in-person Finals, previously held in NYC!**\r\n\r\nLA CTF is an annual Capture the Flag (CTF) cybersecurity competition hosted by ACM Cyber at UCLA & Psi Beta Rho. LA CTF is open to all skill levels of cybersecurity! Whether you are tackling your first exploit or have professional experience, there will be challenges just right for you! There will be a variety of events ranging from the competition containing jeopardy-style cybersecurity challenges to talks from UCLA professors to fun events such as meme competitions! If you are interested in attending, join the Discord to stay up to date with the latest information about LA CTF!\r\n\r\nDiscord: https://lac.tf/discord\r\n\r\nChallenge archive can be found here: https://github.com/uclaacm/lactf-archive\r\n\r\nInfrastructure sponsored by goo.gle/ctfsponsorship",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "LA CTF will have prizes for both the UCLA and open sections! While there will be two sections for prizes, all of the challenges will be the same for both sections. Prizes will be given in the form of US Amazon gift cards.\r\n\r\nSpecific prize amounts are available on our website at https://lac.tf\r\n\r\nUCLA Section: The UCLA Section will be composed of teams that must consist of a maximum of four current UCLA undergraduate students.\r\n\r\nOpen Section: The Open Section will be composed of teams with no size limit. Note that prizes can only be given as US gift cards. All skill levels and experiences are welcomed!\r\n\r\nWriteup Prizes: There will be a pool of money available for the best writeups!",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://lac.tf/",
+        "public_votable": true,
+        "rank": 6
+    },
+    {
+        "organizers": [
+            {
+                "id": 309820,
+                "name": "x3CTF"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2467/",
+        "ctf_id": 1153,
+        "weight": 23.59,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "https://ctftime.org/live/2467/",
+        "logo": "https://ctftime.org//media/events/pink_logo_square_768.png",
+        "id": 2467,
+        "title": "x3CTF 2025 (feat. mvm)",
+        "start": "2025-01-24T18:00:00+00:00",
+        "participants": 140,
+        "location": "",
+        "finish": "2025-01-26T18:00:00+00:00",
+        "description": ":3\r\n\r\njoin us for a cute little jeopardy-style CTF with web, pwn, rev, crypto, and misc challs!\r\n\r\nx3CTF 2025 (feat. mvm) will run from Jan 24th 18:00 UTC until Jan 26th 18:00 UTC (48h). Be there a few minutes early for a fun surprise ^_^.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "List of prizes:\r\n- iPad\r\n- iPod\r\n- iPhone\r\n- Android phone for every person on the team (while supplies last)\r\n- Thinkpad (with socks and cat ears)\r\n\r\nCheck the Discord announcements for the up-to-date info on prizes. Prizes will be signed!\r\n\r\nEach winning team will be able to pick one prize in scoreboard order. There will probably be alternate prizes for those who can't or wish not to receive a prize physically.\r\n\r\nWe reserve the right to not send out a physical prize if shipping it would be prohibitively difficult or expensive (shipping costs over 50€ will be decided on a case-by-case basis).\r\n\r\nWe also have a Windows Phone and we honestly have no idea what to do with it.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://x3c.tf/",
+        "public_votable": true,
+        "rank": 15
+    },
+    {
+        "organizers": [
+            {
+                "id": 141739,
+                "name": "Knight Squad"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2610/",
+        "ctf_id": 721,
+        "weight": 18.78,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/knight_ctf_logo_dark_bg_small.png",
+        "id": 2610,
+        "title": "KnightCTF 2025",
+        "start": "2025-01-20T15:00:00+00:00",
+        "participants": 135,
+        "location": "",
+        "finish": "2025-01-21T15:00:00+00:00",
+        "description": "KnightCTF 2025 is a jeopardy CTF competition for Cyber ​​Security professionals and students or those who are interested in security. There will be challenges in various categories like PWN, Reversing, Web, Cryptography etc.\r\n\r\n\r\nWe like to thanks our sponsors \r\n[+] NSTechValley\r\n[+] BurpBounty\r\n[+] Parrot CTFs\r\n[+] AlteredSecurity\r\n[+] Gen.XYZ\r\n[+]Ret2Systems\r\n[+] Hex-Rays ",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "First Prize\r\n\r\n    CRTP Exam Voucher\r\n    IDA Pro License\r\n    Swags from Hex-Rays\r\n    BurpBounty Pro Vouchers\r\n    ParrotCTFs Vouchers\r\n    .xyz Domains\r\n    RET2 Wargames Vouchers\r\n\r\n\r\nSecond Prize\r\n    IDA Pro License\r\n    BurpBounty Pro Vouchers\r\n    ParrotCTFs Vouchers\r\n    .xyz Domains\r\n    RET2 Wargames Vouchers\r\n\r\n\r\nThird Prize\r\n   IDA Pro License\r\n    BurpBounty Pro Vouchers\r\n    ParrotCTFs Vouchers\r\n    .xyz Domains\r\n    RET2 Wargames Vouchers\r\n\r\n",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2025.knightctf.com/",
+        "public_votable": true,
+        "rank": 9
+    },
+    {
+        "organizers": [
+            {
+                "id": 83421,
+                "name": "Srdnlen"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2576/",
+        "ctf_id": 840,
+        "weight": 32.28,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/e04b66f1d17c437f935e29d0fbe7beed.png",
+        "id": 2576,
+        "title": "Srdnlen CTF 2025 Quals",
+        "start": "2025-01-18T18:00:00+00:00",
+        "participants": 208,
+        "location": "",
+        "finish": "2025-01-19T18:00:00+00:00",
+        "description": "Srdnlen CTF is a Jeopardy-style Capture-The-Flag competition hosted by the members of Srdnlen, an italian team based in Sardinia.\r\n\r\nThis CTF welcomes both beginners and advanced players. The challenges topics include reverse engineering, binary exploitation, web security, cryptography, forensics.\r\n\r\nFor the best 10 teams, in-person finals will be organized in Sardinia (date to be decided)",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.srdnlen.it/",
+        "public_votable": true,
+        "rank": 90
+    },
+    {
+        "organizers": [
+            {
+                "id": 139261,
+                "name": "UofTCTF"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2570/",
+        "ctf_id": 1052,
+        "weight": 23.9,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/uoftctf_logo_3000_black.png",
+        "id": 2570,
+        "title": "UofTCTF 2025",
+        "start": "2025-01-11T00:00:00+00:00",
+        "participants": 141,
+        "location": "",
+        "finish": "2025-01-13T00:00:00+00:00",
+        "description": "UofTCTF 2025 is the annual capture-the-flag competition organized by the UofTCTF team. This year’s event will take place online from January 10, 2025, at 7:00 PM EST to January 12, 2025, at 7:00 PM EST. It will be a jeopardy-style CTF with classic categories like web, pwn, crypto, rev, forensics, and misc. \r\n\r\nJoin the event discord server: https://discord.gg/4mQP8Tk3JE\r\n\r\nWe extend our heartfelt thanks to our sponsors for making this event possible:\r\n- Dataflow Security\r\n- Zellic\r\n- UofT ISEA\r\n- UofT DCS",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Open Division:\r\nFirst Place: $1000 USD\r\nSecond Place: $750 USD\r\nThird Place: $500 USD\r\n\r\nUofT Division:\r\nFirst place: $350 CAD\r\nSecond place: $250 CAD\r\nThird place: $100 CAD\r\n\r\nWriteups:\r\n3x $50 USD",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.uoftctf.org/",
+        "public_votable": true,
+        "rank": 50
+    },
+    {
+        "organizers": [
+            {
+                "id": 127034,
+                "name": "IrisSec"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2503/",
+        "ctf_id": 841,
+        "weight": 34.3,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/IrisSec.png",
+        "id": 2503,
+        "title": "IrisCTF 2025",
+        "start": "2025-01-04T00:00:00+00:00",
+        "participants": 155,
+        "location": "",
+        "finish": "2025-01-06T00:00:00+00:00",
+        "description": "IrisCTF is a 48-hour Capture the Flag competition organized by IrisSec. IrisCTF takes place the first full weekend of every year online, and features challenges in the disciplines of reverse engineering, binary exploitation, web exploitation, cryptography, radio frequency, networks, forensics, open-source intelligence, and more. IrisCTF is meant to be, above all else, a fun, lighthearted, and educational experience for all.\r\n\r\nIrisCTF 2025 starts at 2025-01-04 (Jan 4, 2025) @ 00:00 UTC and ends at 2025-01-06 (Jan 6, 2025) @ 00:00 UTC. Registration is open at https://2025.irisc.tf.\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "The top 5 teams will each receive 3x commemorative tokens and event stickers. In addition, the top 3 teams will receive:\r\n\r\n1. US$512 cash, HTB 3x 1-Year VIP+ & 3x 3-Month Prolabs.\r\n2. US$256 cash, HTB 3x 1-Year VIP+ & 3x 1-Month Problabs.\r\n3. US$128 cash, HTB 3x 6-Month VIP+.\r\n\r\nWe will additionally host a writeup competition where 15x US$20 cash prizes will be awarded.\r\n\r\nSee Terms and Conditions: https://irisc.tf/assets/pdf/irisctf-2025-prize-tncs.pdf",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2025.irisc.tf/",
+        "public_votable": true,
+        "rank": 60
+    },
+    {
+        "organizers": [
+            {
+                "id": 4140,
+                "name": "ASIS"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2403/",
+        "ctf_id": 59,
+        "weight": 92.75,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "https://ctftime.org/live/2403/",
+        "logo": "https://ctftime.org//media/events/asis_logo.png",
+        "id": 2403,
+        "title": "ASIS CTF Finals 2024",
+        "start": "2024-12-28T14:00:00+00:00",
+        "participants": 53,
+        "location": "",
+        "finish": "2024-12-29T14:00:00+00:00",
+        "description": "ASIS CTF Finals 2024 :)",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": ".:: TBA ::.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://asisctf.com/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 585,
+                "name": "hxp"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2437/",
+        "ctf_id": 120,
+        "weight": 98.14,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/hxp-38c3.png",
+        "id": 2437,
+        "title": "hxp 38C3 CTF",
+        "start": "2024-12-27T20:00:00+00:00",
+        "participants": 99,
+        "location": "online, optionally @ 38C3",
+        "finish": "2024-12-29T20:00:00+00:00",
+        "description": "After five years of non-existent C3 and misaligned schedules, we are happy to announce this year's hxp 38C3 CTF. This will be our second time hosting hxp CTF at C3.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "tba",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2024.ctf.link/",
+        "public_votable": true,
+        "rank": 2
+    },
+    {
+        "organizers": [
+            {
+                "id": 16691,
+                "name": "InfoSecIITR"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2540/",
+        "ctf_id": 49,
+        "weight": 49.48,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/0b/4a/0b4a317ba84bb2bd6e871c5eec6fdb00.png",
+        "id": 2540,
+        "title": "BackdoorCTF 2024",
+        "start": "2024-12-22T12:00:00+00:00",
+        "participants": 151,
+        "location": "",
+        "finish": "2024-12-23T12:00:00+00:00",
+        "description": "BackdoorCTF is the flagship event of InfoSecIITR. \r\nThis iteration of Backdoor is sponsored by Zellic, CloudDefense.Ai, IITB Trust Lab and Trail of Bits.\r\nInfrastructure sponsored by goo.gle/ctfsponsorship\r\n\r\nCategories will include Pwn, Rev, Web, Crypto, Blockchain, Forensics\r\n\r\nDiscord invite for the competition is https://discord.gg/EvyNezf3\r\n\r\nHappy Hacking and Happy Holidays!",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st:   $1000\r\n2nd:  $750 \r\n3rd:   $500 \r\n4th:   $300",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://backdoor.infoseciitr.in/",
+        "public_votable": true,
+        "rank": 20
+    },
+    {
+        "organizers": [
+            {
+                "id": 4419,
+                "name": "0ops"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2448/",
+        "ctf_id": 99,
+        "weight": 100.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/0ctf.png",
+        "id": 2448,
+        "title": "0CTF 2024",
+        "start": "2024-12-21T02:00:00+00:00",
+        "participants": 219,
+        "location": "",
+        "finish": "2024-12-23T02:00:00+00:00",
+        "description": "This is an online jeopardy-style CTF organized by 0ops.\r\n\r\nWe welcome CTF players all over the world!\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st: $3137\r\n\r\n2nd: $1337\r\n\r\n3rd: $713\r\n\r\nAll teams: enjoyment, achievement and fancy hacking skills",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.0ops.sjtu.cn/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 16088,
+                "name": "TSG"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2424/",
+        "ctf_id": 294,
+        "weight": 25.0,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "https://ctftime.org/live/2424/",
+        "logo": "https://ctftime.org/media/cache/05/db/05dba8b0bff9b64f56c94e8819db42fe.png",
+        "id": 2424,
+        "title": "TSG CTF 2024",
+        "start": "2024-12-14T07:00:00+00:00",
+        "participants": 63,
+        "location": "",
+        "finish": "2024-12-15T07:00:00+00:00",
+        "description": "TSG is the official computer society of The University of Tokyo, and also the name of the CTF team organized by its members.\r\n\r\nSponsored by Flatt Security Inc. https://flatt.tech/\r\nInfra sponsored by goo.gle/ctfsponsorship",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "The winning team qualifies for the SECCON CTF 2024 Finals (International Division).\r\n\r\n1st: 1,000 USD\r\n2nd: 500 USD\r\n3rd: 200 USD\r\n\r\nSponsor: Flatt Security Inc. (https://flatt.tech/)",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.tsg.ne.jp/",
+        "public_votable": true,
+        "rank": 6
+    },
+    {
+        "organizers": [
+            {
+                "id": 53791,
+                "name": "polygl0ts"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2502/",
+        "ctf_id": 818,
+        "weight": 35.94,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/7fb065c04dbec7e33dfbb1f4456196c7.png",
+        "id": 2502,
+        "title": "LakeCTF Quals 24-25",
+        "start": "2024-12-07T18:00:00+00:00",
+        "participants": 98,
+        "location": "",
+        "finish": "2024-12-08T18:00:00+00:00",
+        "description": "Qualifications for third edition of LakeCTF",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Academic bracket\r\nTop 10 academic: invited to LakeCTF finals\r\n\r\nProfessional bracket\r\nTop 6 professional: 8x tickets each for the Insomni'hack 2025 conference\r\nTop 3 professional: accommodation paid for 3 nights during the Insomni'hack 2025 conference",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://lakectf.epfl.ch/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 283853,
+                "name": "World Wide Flags"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2572/",
+        "ctf_id": 1208,
+        "weight": 24.48,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logobg.png",
+        "id": 2572,
+        "title": "World Wide CTF 2024",
+        "start": "2024-11-30T12:00:00+00:00",
+        "participants": 120,
+        "location": "",
+        "finish": "2024-12-01T12:00:00+00:00",
+        "description": "Join World Wide CTF and test your cybersecurity skills against the best hackers worldwide!\r\n\r\nCompete in diverse categories such as web exploitation, reverse engineering, cryptography, forensics, OSINT, binary exploitation, and more!\r\n\r\nWe have something for everyone, from the cybersecurity novice to the seasoned pro. Challenges range from beginner-friendly to insanely difficult!\r\n\r\nJoin the official discord for updates: https://discord.gg/guwaGy3ftN\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st place:\r\n5x 1-year long subscription of NordVPN\r\n5x 1-year long subscription of NordPass\r\n5x 1-year long subscription of Incogni\r\n5x 1 GB of free Saily data\r\n1x CRTP Voucher\r\n1x 1-Year Proving Grounds Practice licenses\r\n4x .xyz domains\r\n6x Parrot CTFs VIP Voucher\r\n\r\n2nd place:\r\n3x 1-year long subscription of NordVPN\r\n3x 1-year long subscription of NordPass\r\n3x 1-year long subscription of Incogni\r\n3x 1 GB of free Saily data\r\n1x 1-Year Proving Grounds Practice licenses\r\n3x .xyz domains\r\n5x Parrot CTFs VIP Voucher\r\n\r\n3rd place:\r\n2x 1-year long subscription of NordVPN\r\n2x 1-year long subscription of NordPass\r\n2x 1-year long subscription of Incogni\r\n2x 1 GB of free Saily data\r\n1x 1-Year Proving Grounds Practice licenses\r\n2x .xyz domains\r\n4x Parrot CTFs VIP Voucher\r\n\r\n4th place:\r\n1x 1-Year Proving Grounds Practice licenses\r\n1x .xyz domains\r\n3x Parrot CTFs VIP Voucher\r\n\r\n5th place:\r\n$15 USD\r\n1x 1-Year Proving Grounds Practice licenses\r\n2x Parrot CTFs VIP Voucher",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://wwctf.com/",
+        "public_votable": true,
+        "rank": 29
+    },
+    {
+        "organizers": [
+            {
+                "id": 145625,
+                "name": "My4nM4r"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2560/",
+        "ctf_id": 974,
+        "weight": 23.08,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/CYBERGON_Logo.png",
+        "id": 2560,
+        "title": "CYBERGON CTF_2024",
+        "start": "2024-11-30T12:00:00+00:00",
+        "participants": 122,
+        "location": "",
+        "finish": "2024-12-02T12:00:00+00:00",
+        "description": "Organization - CYBERGON is a non-profit-organization which provides knowledge sharing programs, sessions for the students and junior levels \r\nwho are willing to learn and study cyber security. CYBERGON is founded on July 25, 2022, to support Myanmar Information Security Community. \r\n\r\nFull event and CTF name - CYBERGON CTF 2024\r\nLink to event logo - Attached\r\nEvent start datetime  (UTC/GMT +7:00)  November Sat 30,2024 12:00 AM\r\nEvent finish datetime (UTC/GMT +7:00)  December Mon 02,2024 12:00 AM\r\nOfficial site URL - https://cybergon.ctfd.io/\r\nEmail - info@cybergonmyanmar.com\r\nDiscord - https://discord.gg/QA4tqyWgs4\r\nEvent format - jeopardy\r\nIs event online or onsite - online\r\nOrganizers team name - My4nM4r \r\n\r\nImage file available now !!\r\nPlease download image file via the following link. Password will be provided when the competition starts.\r\n\r\nhttps://tinyurl.com/4zt373r5\r\n\r\nPlease download zip file (3GB) via the following link. Password will be provided when the competition starts.\r\n\r\nhttps://tinyurl.com/msbk7dhd\r\n\r\nPrizes\r\n\r\nInternational Teams\r\nFirst Team - Gold Coin + TBD\r\nSecond Team - Silver Coin + TBD\r\nThird Team - Bronze Coin + TBD\r\n\r\nLocal Teams (Myanmar)\r\nFirst Team - TBD\r\nSecond Team - TBD\r\nThird Team - TBD\r\n\r\n[Winning teams from countries outside Myanmar and Thailand must cover shipping costs to receive physical prizes (coins, shirts, etc.). If not, the prizes will be awarded to local teams instead.]",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prizes\r\nInternational Teams\r\nFirst Team - Gold Coin + TBD\r\nSecond Team - Silver Coin + TBD\r\nThird Team - Bronze Coin + TBD\r\n\r\nLocal Teams (Myanmar)\r\nFirst Team - TBD\r\nSecond Team - TBD\r\nThird Team - TBD\r\n\r\n[Winning teams from countries outside Myanmar and Thailand must cover shipping costs to receive physical prizes (coins, shirts, etc.). If not, the prizes will be awarded to local teams instead.]\r\n\r\nOur Sponsors (https://youtu.be/z_ijQc-GfLQ)\r\n\r\nTier Sponsors \r\n\r\nSilver Sponsor - Hellfire Security (https://www.hellfiresecurity.com/)\r\nBronze Sponsor - Pacific Tech Myanmar \r\nBronze Sponsor - Golden Myanmar Apex\r\n\r\nCertification & Training Vouchers\r\n\r\nAltered Security (https://www.alteredsecurity.com/)\r\nCreatigon (https://www.creatigon.com/)\r\n\r\nTShirts Sponsors\r\n\r\nHellfire Security (https://www.hellfiresecurity.com/)\r\nLollipop Clothing Bar \r\n",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://cybergon.ctfd.io/",
+        "public_votable": true,
+        "rank": 203
+    },
+    {
+        "organizers": [
+            {
+                "id": 8323,
+                "name": "LosFuzzys"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2402/",
+        "ctf_id": 863,
+        "weight": 35.69,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/3ae6516246966c8d08c81d3bd5451cfa_1.png",
+        "id": 2402,
+        "title": "GlacierCTF 2024",
+        "start": "2024-11-22T18:00:00+00:00",
+        "participants": 226,
+        "location": "",
+        "finish": "2024-11-23T18:00:00+00:00",
+        "description": "We're excited to announce GlacierCTF 2024 for its third edition, organized by LosFuzzys. We will provide a welcoming environment for CTF players of all levels.\r\n\r\nOur 24-hour jeopardy-style CTF will feature challenges in various categories, including pwn, rev, web, crypto, smart contracts, and misc. \r\n\r\nYou can register under:\r\nTBA\r\n\r\nAnd join our discord at:\r\nhttps://discord.gg/DFYnRAME23\r\n\r\nGlacierCTF is proud to be a qualifier for the Deutsche Hacking Meisterschaft (DHM), offering top teams from the DACH region (Germany, Austria, Switzerland) the chance to compete in this prestigious event. GlacierCTF's top-ranked DACH team will secure a place at the DHM, a 6-person team competition that brings together the best cybersecurity talent from across the region.\r\n\r\nThe qualification process for the DHM is split into two paths: half of the participants earn their place through the CSCG (Cyber Security Challenge Germany), a two-month individual competition, while the other half qualify through team-based events such as the GlacierCTF. The winning DACH team should contact dhm@nfits.de to confirm their qualification and receive further instructions on how to participate in the DHM.\r\n\r\nSponsored by:\r\nTrail of Bits\r\nIAIK@Technical University of Graz\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Open division:\r\n1st:\r\n- 500€\r\n2nd:\r\n- 250€\r\n3rd:\r\n- 125€\r\n\r\nAcademic division:\r\n1st: \r\n    - IAIK Travel Grant for Graz Security Week 2025 (up to €1500)*\r\n2nd:\r\n    - IAIK Travel Grant for Graz Security Week 2025 (up to €1500)*\r\n3rd:\r\n    - IAIK Travel Grant for Graz Security Week 2025 (up to €1500)*\r\n\r\n---\r\nOnly teams whose members are enrolled in a school or university can win academic prizes.\r\nAcademic teams are eligible for both open and academic category prizes.\r\n*\r\nThe IAIK travel grant includes the following:\r\n- Registration fee for the Graz Security Week 2025, including full board according to the program\r\n- Travel costs in economy class to attend Graz Security Week (flight, train, bus, or public transportation)\r\n- Hotel accommodation in Graz, including breakfast (maximum € 120 / night and person)\r\nThe travel grant covers up to EUR 1,500.00 for attending Graz Security Week 2025.\r\nThe actual split of the grant between the team members is up to the winners.\r\nThe travel grant is paid as reimbursement. Hence, the winners register for Graz Security Week 2025, and after attendance, all receipts must be submitted to team@losfuzzys.net.\r\nThe costs for registration, travel, and hotel will then be reimbursed.\r\nPlease contact securityweek@iaik.tugraz.at for any support concerning organizing your attendance at Graz Security Week.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://glacierctf.com/",
+        "public_votable": true,
+        "rank": 4
+    },
+    {
+        "organizers": [
+            {
+                "id": 124896,
+                "name": "CryptoCat"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2446/",
+        "ctf_id": 749,
+        "weight": 24.23,
+        "duration": {
+            "hours": 12,
+            "days": 1
+        },
+        "live_feed": "https://ctftime.org/live/2446/",
+        "logo": "https://ctftime.org//media/events/intigriti_icon_cmyk_navy.png",
+        "id": 2446,
+        "title": "1337UP LIVE CTF",
+        "start": "2024-11-15T11:59:59+00:00",
+        "participants": 209,
+        "location": "",
+        "finish": "2024-11-16T23:59:59+00:00",
+        "description": "Intigriti proudly presents the third edition of our 1337UP LIVE CTF. This capture the flag event will have hackers fighting in teams of up to 4 players in a Jeopardy-style event. The event will run for 36 hours, hosting challenges in the usual categories; web, pwn, rev, crypto, game, mobile, misc, osint etc.\r\n\r\nSponsors include: LetsDefend, Grafana, HackTheBox, Red Bull",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st Place\r\n- €1500 cash\r\n- Red Bull cans for the whole team\r\n- 4 x Limited Edition Swag\r\n- 4 x €200 Swag Voucher\r\n- 4 x 1 Month VIP Let's Defend\r\n- 4 x Grafana Labs Swag Pack\r\n- 4 x 1 Year HackTheBox VIP+\r\n- 4 x 6 Month HackTheBox ProLabs\r\n\r\n2nd Place\r\n- €500 cash\r\n- Red Bull cans for the whole team\r\n- 4 x Limited Edition Swag\r\n- 4 x €100 Swag Voucher\r\n- 4 x Grafana Labs Swag Pack\r\n- 4 x 1 Year HackTheBox VIP+\r\n- 4 x 1 Month HackTheBox ProLabs\r\n\r\n3rd Place\r\n- €250 cash\r\n- Red Bull cans for the whole team\r\n- 4 x Limited Edition Swag\r\n- 4 x €100 Swag Voucher\r\n- 4 x Grafana Labs Swag Pack\r\n- 4 x 1 Year HackTheBox VIP+\r\n\r\n4th & 5th Place\r\n- 4 x €50 Swag Voucher\r\n- 4 x Grafana Labs Swag Pack\r\n- 4 x 6 Month HackTheBox VIP+\r\n\r\n6th - 10th Place\r\n- 4 x €25 Swag Voucher\r\n- 4 x 1 Month HackTheBox VIP\r\n\r\nBest 3 Writeups\r\n- €100 Swag Voucher\r\n\r\nBest Video\r\n- €100 Swag Voucher\r\n- 1 Month VIP Let's Defend\r\n\r\nMORE PRIZES TBA!!\r\n\r\nTrack the latest details @ https://www.intigriti.com/intigriti-ctf-2024",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.intigriti.io/",
+        "public_votable": true,
+        "rank": 104
+    },
+    {
+        "organizers": [
+            {
+                "id": 46747,
+                "name": "Square"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2517/",
+        "ctf_id": 218,
+        "weight": 52.43,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/0ed304c3c4dcb6a3e887778f3928e26e.png",
+        "id": 2517,
+        "title": "BlockCTF 2024",
+        "start": "2024-11-13T22:00:00+00:00",
+        "participants": 77,
+        "location": "",
+        "finish": "2024-11-14T22:00:00+00:00",
+        "description": "Block/Square's annual CTF! Registration will be up soon, join the discord here for future announcements: https://discord.gg/Syv9gJ4n3m\r\nRegistration is now open on \r\nhttps://2024.blockctf.com/\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st: $1000\r\n2nd: $500\r\n3rd: $400\r\n4th: $300\r\n5th...10th: $200",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2024.blockctf.com/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 572,
+                "name": "RPISEC"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2498/",
+        "ctf_id": 157,
+        "weight": 24.43,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/image_center.png",
+        "id": 2498,
+        "title": "Hack The Vote 2024",
+        "start": "2024-11-01T23:00:00+00:00",
+        "participants": 180,
+        "location": "",
+        "finish": "2024-11-03T23:00:00+00:00",
+        "description": "The third iteration of Hack The Vote.\r\n\r\nPwn early, pwn often\r\n\r\nDiscord: https://discord.gg/FyPFNDR5VT\r\nDiscord (but old): #hackthevote on libera.chat\r\n\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://hackthe.vote/",
+        "public_votable": true,
+        "rank": 6
+    },
+    {
+        "organizers": [
+            {
+                "id": 551,
+                "name": "FluxFingers"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2438/",
+        "ctf_id": 8,
+        "weight": 100.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logo-small.png",
+        "id": 2438,
+        "title": "Hack.lu CTF 2024",
+        "start": "2024-10-18T18:00:00+00:00",
+        "participants": 100,
+        "location": "",
+        "finish": "2024-10-20T18:00:00+00:00",
+        "description": "Hack.​lu CTF is organized by FluxFingers, the CTF team of Ruhr-University Bochum (Germany). This will be the 14th edition.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Qualifier for DHM\r\n\r\n(Note: Only for teams from Germany, Austria, or Switzerland)\r\n\r\nHack.​lu CTF is proud to be a qualifier for the Deutsche Hacking Meisterschaft (DHM), offering top teams from the DACH region (Germany, Austria, Switzerland) a chance to compete in this prestigious event. The highest-ranking DACH team from Hack.​lu CTF will secure a spot in the DHM, which is a 6-person team competition, bringing together the best talent in cybersecurity from across the region.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://flu.xxx/",
+        "public_votable": true,
+        "rank": 33
+    },
+    {
+        "organizers": [
+            {
+                "id": 205897,
+                "name": "Blue Water"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2479/",
+        "ctf_id": 469,
+        "weight": 82.0,
+        "duration": {
+            "hours": 12,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/4872c3c168bd1cdeb5dc564bb3a0416f.png",
+        "id": 2479,
+        "title": "Blue Water CTF 2024",
+        "start": "2024-10-12T14:00:00+00:00",
+        "participants": 85,
+        "location": "",
+        "finish": "2024-10-14T02:00:00+00:00",
+        "description": "First edition of Blue Water CTF!\r\n\r\nCTF lasts for 36h, from October 12th (Saturday) 14:00 UTC to October 14th (Monday) 2:00 UTC.\r\n\r\nOfficial website: https://bw.ctf.ing\r\nTwitter: https://twitter.com/pb_ctf\r\nEmail: team@perfect.blue\r\nDiscord: https://discord.gg/7mNgBEHreu\r\n\r\nSponsored by Zellic\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st place - 4,000 USD cash\r\n2nd place - 2,000 USD cash\r\n3rd place - 1,000 USD cash\r\nWriteups - 500 USD (5 selected writeups x 100 USD cash)",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://bw.ctf.ing/",
+        "public_votable": true,
+        "rank": 29
+    },
+    {
+        "organizers": [
+            {
+                "id": 144581,
+                "name": "Buckeye Bureau of BOF"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2449/",
+        "ctf_id": 667,
+        "weight": 50.91,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "https://ctftime.org/live/2449/",
+        "logo": "https://ctftime.org//media/events/logo-black-square.jpeg",
+        "id": 2449,
+        "title": "BuckeyeCTF 2024",
+        "start": "2024-09-27T20:00:00+00:00",
+        "participants": 89,
+        "location": "",
+        "finish": "2024-09-29T20:00:00+00:00",
+        "description": "CTF run by students and alumni from Cyber Security Club @ Ohio State.\r\n\r\nBuckeyeCTF is intended to be beginner-friendly and is geared towards university teams, but there will be a wide range of difficulty.\r\n\r\n*** IMPORTANT NOTE ON TIME ***\r\nThe time listed on CTFtime is off by 4 hours. The actual times are\r\nStart: Sat, 28 Sept. 2024, 00:00 UTC\r\nEnd: Mon, 30 Sept. 2024, 00:00 UTC\r\n*** END NOTE ***\r\n\r\nFormat is jeopardy: web, reversing, binary exploitation, crypto, etc. with a focus on enjoyable problems.\r\n\r\nThree divisions:\r\n- Open (no team size limit)\r\n- U.S. Undergraduate & high school (no team size limit)\r\n- Ohio State (1-4 students)\r\n\r\nCTF site: https://ctf.osucyber.club",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "There are prizes for two divisions:\r\n- Ohio State University undergraduates\r\n- U.S. Undergraduates (and high school students attending a U.S. school)\r\n\r\nCheck out our website for specific info https://ctf.osucyber.club",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://pwnoh.io/",
+        "public_votable": true,
+        "rank": 1
+    },
+    {
+        "organizers": [
+            {
+                "id": 176906,
+                "name": "Competitive Cyber at Mason"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2426/",
+        "ctf_id": 737,
+        "weight": 31.83,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "https://ctftime.org/live/2426/",
+        "logo": "https://ctftime.org//media/events/masoncc_2.png",
+        "id": 2426,
+        "title": "PatriotCTF 2024",
+        "start": "2024-09-20T22:00:00+00:00",
+        "participants": 250,
+        "location": "",
+        "finish": "2024-09-22T22:00:00+00:00",
+        "description": "PatriotCTF is an online jeopardy-style CTF hosted by George Mason University's Competitive Cyber Club. All are welcome to participate, including students and security professionals. Challenges will range from beginner to expert, so there should be something for everyone. \r\n\r\nChallenges include: Web, Reverse Engineering, PWN, Cryptography, Forensics, OSINT, & Misc.\r\nThank you to our sponsors! - Battelle, CACI, Offsec, Corellium, Trail of Bits, cursedCTF and the Mason Volgenau School of Engineering\r\n\r\nWebsite - https://competitivecyber.club/patriotctf/\r\nDiscord - https://discord.gg/Z8pA43vQcW",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prizes will be awarded to the top 3 teams.\r\n\r\n1st place: Prizes $500 + Offsec Course and Cert exam bundle for PEN-200 (OSCP) + Corellium Individual Plans 1-month (x3)\r\n2nd place: Prizes $250\r\n3rd place: Prizes $100\r\nThe top student team will also receive a prize.\r\nStudent 1st place: Prizes $250 + Offsec Course and Cert exam bundle for PEN-200 (OSCP) + Corellium Individual Plans 1-month (x3)",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "http://pctf.competitivecyber.club/",
+        "public_votable": true,
+        "rank": 43
+    },
+    {
+        "organizers": [
+            {
+                "id": 311088,
+                "name": "jailctf"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2450/",
+        "ctf_id": 1152,
+        "weight": 24.88,
+        "duration": {
+            "hours": 0,
+            "days": 3
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/jailctf150.png",
+        "id": 2450,
+        "title": "jailCTF 2024",
+        "start": "2024-09-13T20:00:00+00:00",
+        "participants": 49,
+        "location": "",
+        "finish": "2024-09-16T20:00:00+00:00",
+        "description": "This is the first jailCTF event. Unlike traditional CTFs, this event has a large focus on \"jail\" challenges which ask players to escape out of a code sandbox with some set of restrictions applied. Categories here aren't traditional here either, with categories such as pyjail, esolang, and mainstream (js, perl, ruby, c, etc). Even if you don't know much about jail challenges, you can still learn and have fun with challenges in the introductory category. Come and have fun in jailCTF!\r\n\r\nDiscord: https://discord.gg/JxtuFxMaE8\r\n\r\nSponsored by Zellic!!! https://www.zellic.io/\r\n\r\nNote: https://ctf.pyjail.club/ has been taken down for the time being. The challenge handouts and remotes, along with author solutions, are available at https://github.com/jailctf/challenges-2024",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st place: $500\r\n2nd place: $400\r\n3rd place: $300\r\n4th place: $200\r\n5th place: $100\r\n\r\n(keep in mind teams that organizers are from might be denied prizes)",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.pyjail.club/",
+        "public_votable": true,
+        "rank": 47
+    },
+    {
+        "organizers": [
+            {
+                "id": 439,
+                "name": "NYUSEC"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2398/",
+        "ctf_id": 18,
+        "weight": 21.8,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/CSAW.png",
+        "id": 2398,
+        "title": "CSAW CTF Qualification Round 2024",
+        "start": "2024-09-06T16:00:00+00:00",
+        "participants": 278,
+        "location": "",
+        "finish": "2024-09-08T16:00:00+00:00",
+        "description": "CSAW CTF is one of the oldest and biggest CTFs with 1096 teams with 1+ points in 2023. Designed as an entry-level, jeopardy-style CTF, this competition is for students who are trying to break into the field of security, as well as for advanced students and industry professionals who want to practice their skills.\r\n\r\nOur competition occurs over two rounds: a Qualifying Round in September and a Final Round in November.\r\n\r\nDiscord: https://discord.gg/csaw24-quals ",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Qualify for in-person, all-expenses paid, Finals round in New York City or regional NYU sponsored location to participate in the Cybersecurity Awareness Week.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.csaw.io/",
+        "public_votable": true,
+        "rank": 12
+    },
+    {
+        "organizers": [
+            {
+                "id": 157039,
+                "name": "idek"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2304/",
+        "ctf_id": 700,
+        "weight": 52.06,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/6f/c9/6fc96f74cc7a244b1cbcf8c6061d0485.png",
+        "id": 2304,
+        "title": "idekCTF 2024",
+        "start": "2024-08-17T00:00:00+00:00",
+        "participants": 364,
+        "location": "",
+        "finish": "2024-08-19T00:00:00+00:00",
+        "description": "idekCTF is an information security CTF competition organized by the idek team and is aimed at the entire spectrum from high school and university students to experienced players. idekCTF will cover the standard Jeopardy-style CTF topics (binary exploitation, reverse engineering, cryptography, web exploitation, and forensics) as well as other, less standard categories. \r\n\r\nInfra sponsored by goo.gle/ctfsponsorship\r\n\r\nThanks to our other sponsors:\r\n* Security Innovation\r\n* Zellic\r\n* Trend Micro\r\n* Hack The Box",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "* 1st: $1,500 + 5x 1 Year HTB VIP+\r\n* 2nd: $1,000 + 5x 6 Months HTB VIP+\r\n* 3rd: $500 + 5x 1 Month HTB VIP+\r\n* 4th: $250",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.idek.team/",
+        "public_votable": true,
+        "rank": 51
+    },
+    {
+        "organizers": [
+            {
+                "id": 152491,
+                "name": "n00bzUnit3d"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2378/",
+        "ctf_id": 792,
+        "weight": 24.23,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logo_ascii_1.png",
+        "id": 2378,
+        "title": "n00bzCTF 2024",
+        "start": "2024-08-03T01:00:00+00:00",
+        "participants": 160,
+        "location": "",
+        "finish": "2024-08-05T01:00:00+00:00",
+        "description": "n00bzUnit3d is back with another CTF! \r\nDescription: A 48 hours CTF hosted by n00bz for n00bz. Organized with beginner friendly challenges (and some hard ones), n00bzCTF is dedicated to make cyber security more friendly and approachable for complete n00bz.\r\n\r\nThere will also be prizes for team(s) of lower scores if we get sufficient funding from our sponsors ;)\r\n\r\nTeam limit: 4 members\r\nDiscord: https://discord.gg/Kze7sjpgf7",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Open\r\n\r\n- 1st: 1x Learn Fundamentals Subscription + 1x PG annual subscription + 4x Annual Burp Bounty Pro Subscription + $100 + 4x HTB 1 year VIP+ \r\n\r\n- 2nd: 4x Annual Burp Bounty Pro Subscription + $75 + 4x HTB 6 months VIP+\r\n\r\n- 3rd: 4x Annual Burp Bounty Pro Subscription + $50 + 4x HTB 1 month VIP+\r\n\r\nHighschool\r\n\r\n- 1st: 1x Learn Fundamentals Subscription + 1x PG annual subscription + $100 + 4x HTB 1 year VIP+\r\n\r\n- 2nd: zSecurity 4x course vouchers (each redeemable for up to $99) + $75 + 4x HTB 6 months VIP+\r\n\r\n- 3rd: zSecurity 4x course vouchers (each redeemable for up to $99) + $50 + 4x HTB 1 month VIP+\r\n\r\nWriteup Prizes:\r\n\r\n- Best Unintended: $20\r\n\r\n- Best Well Written: $20\r\n\r\n- Best Technical: $20\r\n\r\nRight now, our prize pool is over $7500!\r\n\r\nPrizes are not a 100% final and could be changed a little bit if our team feels like we need to.\r\n\r\n\r\nPlease thank our sponsors who made this CTF possible!\r\n\r\n- Ottersec\r\n- Offensive Security\r\n- ZSecurity\r\n- BurpBounty\r\n-HackTheBox",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.n00bzunit3d.xyz/",
+        "public_votable": true,
+        "rank": 19
+    },
+    {
+        "organizers": [
+            {
+                "id": 175828,
+                "name": "View Source"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2248/",
+        "ctf_id": 785,
+        "weight": 34.0,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/vsctf_2024_2x.png",
+        "id": 2248,
+        "title": "vsCTF 2024",
+        "start": "2024-06-14T16:00:00+00:00",
+        "participants": 279,
+        "location": "",
+        "finish": "2024-06-15T16:00:00+00:00",
+        "description": "** POSTPONED TO JUNE 14 **\r\n\r\nView Source's 3rd CTF! Challenge difficulty ranges from beginner-friendly to hard.\r\n\r\nHigh School division winners qualify for DiceCTF finals!\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship\r\n\r\nJoin our Discord: https://discord.gg/mVAzUJrpyf",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "TBD",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.viewsource.me/",
+        "public_votable": true,
+        "rank": 221
+    },
+    {
+        "organizers": [
+            {
+                "id": 81702,
+                "name": "BCACTF"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2274/",
+        "ctf_id": 325,
+        "weight": 46.33,
+        "duration": {
+            "hours": 0,
+            "days": 3
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/bcactflogoocean.png",
+        "id": 2274,
+        "title": "BCACTF 5.0",
+        "start": "2024-06-07T20:00:00+00:00",
+        "participants": 141,
+        "location": "",
+        "finish": "2024-06-10T20:00:00+00:00",
+        "description": "Welcome to BCACTF 5.0!!!\r\n\r\nReturning for the fifth year in a row, this highschool CTF from the Bergen County Academies presents challenges in a variety of difficulties targeting everyone from beginners to CTF veterans!\r\n\r\nInfra sponsored by goo.gle/ctfsponsorship.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prizes TBD. Please check our website and discord for the latest information.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://www.bcactf.com/",
+        "public_votable": true,
+        "rank": 5
+    },
+    {
+        "organizers": [
+            {
+                "id": 15734,
+                "name": "ångstromCTF Organizers"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2375/",
+        "ctf_id": 146,
+        "weight": 72.06,
+        "duration": {
+            "hours": 0,
+            "days": 3
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/actf_2.png",
+        "id": 2375,
+        "title": "ångstromCTF 2024",
+        "start": "2024-05-25T00:00:00+00:00",
+        "participants": 97,
+        "location": "",
+        "finish": "2024-05-28T00:00:00+00:00",
+        "description": "Geared primarily towards high school students but with a very wide range of challenge difficulty.\r\n\r\nInfrastructure sponsored by goo.gle/ctfsponsorship",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "TBA",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://angstromctf.com/",
+        "public_votable": true,
+        "rank": 67
+    },
+    {
+        "organizers": [
+            {
+                "id": 278477,
+                "name": "btcodeclub"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2340/",
+        "ctf_id": 1055,
+        "weight": 0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/Screen_Shot_2024-04-10_at_5.52.43_PM.png",
+        "id": 2340,
+        "title": "BTCTF I",
+        "start": "2024-05-24T20:00:00+00:00",
+        "participants": 32,
+        "location": "",
+        "finish": "2024-05-26T20:00:00+00:00",
+        "description": "A 48 hour beginner High School capture the flag hosted by Bergen County Technical High Schools Teterboro. Challenges range from beginner to medium level. \r\n\r\nCompetition here at: \r\nhttps://btctf.us/\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "***Winners must prove they are a student in order to receive prizes***\r\n\r\nEligible for high school students only\r\n1st place - $100\r\n2nd place - $50\r\n3rd place - $25",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "High-school",
+        "url": "https://btcodeclub.vercel.app/",
+        "public_votable": false,
+        "rank": 13
+    },
+    {
+        "organizers": [
+            {
+                "id": 220336,
+                "name": "L3ak"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2322/",
+        "ctf_id": 1077,
+        "weight": 24.43,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/ctf_final.png",
+        "id": 2322,
+        "title": "L3akCTF 2024",
+        "start": "2024-05-24T12:00:00+00:00",
+        "participants": 111,
+        "location": "",
+        "finish": "2024-05-26T12:00:00+00:00",
+        "description": "L3akCTF 2024 is the inaugural CTF competition organized by team L3ak!\r\n\r\nThis is an online, jeopardy-style competition open to teams and individuals worldwide. Participants will solve cybersecurity challenges with difficulty ranging from beginner to expert.\r\n\r\nCategories include crypto, web, rev, pwn, forensics, osint, hardware, and misc.\r\n\r\nDiscord: https://discord.gg/wjSVdt3a7G\r\n\r\nThank you to our sponsors who are supporting this event: Zellic, OtterSec, StackIt",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st: $500 USD\r\n2nd: $300 USD\r\n3rd: $200 USD\r\n4th: $150 USD\r\n5th: $150 USD\r\n\r\nWrite-Up Contest Winners: $200 USD\r\n(8x $25 prizes)",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.l3ak.team/",
+        "public_votable": true,
+        "rank": 219
+    },
+    {
+        "organizers": [
+            {
+                "id": 59573,
+                "name": "JohnHammond"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2364/",
+        "ctf_id": 438,
+        "weight": 41.61,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/NAHAMCON-LOGO_BRANDING_D3_A1_1.png",
+        "id": 2364,
+        "title": "NahamCon CTF 2024",
+        "start": "2024-05-23T20:00:00+00:00",
+        "participants": 228,
+        "location": "",
+        "finish": "2024-05-25T20:00:00+00:00",
+        "description": "The NahamCon 2024 CTF will run from May 23rd to May 25th, 2024.\r\n\r\nThanks to the support from you the community and our sponsors, we are pleased to offer prizes to the winners of NahamCon CTF 2024!\r\n\r\nPrizes will be outlined at https://ctf.nahamcon.com/prizes",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "NahamCon CTF returns for its FIFTH year! From the developers of VirSecCon, H@cktivityCon, BsidesBOS, GRIMMCon CTF, and NahamCon years past... join the mission and join NahamCon CTF 2024!\r\n\r\nRegistration for the CTF is accessible at https://ctf.nahamcon.com\r\n\r\nFor information on the NahamCon conference, check out https://nahamcon.com\r\n\r\nSpecial thank you to all of the events sponsors!",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.nahamcon.com/",
+        "public_votable": true,
+        "rank": 106
+    },
+    {
+        "organizers": [
+            {
+                "id": 53812,
+                "name": "tjcsc"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2321/",
+        "ctf_id": 144,
+        "weight": 35.6,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logo_96.png",
+        "id": 2321,
+        "title": "TJCTF 2024",
+        "start": "2024-05-17T18:30:00+00:00",
+        "participants": 57,
+        "location": "",
+        "finish": "2024-05-19T18:30:00+00:00",
+        "description": "TJCTF is an international cybersecurity competition hosted by TJCSC, a group of students from Thomas Jefferson High School for Science and Technology in Northern Virginia.\r\n\r\nPrizes are sponsored by Trail of Bits and Zellic.\r\n\r\nTwitter: https://twitter.com/tjctf\r\nEmail: contact@tjctf.org\r\nDiscord: https://discord.gg/w5xapGP\r\n\r\nCompetition is online.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "The US High School Division has a prize pool of $2,250:\r\n1. $1,000\r\n2. $750\r\n3. $500\r\n\r\nThe Open Division has a prize pool of $500:\r\n1. $250\r\n2. $150\r\n3. $100\r\n\r\nAll winners will also be awarded Zellic swag.",
+        "format_id": 1,
+        "onsite": true,
+        "restrictions": "Open",
+        "url": "https://tjctf.org/",
+        "public_votable": true,
+        "rank": 25
+    },
+    {
+        "organizers": [
+            {
+                "id": 112558,
+                "name": "3 Prongs And a Computer"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2325/",
+        "ctf_id": 573,
+        "weight": 24.67,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/c8/25/c825a96aa4f4770feeddc3a332d44ec9.png",
+        "id": 2325,
+        "title": "San Diego CTF 2024",
+        "start": "2024-05-10T23:59:59+00:00",
+        "participants": 101,
+        "location": "",
+        "finish": "2024-05-12T23:59:59+00:00",
+        "description": "San Diego CTF (SDCTF) is an annual Capture the Flag competition hosted by undergraduates at the University of California, San Diego (UCSD). Challenges vary across the disciplines of Open Source Intelligence, Cryptography, Web Hacking, Reverse Engineering, Binary Exploitation, Forensic Analysis, and others!\r\n\r\nSignups are open at https://ctf.sdc.tf\r\n\r\nMore information can be found at https://sdc.tf",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "$1500 prize pool!\r\n\r\n1st - $512\r\n2nd - $256\r\n3rd - $128\r\n\r\n$150 in writeup prizes\r\n\r\nWe also have prizes for top UCSD Student teams in addition to the above general prizes:\r\n\r\n1st - $256\r\n2nd - $128\r\n3rd - $64",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://sdc.tf/",
+        "public_votable": true,
+        "rank": 28
+    },
+    {
+        "organizers": [
+            {
+                "id": 201730,
+                "name": "squ1rrel"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2370/",
+        "ctf_id": 1110,
+        "weight": 24.25,
+        "duration": {
+            "hours": 12,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/squ1rrel.png",
+        "id": 2370,
+        "title": "squ1rrel CTF 2024",
+        "start": "2024-05-04T15:00:00+00:00",
+        "participants": 51,
+        "location": "",
+        "finish": "2024-05-06T03:00:00+00:00",
+        "description": "The very first edition of squ1rrel CTF hosted by the squ1rrel CTF team at Vanderbilt University! 36 hours of jeopardy-style CTF with challenges ranging from beginner-friendly to intermediate and advanced with a primary target of university students. \r\n\r\nSponsored by Trail of Bits!\r\n\r\nJoin our discord for more information: https://discord.gg/ejfNarcz",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prizes will be distributed across 2 divisions: Open and Student. The Open category is open to any and all competitors while the Student category is open to US-based University or High School students.\r\n\r\nLikely breakdown of prizes:\r\nStudent\r\n1st: $200\r\n2nd: $150\r\n3rd: $100\r\n\r\nOpen\r\n1st: $200\r\n2nd: $150\r\n3rd: $100",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.squ1rrel.dev/",
+        "public_votable": true,
+        "rank": 6
+    },
+    {
+        "organizers": [
+            {
+                "id": 87711,
+                "name": "UMDCSEC"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2323/",
+        "ctf_id": 444,
+        "weight": 48.92,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/logo_95.png",
+        "id": 2323,
+        "title": "UMDCTF 2024",
+        "start": "2024-04-26T22:00:00+00:00",
+        "participants": 93,
+        "location": "",
+        "finish": "2024-04-28T22:00:00+00:00",
+        "description": "UMDCTF 2024 is the eighth annual competition hosted by the cybersecurity club at the University of Maryland, College Park!\r\n\r\nThe CTF will run for a period of 48 hours and has two player divisions: open and academic. Challenges will feature all the categories you know and love: pwn, rev, web, crypto, forensics, and most importantly, misc.\r\n\r\nOf course, a huge thank you to our incredible sponsors: Zellic, Vector35, Trail of Bits, and ZTC <3\r\n\r\nJoin our Discord! https://discord.gg/n65kg6KuYH",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Open Division\r\n1st place: $1500 + 1 Binary Ninja Personal License\r\n2nd place: $1000 + 1 Binary Ninja Personal License\r\n3rd place: $500\r\n\r\nStudent Division\r\n1st place: $1000 + 1 Binary Ninja Personal License\r\n2nd place: $600 + 1 Binary Ninja Personal License\r\n3rd place: $400 + 1 Binary Ninja Personal License\r\n\r\nOther\r\nBest Binary Ninja Writeup: 1 Personal Binary Ninja License",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://umdctf.io/",
+        "public_votable": true,
+        "rank": 28
+    },
+    {
+        "organizers": [
+            {
+                "id": 242101,
+                "name": "cr3.mov"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2288/",
+        "ctf_id": 1074,
+        "weight": 23.96,
+        "duration": {
+            "hours": 12,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/cr3ctf_2024.png",
+        "id": 2288,
+        "title": "cr3 CTF 2024",
+        "start": "2024-04-26T13:00:00+00:00",
+        "participants": 120,
+        "location": "",
+        "finish": "2024-04-28T01:00:00+00:00",
+        "description": "cr3.mov's first CTF event.\r\nStay tuned for updates https://twitter.com/cr3mov/\r\n\r\nYou can expect challenges from rev, pwn, misc, crypto, ppc, blockchain, web, and forensics categories.\r\n\r\nDiscord: https://discord.gg/hhh4Bk2CvX\r\n\r\nAnd special thanks to our ✨ wonderful ✨ sponsors: OtterSec, Aldrin Labs, Wolfram Research, Ret 2, Offsec, and Foxie Solutions :^)",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "1st: \r\n- 3000 USDT\r\n- 10000 RIN* (~2300 USD)\r\n- Wolfram|One Personal Edition plus a one-year subscription to Wolfram|Alpha Pro (x5)\r\n- Ret 2 wargames tokens (x4)\r\n- 3-month Offseс PG practice (x1)\r\n\r\n2nd: \r\n- 1500 USDT\r\n- 5000 RIN* (~1100 USD)\r\n- Wolfram|One Personal Edition plus a one-year subscription to Wolfram|Alpha Pro (x5)\r\n- Ret 2 wargames tokens (x3)\r\n- Offsec Learn Fundamentals (x1)\r\n\r\n3rd: \r\n- 1000 USDT\r\n- 3000 RIN* (~700 USD)\r\n- Wolfram|One Personal Edition plus a one-year subscription to Wolfram|Alpha Pro (x5)\r\n- Ret 2 wargames tokens (x3)\r\n\r\nWe will additionally host a post-even writeup competition where 20 USDT prizes will be awarded to the top 10 writeup authors.\r\n\r\n* RIN - https://www.coingecko.com/en/coins/aldrin",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://2024.cr3c.tf/",
+        "public_votable": true,
+        "rank": 25
+    },
+    {
+        "organizers": [
+            {
+                "id": 78233,
+                "name": "SavedByTheShell"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2287/",
+        "ctf_id": 598,
+        "weight": 43.1,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/CTF_LOGO_20240401_190034_0000.png",
+        "id": 2287,
+        "title": "UMassCTF 2024",
+        "start": "2024-04-19T22:00:00+00:00",
+        "participants": 143,
+        "location": "",
+        "finish": "2024-04-21T22:00:00+00:00",
+        "description": "UMass CTF is running again this year!\r\n\r\nWe'll have awesome challenges in:\r\n\r\nReverse Engineering\r\nCryptography\r\nForensics\r\nBinary Exploitation\r\nWeb Exploitation\r\nAnd a bunch of misc!\r\n\r\nDiscord: https://discord.gg/YNr9qKpDf3",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "General Winner 1st place - $300, HTB 5x 1 Year VIP+ + 5x 3 month Prolabs, Offsec 1x Annual Proving Ground Subscription, 2x Premium one-month TryHackMe vouchers\r\nGeneral Winner 2nd place - $200, HTB 5x 6 Month VIP+, Offsec 1x 3month Proving Ground subscription, 2x Premium one-month TryHackMe vouchers\r\nGeneral Winner 3nd place - $150, HTB 5x 1 Month VIP+, 1x Premium one-month TryHackMe voucher\r\n\r\nUMass Winner 1st Place - $150, $150 Cybersecurity Development Credit, HTB 2x 6 Month VIP+, Offsec 1x Learn Fundamentals, 1x Giant Teddy Bear Plush, 4x Fortinet Sweatshirt, 5x Premium one-month TryHackMe vouchers\r\nUMass Winner 2nd Place - $100, $150 Cybersecurity Development Credit, HTB 2x 6 Month VIP+, 4x Fortinet Sweatshirt, 5x Premium one-month TryHackMe vouchers\r\nUMass Winner 3rd Place - $50, $150 Cybersecurity Development Credit, HTB 1x 6 Month VIP+, 4x Fortinet Sweatshirt, 5x Premium one-month TryHackMe vouchers\r\n\r\nAdditional Fortinet Hoodies will be given as supply allows to 4th, 5th, and 6th place UMass Teams.\r\n\r\nCybersecurity Development Credit prizes can be redeemed to purchase any Cybersecurity education platform subscriptions / courses of your choice. \r\n\r\nMonetary rewards can only be sent in the form of gift cards for specific vendors.",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.umasscybersec.org/",
+        "public_votable": true,
+        "rank": 33
+    },
+    {
+        "organizers": [
+            {
+                "id": 287896,
+                "name": "HACK@CIT"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2339/",
+        "ctf_id": 1109,
+        "weight": 24.57,
+        "duration": {
+            "hours": 22,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/CTF-CIT-ctftime.png",
+        "id": 2339,
+        "title": "CTF@CIT 2024",
+        "start": "2024-04-19T21:00:00+00:00",
+        "participants": 69,
+        "location": "",
+        "finish": "2024-04-21T19:00:00+00:00",
+        "description": "Join us for the first CTF@CIT!\r\n\r\nRunning from April 19th @ 5PM EST until April 21st @ 3PM EST\r\n\r\nChallenges from topics like forensics, steganography, reverse, OSINT, and misc.\r\n\r\nJoin our Discord for updates: https://discord.gg/F76hFHCC8M\r\n\r\nOver $13,000 in prizes available for students! All student participants get free prizes.\r\n\r\nSponsored by: Malcore, Hexordia, CrowdStrike, Black Hills InfoSec, Electronic Frontier Foundation, OffSec, Hex-Rays, TCM Security, and Red Hat!",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "FIRST PLACE:\r\n\r\n- 1x Any Live Hexordia Forensics Training\r\n- 1x Malcore Reverse Engineer Plan\r\n- 1x 12 Months to TCM Academy\r\n- 1x $150 Gift Card to Black Hills InfoSec's Spearphish General Store (FOR TEAM)\r\n\r\nSECOND PLACE:\r\n\r\n- 1x Any Byte-Sized Hexordia Forensics Training\r\n- 1x Malcore Cyber Analyst Plan\r\n- 1x $100 Gift Card to Black Hills\r\n- 1x 6 Months to TCM Academy\r\n- 1x $100 Gift Card to Black Hills InfoSec's Spearphish General Store (FOR TEAM)\r\n\r\nTHIRD PLACE:\r\n\r\n- 1x Any Byte-Sized Hexordia Forensics Training\r\n- 1x Malcore Analyst Plan\r\n- 1x 3 Months to TCM Academy\r\n- 1x $75 Gift Card to Black Hills InfoSec's Spearphish General Store (FOR TEAM)\r\n\r\nALL STUDENTS:\r\n\r\n- 1x Malcore Premium Plan\r\n\r\nMORE PRIZES TO BE ANNOUNCED!\r\n\r\nPrizes are provided for each team member unless (FOR TEAM) is specified, which in that case the prize is for the entire team and not each member. ",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.cyber-cit.club/",
+        "public_votable": true,
+        "rank": 28
+    },
+    {
+        "organizers": [
+            {
+                "id": 65296,
+                "name": "FITSEC"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2254/",
+        "ctf_id": 728,
+        "weight": 24.5,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "https://ctftime.org/live/2254/",
+        "logo": "https://ctftime.org//media/events/moon.png",
+        "id": 2254,
+        "title": "Space Heroes 2024",
+        "start": "2024-04-12T22:00:00+00:00",
+        "participants": 94,
+        "location": "",
+        "finish": "2024-04-14T22:00:00+00:00",
+        "description": "<a href=\"https://spaceheroes.ctfd.io/scoreboard\">Space Heroes CTF</a> returns for its third year! Hosted by <a href=\"https://research.fit.edu/fitsec/\">FITSEC</a> and <a href=\"https://www.fit.edu\">Florida Tech</a>, challenges will include all levels of difficulty (beginner to expert) for pwn, re, crypto, web, and forensics. \r\n\r\nThis year's competition will also include prizes for the top in-person competitors as we will hold in coordination with <a href=\"https://www.hackspacecon.com\">Hack Space Con 24</a>\r\n\r\nCTF Start Time : 2024-04-12T22:00:00Z\r\n\r\nCTF End Time : 2024-04-14T23:00:00Z",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://spaceheroes.ctfd.io/",
+        "public_votable": true,
+        "rank": 22
+    },
+    {
+        "organizers": [
+            {
+                "id": 284,
+                "name": "Plaid Parliament of Pwning"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2245/",
+        "ctf_id": 10,
+        "weight": 95.19,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org/media/cache/a3/83/a383e768fac0ebb6e84275dcb5ece2fa.png",
+        "id": 2245,
+        "title": "PlaidCTF 2024",
+        "start": "2024-04-12T21:00:00+00:00",
+        "participants": 183,
+        "location": "",
+        "finish": "2024-04-14T21:00:00+00:00",
+        "description": "Plaid CTF :: Hosted by Plaid Parliament of Pwning\r\n\r\nApril 12 21:00 UTC - April 14 21:00 UTC",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "TBD",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://plaidctf.com/",
+        "public_votable": true,
+        "rank": 124
+    },
+    {
+        "organizers": [
+            {
+                "id": 166729,
+                "name": "les amateurs de la competition ctf"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2226/",
+        "ctf_id": 936,
+        "weight": 24.54,
+        "duration": {
+            "hours": 13,
+            "days": 4
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/2d6bd602-ecce-47e6-8f53-b352af222287.915ceb9574bb9759b4dd16bf8a744d25_1.jpeg",
+        "id": 2226,
+        "title": "AmateursCTF 2024",
+        "start": "2024-04-05T14:00:00+00:00",
+        "participants": 248,
+        "location": "",
+        "finish": "2024-04-10T03:00:00+00:00",
+        "description": "Les Amateurs's second CTF competition! Problems are targeted for high schoolers, and will range from beginner-friendly to kernel pwn.\r\n\r\nJoin our discord for more details: discord.gg/gCX22asy65\r\n\r\nEmail: contact@amateurs.team\r\n\r\nAmateursCTF will also serve as a junior qualifier for DiceCTF!",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Prizes (tenatative):\r\n\r\nHigh School Division:\r\n\r\n1st - $500 + stickers + DiceCTF Junior Qualifier!!\r\n2nd - $300 + stickers\r\n3rd - $200 + stickers\r\n\r\nWriteup Prize Pool: \r\n$250",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.amateurs.team/",
+        "public_votable": true,
+        "rank": 21
+    },
+    {
+        "organizers": [
+            {
+                "id": 199492,
+                "name": "cursed"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2239/",
+        "ctf_id": 887,
+        "weight": 19.5,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/Screenshot_2024-01-23_at_11.45.46_AM.png",
+        "id": 2239,
+        "title": "CursedCTF 2024 Quals",
+        "start": "2024-03-30T00:00:00+00:00",
+        "participants": 171,
+        "location": "",
+        "finish": "2024-04-01T00:00:00+00:00",
+        "description": "Experience the thrill of the extraordinary at CursedCTF, the premier cybersecurity event where the impossible becomes possible. Proudly sponsored by industry leaders Google, Zellic, and Rondo, this event is a melting pot of the brightest minds in cybersecurity, challenging them in a realm where only the most skilled can triumph.",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "There will be prizes.\r\n\r\nWinners will be invited to an in-person CursedCTF finals",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://cursedc.tf/",
+        "public_votable": true,
+        "rank": 45
+    },
+    {
+        "organizers": [
+            {
+                "id": 69010,
+                "name": "hhh_"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2302/",
+        "ctf_id": 281,
+        "weight": 48.0,
+        "duration": {
+            "hours": 0,
+            "days": 2
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/UTCTF2024.png",
+        "id": 2302,
+        "title": "UTCTF 2024",
+        "start": "2024-03-29T23:00:00+00:00",
+        "participants": 291,
+        "location": "",
+        "finish": "2024-03-31T23:00:00+00:00",
+        "description": "Online, jeopardy-style CTF. Free to play, with prizes offered first, second, and third place. \r\n\r\nOpen to all! Problems will span difficulties ranging from beginner-friendly to challenging.\r\n\r\nRun by Information & Systems Security Society team at The University of Texas at Austin.\r\n\r\nMore information:\r\n- List of sponsors: https://www.isss.io/\r\n- ISSS (organization): https://www.isss.io/",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Up to $200 in prizes for the top 3 winning teams, with each prize totaling under or equal to $50. Team prizes can only be shipped to 1 location within the US. ",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://isss.io/utctf",
+        "public_votable": true,
+        "rank": 8
+    },
+    {
+        "organizers": [
+            {
+                "id": 173925,
+                "name": "Highlander Hackers"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2230/",
+        "ctf_id": 724,
+        "weight": 21.26,
+        "duration": {
+            "hours": 0,
+            "days": 1
+        },
+        "live_feed": "",
+        "logo": "https://ctftime.org//media/events/Asset_39.png",
+        "id": 2230,
+        "title": "JerseyCTF IV",
+        "start": "2024-03-23T16:00:00+00:00",
+        "participants": 87,
+        "location": "",
+        "finish": "2024-03-24T16:00:00+00:00",
+        "description": "Registration is now live!\r\n\r\nhttps://ctf.jerseyctf.com/register\r\n\r\nLocations:\r\n- Online if unable to attend in-person\r\n- In-Person @ NJIT Campus Center Ballroom, Newark, New Jersey\r\n\r\nJerseyCTF is a beginner-friendly Capture the Flag competition that aims to inspire interest in cybersecurity. \r\n\r\nHosted by the NJIT ACM and NICC organizations and the NJIT SCI program, it is geared towards students, beginners, and professionals alike. \r\n\r\nJerseyCTF provides participants with jeopardy-style questions in categories including cryptography, forensics, binary exploitation/reversing, open-source intelligence, and web exploitation.\r\n\r\n<b>Special Thanks to all of our sponsors:</b>\r\nNJCCIC\r\nAWS\r\nGoogle Cloud\r\nCrowdStrike\r\nISACA\r\nMERCK\r\nADP\r\nNJIT YWCC\r\n\r\nHosted by:\r\nNJIT Information & Cybersecurity Club\r\nACM",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "Student and Open Division Prizes:\r\n\r\n<b>First Place:</b>\r\n<ul>\r\n<li> First Choice from Prize Pool </li>\r\n<li>$1,000 cash for entire team</li>\r\n</ul>\r\n\r\n<b>Second Place:</b>\r\n<ul>\r\n<li> Second Choice from Prize Pool </li>\r\n<li>$750 cash for entire team</li>\r\n</ul>\r\n\r\n<b>Third Place:</b>\r\n<ul>\r\n<li> Third Choice from Prize Pool </li>\r\n<li>$500 cash for entire team</li>\r\n</ul>\r\n\r\n<b>Prize Pool:</b>\r\n<ul>\r\n<li>CyberSecurity Conference FutureCon Virtual Conference Voucher for each teammate </li>\r\n<li>Choice of 1 CompTIA Certification Basic Bundle (Security+, PenTest+, CySA+, or CASP+) for each teammate</li>\r\n<li>TryHackMe 6-month Subscription for each teammate</li>\r\n</ul>\r\n\r\n<b>US Participants - In Person Only:</b>\r\nFree JerseyCTF IV T-Shirt!",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://ctf.jerseyctf.com/",
+        "public_votable": true,
+        "rank": 12
+    },
+    {
+        "organizers": [
+            {
+                "id": 220408,
+                "name": "UTD TexSAW"
+            }
+        ],
+        "ctftime_url": "https://ctftime.org/event/2281/",
+        "ctf_id": 926,
+        "weight": 23.89,
+        "duration": {
+            "hours": 7,
+            "days": 1
+        },
+        "live_feed": "https://ctftime.org/live/2281/",
+        "logo": "https://ctftime.org//media/events/texsaw24.png",
+        "id": 2281,
+        "title": "Texas Security Awareness Week 2024",
+        "start": "2024-03-23T15:00:00+00:00",
+        "participants": 63,
+        "location": "",
+        "finish": "2024-03-24T22:00:00+00:00",
+        "description": "13th Annual Texas Security Awareness Week 2024 - Capture The Flag Competition set up entirely by students at the University of Texas at Dallas. This CTF is targeted for beginner to intermediate level students interested in testing their knowledge in cybersecurity.\r\n",
+        "format": "Jeopardy",
+        "is_votable_now": false,
+        "prizes": "The prizes for TexSAW 2024 will be Hack The Box gift cards:\r\n£60 ($76) per member for 1st place team\r\n£30 ($38) per member for 2nd place team\r\n£15 ($19) per member for 3rd place team\r\n\r\nIF YOU WOULD LIKE TO QUALIFY FOR PRIZES, PLEASE USE YOUR UNIVERSITY AFFILIATED EMAIL ADDRESS (.EDU) WHEN REGISTERING",
+        "format_id": 1,
+        "onsite": false,
+        "restrictions": "Open",
+        "url": "https://csi.utdallas.edu/events/texsaw-2024/",
+        "public_votable": true,
+        "rank": 15
+    }
+]

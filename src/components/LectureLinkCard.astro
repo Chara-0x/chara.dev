@@ -1,0 +1,47 @@
+---
+import Link from '@/components/Link.astro'
+import { buttonVariants } from '@/components/ui/button'
+import { cn } from '@/lib/utils'
+import { Icon } from 'astro-icon/components'
+
+interface Props {
+  href: string
+  lecture: string
+  title: string
+  icon?: string
+  class?: string
+}
+
+const {
+  href,
+  lecture,
+  title,
+  icon = 'lucide:arrow-right',
+  class: className,
+  ...rest
+} = Astro.props
+---
+
+<Link
+  href={href}
+  class={cn(
+    buttonVariants({ variant: 'outline' }),
+    'group flex size-full items-center justify-start rounded-xl px-4 py-3 text-left no-underline',
+    className,
+  )}
+  aria-label={`Read ${lecture}: ${title}`}
+  {...rest}
+>
+  <Icon
+    name={icon}
+    class="mr-2 size-4 shrink-0 transition-transform group-hover:translate-x-1"
+  />
+  <div class="flex flex-col items-start overflow-hidden text-wrap">
+    <span class="text-muted-foreground-special text-left text-xs">
+      {lecture}
+    </span>
+    <span class="w-full text-left text-sm text-balance text-ellipsis">
+      {title}
+    </span>
+  </div>
+</Link>

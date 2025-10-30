@@ -181,7 +181,7 @@ title: 'Your Post Title'
 description: 'A brief description of your post!'
 date: 2024-01-01
 tags: ['tag1', 'tag2']
-image: './image.png'
+# image: './image.png'
 authors: ['author1', 'author2']
 draft: false
 ---
