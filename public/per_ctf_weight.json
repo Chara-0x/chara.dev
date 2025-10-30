@@ -1,6 +1,18 @@
 {
-  "computed_events": 40,
+  "computed_events": 80,
   "events": [
+    {
+      "best_points": 10221.0,
+      "computed_weight": 201.06951871657753,
+      "ctftime_url": "https://ctftime.org/event/2448/",
+      "event_weight": 100.0,
+      "id": 2448,
+      "team_id": 220769,
+      "team_points": 10221.0,
+      "team_rank": 1,
+      "title": "0CTF 2024",
+      "total_teams": 187
+    },
     {
       "best_points": 5038.0,
       "computed_weight": 200.278940027894,
@@ -12,6 +24,18 @@
       "team_rank": 1,
       "title": "HITCON CTF 2025",
       "total_teams": 717
+    },
+    {
+      "best_points": 4579.0,
+      "computed_weight": 186.80633802816902,
+      "ctftime_url": "https://ctftime.org/event/2403/",
+      "event_weight": 92.75,
+      "id": 2403,
+      "team_id": 220769,
+      "team_points": 4579.0,
+      "team_rank": 1,
+      "title": "ASIS CTF Finals 2024",
+      "total_teams": 142
     },
     {
       "best_points": 16666.0,
@@ -62,6 +86,18 @@
       "total_teams": 276
     },
     {
+      "best_points": 10513.0,
+      "computed_weight": 122.19511066937632,
+      "ctftime_url": "https://ctftime.org/event/2437/",
+      "event_weight": 98.14,
+      "id": 2437,
+      "team_id": 220769,
+      "team_points": 7645.0,
+      "team_rank": 2,
+      "title": "hxp 38C3 CTF",
+      "total_teams": 137
+    },
+    {
       "best_points": 7659.0,
       "computed_weight": 116.36065715526492,
       "ctftime_url": "https://ctftime.org/event/2718/",
@@ -72,6 +108,30 @@
       "team_rank": 3,
       "title": "Google Capture The Flag 2025",
       "total_teams": 276
+    },
+    {
+      "best_points": 3676.0,
+      "computed_weight": 105.09995423340962,
+      "ctftime_url": "https://ctftime.org/event/2517/",
+      "event_weight": 52.43,
+      "id": 2517,
+      "team_id": 222911,
+      "team_points": 3676.0,
+      "team_rank": 1,
+      "title": "BlockCTF 2024",
+      "total_teams": 437
+    },
+    {
+      "best_points": 7938.0,
+      "computed_weight": 101.9776160990712,
+      "ctftime_url": "https://ctftime.org/event/2449/",
+      "event_weight": 50.91,
+      "id": 2449,
+      "team_id": 222911,
+      "team_points": 7938.0,
+      "team_rank": 1,
+      "title": "BuckeyeCTF 2024",
+      "total_teams": 646
     },
     {
       "best_points": 5126.0,
@@ -108,6 +168,18 @@
       "team_rank": 8,
       "title": "justCTF 2025",
       "total_teams": 238
+    },
+    {
+      "best_points": 5133.0,
+      "computed_weight": 72.03458064516128,
+      "ctftime_url": "https://ctftime.org/event/2502/",
+      "event_weight": 35.94,
+      "id": 2502,
+      "team_id": 222911,
+      "team_points": 5133.0,
+      "team_rank": 1,
+      "title": "LakeCTF Quals 24-25",
+      "total_teams": 465
     },
     {
       "best_points": 7830.0,
@@ -182,6 +254,18 @@
       "total_teams": 195
     },
     {
+      "best_points": 5910.0,
+      "computed_weight": 50.807664484707765,
+      "ctftime_url": "https://ctftime.org/event/2274/",
+      "event_weight": 46.33,
+      "id": 2274,
+      "team_id": 280900,
+      "team_points": 5260.0,
+      "team_rank": 5,
+      "title": "BCACTF 5.0",
+      "total_teams": 822
+    },
+    {
       "best_points": 22105.0,
       "computed_weight": 49.08860759493671,
       "ctftime_url": "https://ctftime.org/event/2731/",
@@ -192,6 +276,18 @@
       "team_rank": 1,
       "title": "R3CTF 2025",
       "total_teams": 553
+    },
+    {
+      "best_points": 20511.0,
+      "computed_weight": 42.69756686222061,
+      "ctftime_url": "https://ctftime.org/event/2302/",
+      "event_weight": 48.0,
+      "id": 2302,
+      "team_id": 280900,
+      "team_points": 15512.0,
+      "team_rank": 8,
+      "title": "UTCTF 2024",
+      "total_teams": 854
     },
     {
       "best_points": 2213.0,
@@ -216,6 +312,18 @@
       "team_rank": 11,
       "title": "ImaginaryCTF 2025",
       "total_teams": 1414
+    },
+    {
+      "best_points": 7776.0,
+      "computed_weight": 32.57261991823008,
+      "ctftime_url": "https://ctftime.org/event/2402/",
+      "event_weight": 35.69,
+      "id": 2402,
+      "team_id": 222911,
+      "team_points": 5117.0,
+      "team_rank": 4,
+      "title": "GlacierCTF 2024",
+      "total_teams": 789
     },
     {
       "best_points": 17285.0,
@@ -266,6 +374,18 @@
       "total_teams": 1074
     },
     {
+      "best_points": 14906.0,
+      "computed_weight": 28.305281322009048,
+      "ctftime_url": "https://ctftime.org/event/2323/",
+      "event_weight": 48.92,
+      "id": 2323,
+      "team_id": 280900,
+      "team_points": 7683.0,
+      "team_rank": 28,
+      "title": "UMDCTF 2024",
+      "total_teams": 562
+    },
+    {
       "best_points": 4456.0,
       "computed_weight": 27.57462427073495,
       "ctftime_url": "https://ctftime.org/event/2694/",
@@ -276,6 +396,18 @@
       "team_rank": 10,
       "title": "GPN CTF 2025",
       "total_teams": 633
+    },
+    {
+      "best_points": 4350.0,
+      "computed_weight": 25.686777792848282,
+      "ctftime_url": "https://ctftime.org/event/2375/",
+      "event_weight": 72.06,
+      "id": 2375,
+      "team_id": 280900,
+      "team_points": 1370.0,
+      "team_rank": 67,
+      "title": "ångstromCTF 2024",
+      "total_teams": 831
     },
     {
       "best_points": 11479.0,
@@ -290,6 +422,42 @@
       "total_teams": 611
     },
     {
+      "best_points": 10292.0,
+      "computed_weight": 24.812433048137006,
+      "ctftime_url": "https://ctftime.org/event/2378/",
+      "event_weight": 24.23,
+      "id": 2378,
+      "team_id": 280900,
+      "team_points": 9794.0,
+      "team_rank": 19,
+      "title": "n00bzCTF 2024",
+      "total_teams": 964
+    },
+    {
+      "best_points": 4913.0,
+      "computed_weight": 24.640001045514353,
+      "ctftime_url": "https://ctftime.org/event/2424/",
+      "event_weight": 25.0,
+      "id": 2424,
+      "team_id": 222911,
+      "team_points": 3930.0,
+      "team_rank": 6,
+      "title": "TSG CTF 2024",
+      "total_teams": 305
+    },
+    {
+      "best_points": 6405.0,
+      "computed_weight": 23.85785815602837,
+      "ctftime_url": "https://ctftime.org/event/2398/",
+      "event_weight": 21.8,
+      "id": 2398,
+      "team_id": 353591,
+      "team_points": 6405.0,
+      "team_rank": 12,
+      "title": "CSAW CTF Qualification Round 2024",
+      "total_teams": 1175
+    },
+    {
       "best_points": 11598.0,
       "computed_weight": 23.749033771453586,
       "ctftime_url": "https://ctftime.org/event/2668/",
@@ -300,6 +468,18 @@
       "team_rank": 4,
       "title": "Kashi CTF 2025",
       "total_teams": 728
+    },
+    {
+      "best_points": 4462.0,
+      "computed_weight": 22.839444020167257,
+      "ctftime_url": "https://ctftime.org/event/2438/",
+      "event_weight": 100.0,
+      "id": 2438,
+      "team_id": 222911,
+      "team_points": 705.0,
+      "team_rank": 33,
+      "title": "Hack.lu CTF 2024",
+      "total_teams": 155
     },
     {
       "best_points": 8327.0,
@@ -324,6 +504,30 @@
       "team_rank": 10,
       "title": "CrewCTF 2025",
       "total_teams": 667
+    },
+    {
+      "best_points": 11593.0,
+      "computed_weight": 21.466926082469943,
+      "ctftime_url": "https://ctftime.org/event/2370/",
+      "event_weight": 24.25,
+      "id": 2370,
+      "team_id": 280900,
+      "team_points": 8170.0,
+      "team_rank": 6,
+      "title": "squ1rrel CTF 2024",
+      "total_teams": 378
+    },
+    {
+      "best_points": 3759.0,
+      "computed_weight": 21.330065397401587,
+      "ctftime_url": "https://ctftime.org/event/2479/",
+      "event_weight": 82.0,
+      "id": 2479,
+      "team_id": 222911,
+      "team_points": 595.0,
+      "team_rank": 29,
+      "title": "Blue Water CTF 2024",
+      "total_teams": 83
     },
     {
       "best_points": 9727.0,
@@ -362,6 +566,42 @@
       "total_teams": 1054
     },
     {
+      "best_points": 9552.0,
+      "computed_weight": 17.843036101041506,
+      "ctftime_url": "https://ctftime.org/event/2287/",
+      "event_weight": 43.1,
+      "id": 2287,
+      "team_id": 280900,
+      "team_points": 3375.0,
+      "team_rank": 33,
+      "title": "UMassCTF 2024",
+      "total_teams": 417
+    },
+    {
+      "best_points": 3860.0,
+      "computed_weight": 17.43469321948727,
+      "ctftime_url": "https://ctftime.org/event/2281/",
+      "event_weight": 23.89,
+      "id": 2281,
+      "team_id": 280900,
+      "team_points": 2460.0,
+      "team_rank": 15,
+      "title": "Texas Security Awareness Week 2024",
+      "total_teams": 409
+    },
+    {
+      "best_points": 4153.0,
+      "computed_weight": 17.362242391179024,
+      "ctftime_url": "https://ctftime.org/event/2498/",
+      "event_weight": 24.43,
+      "id": 2498,
+      "team_id": 222911,
+      "team_points": 2228.0,
+      "team_rank": 6,
+      "title": "Hack The Vote 2024",
+      "total_teams": 559
+    },
+    {
       "best_points": 36885.0,
       "computed_weight": 14.704228912080016,
       "ctftime_url": "https://ctftime.org/event/2759/",
@@ -386,6 +626,18 @@
       "total_teams": 406
     },
     {
+      "best_points": 9324.0,
+      "computed_weight": 13.808034475733319,
+      "ctftime_url": "https://ctftime.org/event/2321/",
+      "event_weight": 35.6,
+      "id": 2321,
+      "team_id": 280900,
+      "team_points": 3077.0,
+      "team_rank": 25,
+      "title": "TJCTF 2024",
+      "total_teams": 518
+    },
+    {
       "best_points": 8771.0,
       "computed_weight": 13.353717733928557,
       "ctftime_url": "https://ctftime.org/event/2736/",
@@ -398,6 +650,54 @@
       "total_teams": 553
     },
     {
+      "best_points": 18306.0,
+      "computed_weight": 12.656200268822628,
+      "ctftime_url": "https://ctftime.org/event/2426/",
+      "event_weight": 31.83,
+      "id": 2426,
+      "team_id": 280900,
+      "team_points": 6630.0,
+      "team_rank": 43,
+      "title": "PatriotCTF 2024",
+      "total_teams": 1360
+    },
+    {
+      "best_points": 14101.0,
+      "computed_weight": 12.359201556295309,
+      "ctftime_url": "https://ctftime.org/event/2226/",
+      "event_weight": 24.54,
+      "id": 2226,
+      "team_id": 280900,
+      "team_points": 6304.0,
+      "team_rank": 21,
+      "title": "AmateursCTF 2024",
+      "total_teams": 1160
+    },
+    {
+      "best_points": 27931.0,
+      "computed_weight": 11.411136553998912,
+      "ctftime_url": "https://ctftime.org/event/2230/",
+      "event_weight": 21.26,
+      "id": 2230,
+      "team_id": 280900,
+      "team_points": 12326.0,
+      "team_rank": 12,
+      "title": "JerseyCTF IV",
+      "total_teams": 520
+    },
+    {
+      "best_points": 9812.0,
+      "computed_weight": 11.206146094475296,
+      "ctftime_url": "https://ctftime.org/event/2540/",
+      "event_weight": 49.48,
+      "id": 2540,
+      "team_id": 222911,
+      "team_points": 1642.0,
+      "team_rank": 20,
+      "title": "BackdoorCTF 2024",
+      "total_teams": 476
+    },
+    {
       "best_points": 6296.0,
       "computed_weight": 11.185593515194329,
       "ctftime_url": "https://ctftime.org/event/2467/",
@@ -408,6 +708,42 @@
       "team_rank": 15,
       "title": "x3CTF 2025 (feat. mvm)",
       "total_teams": 527
+    },
+    {
+      "best_points": 7819.0,
+      "computed_weight": 11.065317187757474,
+      "ctftime_url": "https://ctftime.org/event/2304/",
+      "event_weight": 52.06,
+      "id": 2304,
+      "team_id": 280900,
+      "team_points": 1433.0,
+      "team_rank": 51,
+      "title": "idekCTF 2024",
+      "total_teams": 1070
+    },
+    {
+      "best_points": 20670.0,
+      "computed_weight": 10.583761279066175,
+      "ctftime_url": "https://ctftime.org/event/2364/",
+      "event_weight": 41.61,
+      "id": 2364,
+      "team_id": 280900,
+      "team_points": 4859.0,
+      "team_rank": 106,
+      "title": "NahamCon CTF 2024",
+      "total_teams": 2632
+    },
+    {
+      "best_points": 11521.0,
+      "computed_weight": 9.228809774490413,
+      "ctftime_url": "https://ctftime.org/event/2254/",
+      "event_weight": 24.5,
+      "id": 2254,
+      "team_id": 280900,
+      "team_points": 3666.0,
+      "team_rank": 22,
+      "title": "Space Heroes 2024",
+      "total_teams": 614
     },
     {
       "best_points": 10224.0,
@@ -434,6 +770,30 @@
       "total_teams": 557
     },
     {
+      "best_points": 4123.0,
+      "computed_weight": 8.046936373568835,
+      "ctftime_url": "https://ctftime.org/event/2325/",
+      "event_weight": 24.67,
+      "id": 2325,
+      "team_id": 280900,
+      "team_points": 1042.0,
+      "team_rank": 28,
+      "title": "San Diego CTF 2024",
+      "total_teams": 214
+    },
+    {
+      "best_points": 24340.0,
+      "computed_weight": 7.964054299324965,
+      "ctftime_url": "https://ctftime.org/event/2339/",
+      "event_weight": 24.57,
+      "id": 2339,
+      "team_id": 280900,
+      "team_points": 6640.0,
+      "team_rank": 28,
+      "title": "CTF@CIT 2024",
+      "total_teams": 553
+    },
+    {
       "best_points": 14472.0,
       "computed_weight": 6.673964169180384,
       "ctftime_url": "https://ctftime.org/event/2629/",
@@ -444,6 +804,42 @@
       "team_rank": 44,
       "title": "L3akCTF 2025",
       "total_teams": 1587
+    },
+    {
+      "best_points": 8734.0,
+      "computed_weight": 6.56576085243647,
+      "ctftime_url": "https://ctftime.org/event/2572/",
+      "event_weight": 24.48,
+      "id": 2572,
+      "team_id": 280900,
+      "team_points": 1930.0,
+      "team_rank": 29,
+      "title": "World Wide CTF 2024",
+      "total_teams": 581
+    },
+    {
+      "best_points": 8620.0,
+      "computed_weight": 5.669419153104494,
+      "ctftime_url": "https://ctftime.org/event/2446/",
+      "event_weight": 24.23,
+      "id": 2446,
+      "team_id": 222911,
+      "team_points": 1754.0,
+      "team_rank": 104,
+      "title": "1337UP LIVE CTF",
+      "total_teams": 1061
+    },
+    {
+      "best_points": 11272.0,
+      "computed_weight": 5.130924531364251,
+      "ctftime_url": "https://ctftime.org/event/2248/",
+      "event_weight": 34.0,
+      "id": 2248,
+      "team_id": 280900,
+      "team_points": 1332.0,
+      "team_rank": 221,
+      "title": "vsCTF 2024",
+      "total_teams": 961
     },
     {
       "best_points": 12435.0,
@@ -470,6 +866,30 @@
       "total_teams": 897
     },
     {
+      "best_points": 19062.0,
+      "computed_weight": 4.226275853730253,
+      "ctftime_url": "https://ctftime.org/event/2239/",
+      "event_weight": 19.5,
+      "id": 2239,
+      "team_id": 280900,
+      "team_points": 3691.0,
+      "team_rank": 45,
+      "title": "CursedCTF 2024 Quals",
+      "total_teams": 11056
+    },
+    {
+      "best_points": 15735.0,
+      "computed_weight": 2.7664387638861614,
+      "ctftime_url": "https://ctftime.org/event/2288/",
+      "event_weight": 23.96,
+      "id": 2288,
+      "team_id": 280900,
+      "team_points": 1080.0,
+      "team_rank": 25,
+      "title": "cr3 CTF 2024",
+      "total_teams": 398
+    },
+    {
       "best_points": 4801.0,
       "computed_weight": 2.7025673445803338,
       "ctftime_url": "https://ctftime.org/event/2576/",
@@ -480,214 +900,74 @@
       "team_rank": 90,
       "title": "Srdnlen CTF 2025 Quals",
       "total_teams": 847
+    },
+    {
+      "best_points": 3736.0,
+      "computed_weight": 2.594503856479029,
+      "ctftime_url": "https://ctftime.org/event/2245/",
+      "event_weight": 95.19,
+      "id": 2245,
+      "team_id": 280900,
+      "team_points": 51.0,
+      "team_rank": 124,
+      "title": "PlaidCTF 2024",
+      "total_teams": 486
+    },
+    {
+      "best_points": 24538.0,
+      "computed_weight": 2.3587532082150062,
+      "ctftime_url": "https://ctftime.org/event/2450/",
+      "event_weight": 24.88,
+      "id": 2450,
+      "team_id": 280900,
+      "team_points": 1660.0,
+      "team_rank": 47,
+      "title": "jailCTF 2024",
+      "total_teams": 711
+    },
+    {
+      "best_points": 4612.0,
+      "computed_weight": 1.8762487102610874,
+      "ctftime_url": "https://ctftime.org/event/2560/",
+      "event_weight": 23.08,
+      "id": 2560,
+      "team_id": 280900,
+      "team_points": 211.0,
+      "team_rank": 203,
+      "title": "CYBERGON CTF_2024",
+      "total_teams": 336
+    },
+    {
+      "best_points": 21623.0,
+      "computed_weight": 0.6490059598497369,
+      "ctftime_url": "https://ctftime.org/event/2322/",
+      "event_weight": 24.43,
+      "id": 2322,
+      "team_id": 280900,
+      "team_points": 300.0,
+      "team_rank": 219,
+      "title": "L3akCTF 2024",
+      "total_teams": 497
+    },
+    {
+      "best_points": 11540.0,
+      "computed_weight": 0.0,
+      "ctftime_url": "https://ctftime.org/event/2340/",
+      "event_weight": 0.0,
+      "id": 2340,
+      "team_id": 280900,
+      "team_points": 9540.0,
+      "team_rank": 13,
+      "title": "BTCTF I",
+      "total_teams": 142
     }
   ],
-  "generated_at": "2025-10-30T18:44:38.461142+00:00",
+  "generated_at": "2025-10-30T18:48:13.652226+00:00",
   "missing": [
-    {
-      "id": 2540,
-      "reason": "no_event_results",
-      "title": "BackdoorCTF 2024"
-    },
-    {
-      "id": 2572,
-      "reason": "no_event_results",
-      "title": "World Wide CTF 2024"
-    },
-    {
-      "id": 2560,
-      "reason": "no_event_results",
-      "title": "CYBERGON CTF_2024"
-    },
-    {
-      "id": 2402,
-      "reason": "no_event_results",
-      "title": "GlacierCTF 2024"
-    },
-    {
-      "id": 2449,
-      "reason": "no_event_results",
-      "title": "BuckeyeCTF 2024"
-    },
-    {
-      "id": 2426,
-      "reason": "no_event_results",
-      "title": "PatriotCTF 2024"
-    },
-    {
-      "id": 2450,
-      "reason": "no_event_results",
-      "title": "jailCTF 2024"
-    },
-    {
-      "id": 2398,
-      "reason": "no_event_results",
-      "title": "CSAW CTF Qualification Round 2024"
-    },
-    {
-      "id": 2304,
-      "reason": "no_event_results",
-      "title": "idekCTF 2024"
-    },
-    {
-      "id": 2378,
-      "reason": "no_event_results",
-      "title": "n00bzCTF 2024"
-    },
-    {
-      "id": 2248,
-      "reason": "no_event_results",
-      "title": "vsCTF 2024"
-    },
-    {
-      "id": 2274,
-      "reason": "no_event_results",
-      "title": "BCACTF 5.0"
-    },
-    {
-      "id": 2375,
-      "reason": "no_event_results",
-      "title": "ångstromCTF 2024"
-    },
-    {
-      "id": 2340,
-      "reason": "no_event_results",
-      "title": "BTCTF I"
-    },
-    {
-      "id": 2322,
-      "reason": "no_event_results",
-      "title": "L3akCTF 2024"
-    },
-    {
-      "id": 2364,
-      "reason": "no_event_results",
-      "title": "NahamCon CTF 2024"
-    },
-    {
-      "id": 2321,
-      "reason": "no_event_results",
-      "title": "TJCTF 2024"
-    },
-    {
-      "id": 2325,
-      "reason": "no_event_results",
-      "title": "San Diego CTF 2024"
-    },
-    {
-      "id": 2370,
-      "reason": "no_event_results",
-      "title": "squ1rrel CTF 2024"
-    },
-    {
-      "id": 2323,
-      "reason": "no_event_results",
-      "title": "UMDCTF 2024"
-    },
-    {
-      "id": 2288,
-      "reason": "no_event_results",
-      "title": "cr3 CTF 2024"
-    },
-    {
-      "id": 2287,
-      "reason": "no_event_results",
-      "title": "UMassCTF 2024"
-    },
-    {
-      "id": 2339,
-      "reason": "no_event_results",
-      "title": "CTF@CIT 2024"
-    },
-    {
-      "id": 2254,
-      "reason": "no_event_results",
-      "title": "Space Heroes 2024"
-    },
-    {
-      "id": 2245,
-      "reason": "no_event_results",
-      "title": "PlaidCTF 2024"
-    },
-    {
-      "id": 2226,
-      "reason": "no_event_results",
-      "title": "AmateursCTF 2024"
-    },
-    {
-      "id": 2239,
-      "reason": "no_event_results",
-      "title": "CursedCTF 2024 Quals"
-    },
-    {
-      "id": 2302,
-      "reason": "no_event_results",
-      "title": "UTCTF 2024"
-    },
-    {
-      "id": 2230,
-      "reason": "no_event_results",
-      "title": "JerseyCTF IV"
-    },
-    {
-      "id": 2281,
-      "reason": "no_event_results",
-      "title": "Texas Security Awareness Week 2024"
-    },
-    {
-      "id": 2424,
-      "reason": "no_event_results",
-      "title": "TSG CTF 2024"
-    },
-    {
-      "id": 2502,
-      "reason": "no_event_results",
-      "title": "LakeCTF Quals 24-25"
-    },
-    {
-      "id": 2446,
-      "reason": "no_event_results",
-      "title": "1337UP LIVE CTF"
-    },
-    {
-      "id": 2517,
-      "reason": "no_event_results",
-      "title": "BlockCTF 2024"
-    },
-    {
-      "id": 2498,
-      "reason": "no_event_results",
-      "title": "Hack The Vote 2024"
-    },
-    {
-      "id": 2438,
-      "reason": "no_event_results",
-      "title": "Hack.lu CTF 2024"
-    },
-    {
-      "id": 2479,
-      "reason": "no_event_results",
-      "title": "Blue Water CTF 2024"
-    },
     {
       "id": -1,
       "reason": "no_event_results",
       "title": "Aliyun CTF 2025"
-    },
-    {
-      "id": 2448,
-      "reason": "no_event_results",
-      "title": "0CTF 2024"
-    },
-    {
-      "id": 2403,
-      "reason": "no_event_results",
-      "title": "ASIS CTF Finals 2024"
-    },
-    {
-      "id": 2437,
-      "reason": "no_event_results",
-      "title": "hxp 38C3 CTF"
     }
   ],
   "total_events": 81

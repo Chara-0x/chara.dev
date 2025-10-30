@@ -38,7 +38,8 @@ def load_events(path: Path) -> List[Dict[str, Any]]:
     return data
 
 
-def fetch_results(url: str) -> Dict[str, Any]:
+def fetch_results(year: Optional[int] = None) -> Dict[str, Any]:
+    url = RESULTS_URL if year is None else f'{RESULTS_URL}{year}/'
     request = Request(
         url,
         headers={
@@ -58,6 +59,31 @@ def fetch_results(url: str) -> Dict[str, Any]:
     if not isinstance(data, dict):
         raise ValueError('Unexpected results payload structure')
     return data
+
+
+def parse_event_year(event: Dict[str, Any]) -> Optional[int]:
+    start = event.get('start')
+    if not isinstance(start, str):
+        return None
+    try:
+        return datetime.fromisoformat(start).year
+    except ValueError:
+        return None
+
+
+def collect_results(events: Iterable[Dict[str, Any]]) -> Dict[str, Any]:
+    years = {parse_event_year(event) for event in events}
+    years = {year for year in years if year is not None}
+    payload: Dict[str, Any] = {}
+
+    if not years:
+        return fetch_results()
+
+    for year in sorted(years):
+        data = fetch_results(year)
+        payload.update(data)
+
+    return payload
 
 
 def _safe_int(value: Any) -> Optional[int]:
@@ -137,7 +163,7 @@ def compute_event_weight(
 
 def main() -> None:
     events = load_events(INPUT_PATH)
-    results = fetch_results(RESULTS_URL)
+    results = collect_results(events)
 
     computed: List[Dict[str, Any]] = []
     missing: List[Dict[str, Any]] = []
