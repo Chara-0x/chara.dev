@@ -40,7 +40,7 @@ const { class: className, gap = 'default', smooth = false } = Astro.props
       <main class="grow">
         <div class={cn(
           "mx-auto flex grow flex-col px-4",
-          Astro.url.pathname !== "/" && "max-w-3xl",
+          Astro.url.pathname !== "/" && "max-w-3xl gap-y-6",
           className
         )}>
           <slot />
@@ -54,7 +54,7 @@ const { class: className, gap = 'default', smooth = false } = Astro.props
           <main class="grow">
             <div class={cn(
               "mx-auto flex grow flex-col px-4",
-              Astro.url.pathname !== "/" && "max-w-3xl",
+              Astro.url.pathname !== "/" && "max-w-3xl gap-y-6",
               className
             )}>
               <slot />
