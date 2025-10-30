@@ -12,7 +12,6 @@ import type { Payload } from 'recharts/types/component/DefaultTooltipContent'
 interface TrajectoryPoint {
   index: number
   label: string
-  rank: number
   weight: number
   title: string
   dateLabel: string
@@ -24,13 +23,7 @@ interface ContestTrajectoryChartProps {
 }
 
 const tooltipFormatter = (value: number, name: string) => {
-  if (name === 'Avg Rank') {
-    return [`#${Number(value).toFixed(1)}`, name]
-  }
-  if (name === 'Avg Weight') {
-    return [`${Number(value).toFixed(1)}`, name]
-  }
-  return [value, name]
+  return [`${Number(value).toFixed(1)}`, name]
 }
 
 const tooltipLabelFormatter = (
@@ -45,7 +38,7 @@ const ContestTrajectoryChart = ({ data }: ContestTrajectoryChartProps) => {
   if (!data.length) {
     return (
       <div className="flex h-44 items-center justify-center rounded-2xl border border-dashed border-border/60 bg-background/80 text-sm text-muted-foreground">
-        No ranked finishes logged yet.
+        No computed weights logged yet.
       </div>
     )
   }
@@ -68,16 +61,6 @@ const ContestTrajectoryChart = ({ data }: ContestTrajectoryChartProps) => {
           tick={{ fill: 'var(--muted-foreground)', fontSize: 11 }}
         />
         <YAxis
-          yAxisId="rank"
-          dataKey="rank"
-          domain={['dataMin', 'dataMax']}
-          allowDecimals={false}
-          width={48}
-          tick={{ fill: 'var(--muted-foreground)', fontSize: 11 }}
-        />
-        <YAxis
-          yAxisId="weight"
-          orientation="right"
           width={48}
           tick={{ fill: 'var(--muted-foreground)', fontSize: 11 }}
           domain={['auto', 'auto']}
@@ -94,24 +77,18 @@ const ContestTrajectoryChart = ({ data }: ContestTrajectoryChartProps) => {
           }}
         />
         <Line
-          yAxisId="rank"
-          type="monotone"
-          dataKey="rank"
-          name="Avg Rank"
-          stroke="color-mix(in srgb, var(--accent) 65%, black 35%)"
-          strokeWidth={2.6}
-          dot={{ r: 4, stroke: 'color-mix(in srgb, var(--accent) 65%, black 35%)', strokeWidth: 1.4, fill: 'var(--background)' }}
-          activeDot={{ r: 6 }}
-        />
-        <Line
-          yAxisId="weight"
           type="monotone"
           dataKey="weight"
-          name="Avg Weight"
-          stroke="color-mix(in srgb, var(--primary) 40%, white 60%)"
-          strokeWidth={1.8}
-          dot={{ r: 3, stroke: 'color-mix(in srgb, var(--primary) 40%, white 60%)', strokeWidth: 1, fill: 'var(--background)' }}
-          activeDot={{ r: 5 }}
+          name="Avg Computed Weight"
+          stroke="color-mix(in srgb, var(--primary) 100%, white 20%)"
+          strokeWidth={2.2}
+          dot={{
+            r: 3.6,
+            stroke: 'color-mix(in srgb, var(--primary) 100%, white 20%)',
+            strokeWidth: 1.2,
+            fill: 'var(--background)',
+          }}
+          activeDot={{ r: 5.4 }}
         />
       </LineChart>
     </ResponsiveContainer>

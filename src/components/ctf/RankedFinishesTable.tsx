@@ -53,8 +53,16 @@ const sortComparators: Record<SortKey, (a: RankedFinish, b: RankedFinish) => num
 }
 
 const RankedFinishesTable = ({ entries }: RankedFinishesTableProps) => {
-  const [sortKey, setSortKey] = useState<SortKey>('rank')
-  const [direction, setDirection] = useState<SortDirection>('asc')
+  const [sortKey, setSortKey] = useState<SortKey>('weight')
+  const [direction, setDirection] = useState<SortDirection>('desc')
+
+  const defaultDirection: Record<SortKey, SortDirection> = {
+    rank: 'asc',
+    title: 'asc',
+    date: 'asc',
+    teams: 'asc',
+    weight: 'desc',
+  }
 
   const sortedEntries = useMemo(() => {
     const comparator = sortComparators[sortKey]
@@ -68,7 +76,7 @@ const RankedFinishesTable = ({ entries }: RankedFinishesTableProps) => {
       return
     }
     setSortKey(key)
-    setDirection(key === 'title' || key === 'date' ? 'asc' : 'asc')
+    setDirection(defaultDirection[key])
   }
 
   const renderSortIcon = (key: SortKey) => {

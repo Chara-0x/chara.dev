@@ -156,6 +156,52 @@ def compute_event_weight(
             'event_weight': weight,
             'total_teams': total_teams,
             'computed_weight': rating,
+            'source': 'ctftime',
+        },
+        None,
+    )
+
+
+def compute_event_weight_from_event_data(
+    event: Dict[str, Any],
+) -> Tuple[Optional[Dict[str, Any]], Optional[str]]:
+    rank = _safe_int(event.get('rank'))
+    if rank is None or rank <= 0:
+        return None, 'missing_rank'
+
+    team_points = _safe_float(event.get('team_points'))
+    best_points = _safe_float(event.get('best_points'))
+    if team_points is None or best_points is None or team_points <= 0 or best_points <= 0:
+        return None, 'missing_points'
+
+    total_teams = (
+        _safe_int(event.get('total_teams'))
+        or _safe_int(event.get('participants'))
+        or _safe_int(event.get('participant_count'))
+        or 0
+    )
+    if total_teams <= 0:
+        return None, 'missing_participant_count'
+
+    weight = _safe_float(event.get('weight')) or 0.0
+    if weight <= 0:
+        return None, 'missing_weight'
+
+    rating = calculate_team_rating(team_points, best_points, rank, total_teams, weight)
+
+    return (
+        {
+            'id': event.get('id'),
+            'title': event.get('title'),
+            'ctftime_url': event.get('ctftime_url') or '',
+            'team_id': event.get('team_id'),
+            'team_rank': rank,
+            'team_points': team_points,
+            'best_points': best_points,
+            'event_weight': weight,
+            'total_teams': total_teams,
+            'computed_weight': rating,
+            'source': 'event_entry',
         },
         None,
     )
@@ -172,14 +218,26 @@ def main() -> None:
         event_id = event.get('id')
         key = str(event_id)
         event_results = results.get(key)
-        if not isinstance(event_results, dict):
-            missing.append({'id': event_id, 'title': event.get('title'), 'reason': 'no_event_results'})
-            continue
-        result, error = compute_event_weight(event, event_results)
-        if result:
-            computed.append(result)
+
+        result: Optional[Dict[str, Any]] = None
+        error: Optional[str] = None
+
+        if isinstance(event_results, dict):
+            result, error = compute_event_weight(event, event_results)
         else:
-            missing.append({'id': event_id, 'title': event.get('title'), 'reason': error or 'unknown'})
+            error = 'no_event_results'
+
+        if not result:
+            fallback_result, fallback_error = compute_event_weight_from_event_data(event)
+            if fallback_result:
+                computed.append(fallback_result)
+                continue
+            error = fallback_error or error
+        else:
+            computed.append(result)
+            continue
+
+        missing.append({'id': event_id, 'title': event.get('title'), 'reason': error or 'unknown'})
 
     computed.sort(key=lambda item: item.get('computed_weight', 0), reverse=True)
 
