@@ -183,7 +183,7 @@ def run_puller() -> None:
 
 def main() -> None:
     now = datetime.now(timezone.utc)
-    start = now - timedelta(days=14)
+    start = now - timedelta(days=30)
     start_ts = int(start.timestamp())
     finish_ts = int(now.timestamp())
 

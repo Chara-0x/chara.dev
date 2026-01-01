@@ -1,5 +1,5 @@
 {
-  "computed_events": 82,
+  "computed_events": 84,
   "events": [
     {
       "best_points": 10221.0,
@@ -117,6 +117,19 @@
       "team_rank": 3,
       "title": "Google Capture The Flag 2025",
       "total_teams": 276
+    },
+    {
+      "best_points": 5020.0,
+      "computed_weight": 106.49973268901579,
+      "ctftime_url": "https://ctftime.org/event/2924/",
+      "event_weight": 98.14,
+      "id": 2924,
+      "source": "ctftime",
+      "team_id": 220769,
+      "team_points": 4111.0,
+      "team_rank": 4,
+      "title": "hxp 39C3 CTF",
+      "total_teams": 263
     },
     {
       "best_points": 3676.0,
@@ -247,6 +260,19 @@
       "team_rank": 5,
       "title": "TJCTF 2025",
       "total_teams": 722
+    },
+    {
+      "best_points": 10351.0,
+      "computed_weight": 58.6471469521346,
+      "ctftime_url": "https://ctftime.org/event/2997/",
+      "event_weight": 96.88,
+      "id": 2997,
+      "source": "ctftime",
+      "team_id": 220769,
+      "team_points": 4692.0,
+      "team_rank": 7,
+      "title": "0CTF 2025",
+      "total_teams": 453
     },
     {
       "best_points": 14833.0,
@@ -1068,7 +1094,7 @@
       "total_teams": 142
     }
   ],
-  "generated_at": "2025-10-30T19:18:07.718390+00:00",
+  "generated_at": "2026-01-01T13:08:51.091845+00:00",
   "missing": [],
-  "total_events": 82
+  "total_events": 84
 }

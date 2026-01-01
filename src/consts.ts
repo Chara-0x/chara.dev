@@ -2,13 +2,15 @@ import type { IconMap, SocialLink, Site } from '@/types'
 
 export const SITE: Site = {
   title: 'Chara\'s Blog',
-  description:
-    'Haiiiiiiiii! ^-^',
+  description: 'Haiiiiiiiii! ^-^',
   href: 'https://chara.dev',
   author: 'Chara',
   locale: 'en-US',
   featuredPostCount: 2,
   postsPerPage: 5,
+  DESCRIPTION: 'Haiiiiiiiii! ^-^',
+  AUTHOR: 'Chara',
+  NUM_POSTS_ON_HOMEPAGE: 4,
 }
 
 export const NAV_LINKS: SocialLink[] = [
@@ -38,6 +40,7 @@ export const SOCIAL_LINKS: SocialLink[] = [
   {
     href: 'https://github.com/chara-0x',
     label: 'GitHub',
+    username: 'chara-0x',
   },
   {
     href: 'https://twitter.com/chara0x00',

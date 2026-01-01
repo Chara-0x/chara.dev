@@ -6,11 +6,15 @@ export type Site = {
   locale: string
   featuredPostCount: number
   postsPerPage: number
+  DESCRIPTION?: string
+  AUTHOR?: string
+  NUM_POSTS_ON_HOMEPAGE?: number
 }
 
 export type SocialLink = {
   href: string
   label: string
+  username?: string
 }
 
 export type IconMap = {
