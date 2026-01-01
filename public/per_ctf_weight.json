@@ -1,5 +1,5 @@
 {
-  "computed_events": 82,
+  "computed_events": 91,
   "events": [
     {
       "best_points": 10221.0,
@@ -26,6 +26,19 @@
       "team_rank": 1,
       "title": "HITCON CTF 2025",
       "total_teams": 717
+    },
+    {
+      "best_points": 3508.0,
+      "computed_weight": 200.24479804161567,
+      "ctftime_url": "https://ctftime.org/event/2862/",
+      "event_weight": 100.0,
+      "id": 2862,
+      "source": "ctftime",
+      "team_id": 222911,
+      "team_points": 3508.0,
+      "team_rank": 1,
+      "title": "SECCON CTF 14 Quals",
+      "total_teams": 817
     },
     {
       "best_points": 4579.0,
@@ -119,6 +132,32 @@
       "total_teams": 276
     },
     {
+      "best_points": 5020.0,
+      "computed_weight": 106.49973268901579,
+      "ctftime_url": "https://ctftime.org/event/2924/",
+      "event_weight": 98.14,
+      "id": 2924,
+      "source": "ctftime",
+      "team_id": 220769,
+      "team_points": 4111.0,
+      "team_rank": 4,
+      "title": "hxp 39C3 CTF",
+      "total_teams": 263
+    },
+    {
+      "best_points": 7821.0,
+      "computed_weight": 105.34902584493041,
+      "ctftime_url": "https://ctftime.org/event/2714/",
+      "event_weight": 52.57,
+      "id": 2714,
+      "source": "ctftime",
+      "team_id": 222911,
+      "team_points": 7821.0,
+      "team_rank": 1,
+      "title": "GlacierCTF 2025",
+      "total_teams": 503
+    },
+    {
       "best_points": 3676.0,
       "computed_weight": 105.09995423340962,
       "ctftime_url": "https://ctftime.org/event/2517/",
@@ -130,6 +169,19 @@
       "team_rank": 1,
       "title": "BlockCTF 2024",
       "total_teams": 437
+    },
+    {
+      "best_points": 6767.0,
+      "computed_weight": 103.94244020350861,
+      "ctftime_url": "https://ctftime.org/event/2915/",
+      "event_weight": 71.35,
+      "id": 2915,
+      "source": "ctftime",
+      "team_id": 222911,
+      "team_points": 6442.0,
+      "team_rank": 2,
+      "title": "BackdoorCTF 2025",
+      "total_teams": 602
     },
     {
       "best_points": 7938.0,
@@ -169,6 +221,19 @@
       "team_rank": 6,
       "title": "DownUnderCTF 2025",
       "total_teams": 1664
+    },
+    {
+      "best_points": 2467.0,
+      "computed_weight": 90.18072289156626,
+      "ctftime_url": "https://ctftime.org/event/2944/",
+      "event_weight": 45.0,
+      "id": 2944,
+      "source": "ctftime",
+      "team_id": 222911,
+      "team_points": 2467.0,
+      "team_rank": 1,
+      "title": "LakeCTF Quals 25-26",
+      "total_teams": 498
     },
     {
       "best_points": 5443.0,
@@ -249,6 +314,19 @@
       "total_teams": 722
     },
     {
+      "best_points": 10351.0,
+      "computed_weight": 58.6471469521346,
+      "ctftime_url": "https://ctftime.org/event/2997/",
+      "event_weight": 96.88,
+      "id": 2997,
+      "source": "ctftime",
+      "team_id": 220769,
+      "team_points": 4692.0,
+      "team_rank": 7,
+      "title": "0CTF 2025",
+      "total_teams": 453
+    },
+    {
       "best_points": 14833.0,
       "computed_weight": 58.3773442923811,
       "ctftime_url": "https://ctftime.org/event/2641/",
@@ -299,6 +377,19 @@
       "team_rank": 10,
       "title": "DEF CON CTF Qualifier 2025",
       "total_teams": 195
+    },
+    {
+      "best_points": 2374.0,
+      "computed_weight": 51.24999999999999,
+      "ctftime_url": "https://ctftime.org/event/2999/",
+      "event_weight": 25.0,
+      "id": 2999,
+      "source": "ctftime",
+      "team_id": 220769,
+      "team_points": 2374.0,
+      "team_rank": 1,
+      "title": "2025 Qiangwang Mimic Defense Final - AI Division",
+      "total_teams": 40
     },
     {
       "best_points": 5910.0,
@@ -416,6 +507,19 @@
       "team_rank": 3,
       "title": "BroncoCTF 2025",
       "total_teams": 806
+    },
+    {
+      "best_points": 8481.0,
+      "computed_weight": 29.930131683588094,
+      "ctftime_url": "https://ctftime.org/event/2982/",
+      "event_weight": 25.0,
+      "id": 2982,
+      "source": "ctftime",
+      "team_id": 222911,
+      "team_points": 7481.0,
+      "team_rank": 5,
+      "title": "CSAW CTF Final Round 2025",
+      "total_teams": 47
     },
     {
       "best_points": 11952.0,
@@ -598,6 +702,19 @@
       "team_rank": 29,
       "title": "Blue Water CTF 2024",
       "total_teams": 83
+    },
+    {
+      "best_points": 10132.0,
+      "computed_weight": 21.002413825153656,
+      "ctftime_url": "https://ctftime.org/event/2883/",
+      "event_weight": 50.0,
+      "id": 2883,
+      "source": "ctftime",
+      "team_id": 222911,
+      "team_points": 3776.0,
+      "team_rank": 39,
+      "title": "BuckeyeCTF 2025",
+      "total_teams": 715
     },
     {
       "best_points": 9727.0,
@@ -1068,7 +1185,13 @@
       "total_teams": 142
     }
   ],
-  "generated_at": "2025-10-30T19:18:07.718390+00:00",
-  "missing": [],
-  "total_events": 82
+  "generated_at": "2026-01-01T13:16:14.505268+00:00",
+  "missing": [
+    {
+      "id": 3022,
+      "reason": "missing_points",
+      "title": "Advent of CTF 2025"
+    }
+  ],
+  "total_events": 92
 }
