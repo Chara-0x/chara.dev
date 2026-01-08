@@ -1,0 +1,7 @@
+---
+import EquationPlotter, { type EquationPlotterProps } from './EquationPlotter'
+
+const props = Astro.props as EquationPlotterProps
+---
+
+<EquationPlotter client:only="react" {...props} />

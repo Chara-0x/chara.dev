@@ -1,0 +1,154 @@
+---
+title: "Differential Equations!"
+description: "Notes on my UCSB Math 4A (Differential Equations) course."
+date: 2026-01-03
+tags: ["Math", "UCSBB"]
+image: "./banner.png"
+authors: ["Chara"]
+---
+
+import Callout from '@/components/Callout.astro'
+import EquationPlot from '@/components/EquationPlot.astro'
+
+### Def. 1 - Order
+
+If $y^{(n)}$ is the highest order derivative of $y$ that appears in (1), then we say (1) is the $n$th order ODE.
+
+In other words, an equation has order $n$ if this equation contains $y^{(n)}$, and doesn't contain any higher order derivative of $y$.
+
+<Callout variant="example" title="Example 1">
+$y'' + 2y = 0$ — this is a 2nd order ODE.
+</Callout>
+
+<Callout variant="example" title="Example 2">
+$y'''y + (y'')^2 = x^2$ — this is a 3rd order ODE.
+</Callout>
+
+---
+
+### Def. 2 - Linear vs Nonlinear
+
+If an equation has the form
+
+$$
+a_n(x)\cdot y^{(n)}(x) + a_{n-1}(x)\cdot y^{(n-1)}(x) + \cdots + a_2(x)\cdot y^{(2)}(x) + a_1(x)\cdot y'(x) + a_0(x)\cdot y(x) + a(x) = 0
+$$
+
+here $a_n(x), a_{n-1}(x), \ldots, a_1(x), a_0(x)$ are functions of $x$ (functions we already know), then we say this is a linear ODE. Otherwise, this is a non-linear ODE.
+
+<Callout variant="example" title="Example 3">
+$x^2\cdot y'' + \sin(x)\cdot y' + x^3 = 0$ — this is a 2nd order linear ODE.
+
+If we let $a_2(x) = x^2$, $a_1(x) = \sin(x)$, $a_0(x) = 0$, $a(x) = x^3$, then (2) has the form
+
+$$
+a_2(x)\cdot y^{(2)}(x) + a_1(x)\cdot y^{(1)}(x) + a_0(x)\cdot y(x) + a(x) = 0.
+$$
+</Callout>
+
+<Callout variant="example" title="Example 4">
+$y'(x) + y^2(x) = x^2$ — this is a 1st order non-linear ODE, because we can't write it in the form of (2) due to the existence of $y^2$.
+</Callout>
+
+<Callout variant="example" title="Example 5">
+$y''(x)\cdot y(x) + y'(x) = x$ — this is a 2nd order non-linear ODE due to the existence of $y''(x)\cdot y(x)$.
+</Callout>
+
+In a linear equation, you can always separate $y(x)$, $y'(x)$, $y''(x)$ (no products like $y''(x)\cdot y(x)$).
+
+---
+
+### Def. 3 - Solution
+
+If $y=y(x)$ satisfies (solves)
+
+$$
+F\bigl(x, y(x), y'(x), y''(x)\bigr) = 0 \quad (1)
+$$
+
+then we say $y(x)$ is a solution of (1).
+
+
+#### **First-order linear ODE**
+
+$$
+\frac{dy}{dx} + P(x)\cdot y = Q(x)
+$$
+
+here $P(x), Q(x)$ are functions of $x$. This is a 1st order linear ODE.
+
+If $a_1(x) = 1$, $a_0(x) = P(x)$, and $a(x) = -Q(x)$, then (3) can be written as
+
+$$
+a_1(x)\cdot y^{(1)}(x) + a_0(x)\cdot y(x) + a(x) = 0.
+$$
+
+--- 
+
+{/* <Callout variant="example" title="Example 6"> */}
+$$
+\frac{dy}{dx} + 2\cdot y(x) = 0 \quad (4)
+$$
+
+We times $e^{2x}$ on both sides of (4), then we have
+
+$$
+e^{2x}\cdot \frac{dy}{dx} + 2\cdot e^{2x}\cdot y(x) = 0 \quad (5)
+$$
+
+From (5), we obtain
+
+$$
+\bigl(e^{2x}\cdot y(x)\bigr)' = 0.
+$$
+
+$$
+\bigl(e^{2x}\cdot y(x)\bigr)' = (e^{2x})'\cdot y(x) + e^{2x}\cdot y'(x) = 2\cdot e^{2x}\cdot y(x) + e^{2x}\cdot y'(x).
+$$
+
+Since if $f' = 0$, then $f=C$ (a constant), from the above we have
+
+$$
+e^{2x}\cdot y(x) = C,
+\quad
+y(x) = \frac{C}{e^{2x}} = C\cdot e^{-2x},
+$$
+
+here $C$ can be any constant.
+
+Plotting one solution curve for $y = C\cdot e^{-2x}$ (take $C = 1$):
+
+<EquationPlot
+  title="Example 6:"
+  equation="y = C*e^{-2x}"
+  description="C = 1 shown"
+  expression="C * exp(-2 * x)"
+  params={{ C: 1 }}
+  xRange={[0, 3]}
+  samples={240}
+/>
+{/* </Callout> */}
+
+Slope field for the differential equation $y' = y - x$:
+
+<EquationPlot
+  title="Slope field: y' = y - x"
+  description="Grid of slopes over [-3,3] with density 18"
+  expression="y - x"
+  mode="slope"
+  xRange={[-3, 3]}
+  yRange={[-3, 3]}
+  gridSize={18}
+/>
+
+3D surface for $z = \sin(x)\cos(y)$:
+
+<EquationPlot
+  title="Surface: z = sin(x)cos(y)"
+  expression="sin(x) * cos(y)"
+  mode="surface"
+  xRange={[-4, 4]}
+  yRange={[-4, 4]}
+  zRange={[-1, 1]}
+  gridSize={30}
+/>

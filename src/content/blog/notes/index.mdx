@@ -1,0 +1,203 @@
+---
+
+title: 'Differential Equations!'
+description: 'Notes on my UCSB Math 4B (Differential Equations) course.'
+date: 2026-01-07
+tags: ['Math', 'UCSBB',]
+image: './banner.png'
+authors: ['Chara']
+---
+{/* 
+Proof today
+
+<Callout variant="proposition" title="Proposition 1">
+A proposition is a statement that is true or false
+(Although every statement is true but here no it depends).
+</Callout>
+
+Example of propositions:
+\sum^10_{i=1} i = 50 <- thats a FALSE proposition
+\prod^5_{i=-5} i = 0 <- that's a TRUE proposition
+Zip codes in USA have exactly 7 digits. <- that's a FALSE proposition
+For all integers x, 2x is an even #. <- that's a TRUE proposition
+
+All of them are propositions.
+
+---
+Examples that are NOT propositions:
+
+for integer x, x+1 is even <- NOT a proposition (because it depends on x)
+7*8 <- NOT a proposition (because it's incomplete)
+x^2 +1 = 2 <- NOT a proposition (because it depends on x)
+Atlanta airport is busiest airport in USA <- NOT a proposition (because it's debatable on what "busiest" means)
+
+---
+
+for all V x in Z, 2x is even <- that's a TRUE proposition
+\forall x \in Z, 2x is odd <- false prop
+\forall x \in Z, 2x > x <- false prop
+(so before the x is not defined / not qunatified , but here x is defined for every integer, we can proof it's false so it's a proposition)
+by showing a counter example
+opposite : \exists x \in Z, 2x <= x: x-1, -2<= -1
+
+Key thing: if u want to show a proposition is false, u just need to find one counter example.
+but when u want to show a proposition is true, u need to proof or show it for all cases.
+
+---
+Proposition P & quad
+AND = conjunction: P ^ Q = P and Q : true if both P and Q are true
+OR = disjunction: P v Q = P or Q : true if P is true and/or Q is true
+XOR = exclusive or: P ⊕ Q : true if exactly one of P or Q is true
+NOT = negation: \bar P or ¬P : true if P is false then ¬P is true, if P is true then ¬P is false
+
+Truth tables:
+        AND      OR    XOR    NOT
+P | Q | P^Q | P v Q | P ⊕ Q | ¬P
+T | T |  T  |   T   |   F   |  F
+T | F |  F  |   T   |   T   |  F
+F | T |  F  |   T   |   T   |  T
+F | F |  F  |   F   |   F   |  T
+
+---
+ => this means implies
+P => Q : P implies Q 
+if P is true then Q is true
+P | Q | P=>Q
+T | T |   T
+T | F |   F
+F | T |   T
+F | F |   T
+
+let S = { x \in N : x^2 = 5}, S = empty set 
+if x \in S, then x is odd
+
+// red - 
+this proposition is vacously true because x \in S is never satisfied
+
+---
+P = my university is UCSB
+Q = my university is next to the ocean
+R = my university is surrounded by Goleta
+
+at here, P is **hypothesis**, Q is **conclusion**:
+T: P => Q (original statement)
+if my uni is UCSB, then my university is next to the ocean
+
+
+F: Q => P (converse)
+if my uni is next to the ocean, then my university is UCSB (false because there are other unis next to the ocean)
+
+\barQ => \barP (**contrapositive**)
+if my uni is NOT next ocean, then my uni is NOT UCSB (true)
+
+P => Q is same as \barQ => \barP
+Contrapositive is logically equivalent to the original statement
+
+                      original       contrapositive
+P | Q | \barQ | \barP | P => Q | \barQ => \barP  | Q => P (converse)
+T | T | \red  F   | \red  F   | \red T |  \red T |  T
+T | F | \red  T   | \red  F   | \red F |  \red F |  T
+F | T | \red  F   |  \red T   |   T    |  \red T |  F
+F | F | \red  T   | \red  T   |   T    |  \red T |  F
+so P => Q is equivalent to \barQ => \barP contrapositive
+
+hypothesis => conclusion
+\bar con. => \bar hyp.
+
+--- 
+P => Q is true, then Q is **necessary condition** for P
+
+P is **sufficient condition** for Q, 
+because if P holds, then Q holds.
+
+P <=> Q means ( P => Q ) ^ (Q => P)
+               original AND converse
+[-
+| P iff Q
+| P if and only if Q
+| if P then Q & if Q then P
+[-
+equivalent: P & Q are equivalent
+to show P <=> Q, we need to show both directions
+=> P => Q
+& <= Q => P
+\forall n ( P(n) ^ Q(n) ) 
+                  <=>  ( \forall n P(n) ) ^ ( \forall n Q(n) )
+
+     P(n) Q(n)
+n=1 | ... ...
+n=2 | ... ...
+LHS of the equation is showing row by row is true
+RHS of the equation is showing column by column is true
+just some explanation is enough
+
+to show its not equivalent, u need to show a counter exmaple - just one implitation that it's false.
+
+---
+Proof by contrapositive:
+P => Q we'll show \barQ => \barP
+_Lemma 1_: Let n be an integer. 
+If n^2 is even, then n is even.
+
+~~ _Proof:_ n^2 = 2k => \sqrt(n^2) ... (Not eazy to proof )~~
+
+_Proof:_ We'll show the contrapositive:
+  if n is odd then n^2 is odd.
+Let n be an odd integer, 
+Thus, n=2k + 1 for some integer k.
+Now we'll compute n^2 & substitude n=2k+1:
+n^2 = (2k + 1)^2 = 4k^2 + 4k + 1 = 2(2k^2 + 2k) + 1
+Since k is an integer, Then 2k^2 + 2k is also an integer.
+Thus, n^2 = 2m + 1 where m= 2k^2 + 2k is an integer and hence n^2 is odd.
+which completes the proof. \blacksquare
+
+---
+
+_Direct proof:_
+Lemma 2: Sum of any two even integers is even. 
+_Proof:_ 
+Let i & j be even integers,
+Thus, i = 2k & j = 2l where k & l are integers.
+Need to show that: i+j = 2m where m is an integer & hence i+j is even.
+Since k & l are integers then k+l is an integer
+Thus, i+j = 2m where m = k+l is an integer, so i+j is even. \blacksquare
+
+---
+Proof by contradiction:
+show P is true
+we'll assume \barP is true
+\barP => (R ^ \barR) (for some proposition R)
+
+---
+
+Lemma 3: sqrt(2) is irrational.
+_Proof:_ 
+Suppose that \sqrt 2 is rational.
+Hence, there exsits integers a & b != 0 
+where \sqrt 2 = a/b
+let's assume a/b is lowest terms so a&b have no common factor.
+Now square both sides:
+2 = a^2 / b^2
+=> a^2 = 2b^2  
+Since b is an integer, then b^2 is an integer, so a^2 is even.
+And by Lemma 1, a is even. 
+So a = 2k for some int k.
+2b^2 = a^2 = (2k)^2 = 4k^2 = 2(2k^2)
+devide both sides by 2:
+b^2 = 2k^2
+Since k is an integer, then k^2 is an integer, and hence b^2 = 2m where m=k^2 is an integer, 
+so b^2 is even, then b is even. 
+We showed a & b are both even so they have common factor, which is a contradiction =><= 
+\blacksquare
+
+---
+_Pigeonhole Principle:_
+n pigeons into m containers where n > m
+then for any arrangement, >= 1 container has >= 2 pigeons.
+_Proof:_
+Assume all m container have <= 1 pigeon.
+Then <= m pigeons assigned
+Thus, n-m are unassigned
+      n-m > 0, >=1 is unassigned.
+      =><=
+      \blacksquare */}

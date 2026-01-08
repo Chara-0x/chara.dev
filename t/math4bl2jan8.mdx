@@ -1,0 +1,59 @@
+Todays' note Jan 8 Math 4b
+
+\dy/dx + P(x)y = Q(x) this is a first order linear ODE, 
+Here P(x), Q(x) are given functions. In other word, we already known.
+
+So how to solve it?
+We times e^\int P(x) dx on both sides on equation (1), then (1) becomes e^\int P(x) dx * dy/dx + e^\int P(x) dx * P(x)y = e^\int P(x) dx * Q(x) (2)
+
+(e^\int P(x) dx * y)' = (e^\int P(x) dx)' * y(x) + e ^\int P(x) dx * y'(x) = e^\int P(x) dx * (\int P(x)dx)' * y(x) + e^\int P(x) dx * y'(x)
+= e^\int P(x) dx * P(x) * y(x) + e^\int P(x) dx * y'(x)  (3)
+
+chain rule: (e^f(x))' = e^f(x)
+
+the derivative of an antiderivative of some function is the function itself.
+
+
+From (2) and (3), we obtain that the derivative of the function 
+(e^\int P(x) dx * y(x))' = e^\int P(x) dx * Q(x) (4)
+e^\int P(x) dx * y(x) = \int e^\int P(x) dx * Q(x) dx
+y(x) = \int e^\int P(x) dx * Q(x) dx / e^\int P(x) dx
+
+we want to find the approprate function mu(x) so that after we times mu(x) on both sides of (1), the LHS becomes the derivative of certain function.
+mu(x) * dy/dx + mu(x) * P(x) * y = mu(x) * Q(x)
+so mu(x) dy/dx + mu(x) P(x) y(x) = (mu(x) y(x))'
+obviously, e^\int P(x) dx is approprate function.
+
+(its the integrating factor)
+
+
+Example 1:
+dy / dx + 2y = x e^(-x) (5)
+P(x) = 2
+\int P(x) dx = 2x
+then e^\int P(x) dx = e^(2x)
+
+we times e^(2x) on both sides of (5):
+e^(2x) dy/dx + 2 e^(2x) y = x e^(x) (6)
+(e^2x y)' = x e^(x) (7)
+
+
+e^2x*y = \int x e^(x) dx (8)
+\int x e^(x) dx = \int x (e^(x))' dx 
+= x *e^x - \int 1 * e^(x) dx (integration by part - \int f' g + \int f g' = \int (fg)' = fg + C)
+= x e^(x) - \int e^(x) dx + C
+= x e^x - e^x + C = (x-1) e^x + C (9)
+
+From (8) and (9), we have
+e^(2x) * y(x) = (x-1) e^x + C
+y(x) = (x-1) e^-x + C e^(-2x), here C is a constant.
+
+
+Example 2:
+dy/dx + 1/x y(x) = x^3 (10)
+(x>0)
+P(x) = 1/x
+\int P(x) dx = ln x 
+e^\int P(x) dx = e^ln x
+and e^ln x = x
+ 

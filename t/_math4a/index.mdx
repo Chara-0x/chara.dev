@@ -1,0 +1,308 @@
+---
+title: "Differential Equations!"
+description: "Notes on my UCSB Math 4A (Differential Equations) course."
+date: 2026-01-03
+tags: ["Math", "UCSBB"]
+image: "./banner.png"
+authors: ["Chara"]
+---
+
+## Definition 1 (Order)
+
+If $y^{(n)}$ is the highest order derivative of $y$ that appears in (1), then we say (1) is the $n$th order ODE.
+
+In other words, an equation has order $n$ if this equation contains $y^{(n)}$, and doesn't contain any higher order derivative of $y$.
+
+**Example 1:** $y'' + 2y = 0$ — this is a 2nd order ODE.
+
+**Example 2:** $y'''y + (y'')^2 = x^2$ — this is a 3rd order ODE.
+
+---
+
+## Definition 2 (Linear vs Nonlinear)
+
+If an equation has the form
+
+$$
+a_n(x)\cdot y^{(n)}(x) + a_{n-1}(x)\cdot y^{(n-1)}(x) + \cdots + a_2(x)\cdot y^{(2)}(x) + a_1(x)\cdot y'(x) + a_0(x)\cdot y(x) + a(x) = 0
+$$
+
+here $a_n(x), a_{n-1}(x), \ldots, a_1(x), a_0(x)$ are functions of $x$ (functions we already know), then we say this is a linear ODE. Otherwise, this is a non-linear ODE.
+
+**Example 3:** $x^2\cdot y'' + \sin(x)\cdot y' + x^3 = 0$ — this is a 2nd order linear ODE.
+
+If we let $a_2(x) = x^2$, $a_1(x) = \sin(x)$, $a_0(x) = 0$, $a(x) = x^3$, then (2) has the form
+
+$$
+a_2(x)\cdot y^{(2)}(x) + a_1(x)\cdot y^{(1)}(x) + a_0(x)\cdot y(x) + a(x) = 0.
+$$
+
+**Example 4:** $y'(x) + y^2(x) = x^2$ — this is a 1st order non-linear ODE, because we can't write it in the form of (2) due to the existence of $y^2$.
+
+**Example 5:** $y''(x)\cdot y(x) + y'(x) = x$ — this is a 2nd order non-linear ODE due to the existence of $y''(x)\cdot y(x)$.
+
+In a linear equation, you can always separate $y(x)$, $y'(x)$, $y''(x)$ (no products like $y''(x)\cdot y(x)$).
+
+---
+
+## Definition 3 (Solution)
+
+If $y=y(x)$ satisfies (solves)
+
+$$
+F\bigl(x, y(x), y'(x), y''(x)\bigr) = 0 \quad (1)
+$$
+
+then we say $y(x)$ is a solution of (1).
+
+
+### **First-order linear ODE**
+
+$$
+\frac{dy}{dx} + P(x)\cdot y = Q(x)
+$$
+
+here $P(x), Q(x)$ are functions of $x$. This is a 1st order linear ODE.
+
+If $a_1(x) = 1$, $a_0(x) = P(x)$, and $a(x) = -Q(x)$, then (3) can be written as
+
+$$
+a_1(x)\cdot y^{(1)}(x) + a_0(x)\cdot y(x) + a(x) = 0.
+$$
+
+
+**Example 6:**
+
+$$
+\frac{dy}{dx} + 2\cdot y(x) = 0 \quad (4)
+$$
+
+We times $e^{2x}$ on both sides of (4), then we have
+
+$$
+e^{2x}\cdot \frac{dy}{dx} + 2\cdot e^{2x}\cdot y(x) = 0 \quad (5)
+$$
+
+From (5), we obtain
+
+$$
+\bigl(e^{2x}\cdot y(x)\bigr)' = 0.
+$$
+
+$$
+\bigl(e^{2x}\cdot y(x)\bigr)' = (e^{2x})'\cdot y(x) + e^{2x}\cdot y'(x) = 2\cdot e^{2x}\cdot y(x) + e^{2x}\cdot y'(x).
+$$
+
+Since if $f' = 0$, then $f=C$ (a constant), from the above we have
+
+$$
+e^{2x}\cdot y(x) = C,
+\quad
+y(x) = \frac{C}{e^{2x}} = C\cdot e^{-2x},
+$$
+
+here $C$ can be any constant.
+
+
+
+### 0. Background & Introduction:
+
+Assuming knowning single variable calculus
+
+A differential equaiton in general is a equation that involves the derivatives of an unknown function y = y(x)
+for example:
+f'(x) = x^2 + 1
+you know some function satisfies this equation, and goal of this class is to find this function y = y(x)
+
+typically we write a differential equation in the form of
+\frac{dy}{dx} = x^2 + 1
+e.g. here is y(x) = \frac{x^3}{3} + x + C, C is any constant - we have a collection that satisfies this equation
+
+so like if we have 
+\frac{d^2y}{dx^2} = x - in this function we have a second derivative of y, 
+and by find a solution means find a function y = y(x) that satisfies this equation
+\frac{dx}{dx} = \frac{x^2}{2} + C
+so here y(x) = \frac{x^3}{6} + C*x + D
+So as if u have 2 derivatives, u will have 2 constants C and D
+
+sin(\frac{dy}{dx}) = \frac{d^2y}{dx^2}
+
+One of the main goal of this class is that in the end we can classify different types of differential equations
+
+### 1. Basic Terminology
+
+#### What is a differential equation?
+A differential equation is an equation that involves the derivatives of an unknown function y = y(x)
+our goal is to find all such functions that satisfies
+
+#### Ordinary Differential Equations (ODE)
+Functions of 1-variable 
+
+#### Orders of ODE(order of a differential equation)
+1st order: e.g. \frac{dy}{dx} + (\frac{dy}{dx})^2 = x
+2nd order: e.g. \frac{d^2y}{dx^2} + 3\frac{dy}{dx} + 2y = 0
+3rd order: e.g. \frac{d^3y}{dx^3} + y\frac{d^2y}{dx^2} = sin(x)
+
+####  Linear Differential Equations
+f_n(x) * \frac{d^ny}{dx^n} + f_(n-1)(x) * \frac{d^(n-1)y}{dx^(n-1)} + ... + f_1(x) * \frac{dy}{dx} + f_0(x) * y = g(x)
+
+so for example, cos(x)\frac{dy}{dx} = 0 is a linear differential equation
+because we don't consider x as a variable, here because x is not a variable, so cos(x) is just a function of x
+
+####  Homogeneous Linear ODE
+ g(x) = 0 is called homogeneous linear differential equation
+ so like \frac{d^2y}{dx^2} - cos(x) * \frac{dy}{dx} = 0 is a homogeneous linear differential equation
+
+
+### 2. Solve ODE
+
+#### Seperable ODE
+it's in a form of 
+\frac{dy}{dx} = f(x) * g(y)
+
+we can rewrite it as
+\frac{dy}{g(y)} = f(x)dx
+and then we can integrate both sides
+\int \frac{1}{g(y)} = \int f(x)
+
+\frac{dy}{dx} = e^x * y
+\frac{dy}{y} = e^x dx
+\ln|y| = e^x + C
+\abs{y} = e^(e^x + C)
+       = e^C * e^(e^x) 
+       = C_1 * e^(e^x)
+
+And this would classify as a solution to this differential equation
+and then we can also get the nagitive solution as well which we will talk later.
+The class is basically different manipulation numbers and equation.
+
+#### Initial value problem
+
+For example, in physics u have acceleration of g = 9.8 m/s^2, which acceleration is the second derivative of position s(t)
+So when we saying we know the acceleration, we mean that we know the second derivative of s(t)
+when I throw up a ball to air, it will have some *initial volocity v_0* at *initial position s_0*
+and those are the intial values. 
+so this initial value is defined how high or how fast i throw
+
+Initial value (IVP) some differntial Equation and a collection of values of y, \frac{dy}{dx}, \frac{d^2y}{dx^2} ...
+
+e.g.
+\frac{dy}{dx} = x
+
+solutoin set / family of solutoins / solutoin set:
+in other word the every solutoin of this equation is 
+y=\frac{1}{2}^x + C
+
+\frac{d^2y}{dx^2} = a
+\frac{dy}{dx} = ax + C
+y = \frac{a}{2}x^2 + C*x + D
+so if i have 2 constant, We need 2 initial values to determine a unique solution (if we have non linear equation, this logic dosn't apply)
+
+so if given y(0) = 1 and y(1) = 5 and we can determine the unique solution.
+
+in another sernialo, if we have 
+\frac{dy}{dx}(0) = 7
+
+
+#### Non-uniqueness example (nonlinear IVP)
+
+Consider the differential equation
+
+$$
+\frac{dy}{dt} = a\cdot y^{2/3},
+\qquad
+y(0)=0.
+$$
+
+This is **1st order** and **nonlinear** (because of $y^{2/3}$).  
+For linear ODEs, “1 initial value $\Rightarrow$ unique solution” is usually true, but here it can fail.
+
+---
+
+### Solution 1 (the obvious one)
+
+Let
+
+$$
+y(t) \equiv 0.
+$$
+
+Then $\frac{dy}{dt}=0$, and the right-hand side is $a\cdot 0^{2/3}=0$.  
+So $y(t)=0$ satisfies the ODE, and also satisfies $y(0)=0$.
+
+---
+
+### Solution 2 (a different solution with the same initial value)
+
+Define a piecewise function:
+
+$$
+y(t)=
+\begin{cases}
+\left(\frac{a t}{3}\right)^3, & t<0, \\
+0, & t\ge 0.
+\end{cases}
+$$
+
+Now verify it solves the ODE.
+
+**Step 1: compute $y'(t)$.**
+
+For $t<0$,
+
+$$
+y(t)=\left(\frac{a t}{3}\right)^3=\frac{a^3}{27}t^3
+\quad\Rightarrow\quad
+y'(t)=\frac{a^3}{9}t^2.
+$$
+
+For $t>0$, $y(t)=0$ so $y'(t)=0$.
+
+At $t=0$, the left derivative is $\lim_{t\to 0^-}\frac{a^3}{9}t^2=0$ and the right derivative is $0$, so $y'(0)=0$.
+
+So overall,
+
+$$
+y'(t)=
+\begin{cases}
+\frac{a^3}{9}t^2, & t<0,\\
+0, & t\ge 0.
+\end{cases}
+$$
+
+**Step 2: compute $a\cdot y(t)^{2/3}$.**
+
+For $t<0$,
+
+$$
+y(t)^{2/3}=\left(\left(\frac{a t}{3}\right)^3\right)^{2/3}=\left(\frac{a t}{3}\right)^2=\frac{a^2}{9}t^2,
+$$
+
+so
+
+$$
+a\cdot y(t)^{2/3}=\frac{a^3}{9}t^2.
+$$
+
+For $t\ge 0$, $y(t)=0$, so $a\cdot y^{2/3}=0$.
+
+Therefore,
+
+$$
+y'(t)=a\cdot y(t)^{2/3}
+$$
+
+for all $t$, and also $y(0)=0$.
+
+So this piecewise function is **another** solution to the **same** IVP.
+
+---
+
+### Conclusion
+
+We found **two distinct solutions** that both satisfy $y(0)=0$:
+
+- $y(t)\equiv 0$
+- $y(t)=\left(\frac{a t}{3}\right)^3$ for $t<0$, and $0$ for $t\ge 0$
+
+This kind of “weird stuff” happens because the equation is **nonlinear**, and the function $y^{2/3}$ becomes **infinitely steep near $y=0$**, so the usual uniqueness theorem conditions fail.
