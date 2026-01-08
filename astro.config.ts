@@ -1,4 +1,5 @@
 import { defineConfig } from 'astro/config'
+import type { PluginOption } from 'vite'
 
 import mdx from '@astrojs/mdx'
 import react from '@astrojs/react'
@@ -82,7 +83,8 @@ export default defineConfig({
     icon(),
   ],
   vite: {
-    plugins: [tailwindcss()],
+    // Cast to align Vite plugin types between Astro's bundled Vite and the Tailwind plugin
+    plugins: tailwindcss() as unknown as PluginOption[],
   },
   image: {
     service: {

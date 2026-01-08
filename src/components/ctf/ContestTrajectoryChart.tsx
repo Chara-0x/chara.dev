@@ -22,8 +22,8 @@ interface ContestTrajectoryChartProps {
   data: TrajectoryPoint[]
 }
 
-const tooltipFormatter = (value: number, name: string) => {
-  return [`${Number(value).toFixed(1)}`, name]
+const tooltipFormatter = (value: number | undefined, name: string) => {
+  return [`${Number(value ?? 0).toFixed(1)}`, name]
 }
 
 const tooltipLabelFormatter = (
