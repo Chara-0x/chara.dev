@@ -1,0 +1,162 @@
+---
+title: 'Echelon Forms & RREF'
+description: 'Notes on echelon form, reduced echelon form (RREF), pivot strategy, uniqueness, and solution classification.'
+date: 2025-09-29
+tags: ['linear-algebra', 'lecture-2']
+image: './banner.png'
+authors: ['Chara']
+---
+
+import Callout from '@/components/Callout.astro'
+
+## Echelon Form
+
+{/* ### Definition */}
+<Callout variant="definition" title="Row Echelon Form">
+  A matrix is in **row echelon form (REF)** if:
+
+  1. Each leading entry (first nonzero in row, called a **pivot**) is to the right of the pivot in the row above.
+  2. All zero rows are at the bottom.
+</Callout>
+
+### Example
+
+$$
+\begin{bmatrix}
+\$ & * & * & * & * \\
+0 & \$ & * & * & * \\
+0 & 0 & 0 & \$ & * \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+- $ = pivot (nonzero)  
+- $*$ = any entry  
+
+
+---
+
+## Reduced Row Echelon Form (RREF)
+
+{/* ### Definition */}
+
+<Callout variant="definition" title="Reduced Row Echelon Form">
+  A matrix is in **RREF** if:
+
+  1. It is in echelon form.
+  2. All pivots are $1$ (scaling).
+  3. Each pivot is the only nonzero in its column.
+</Callout>
+
+### Example
+$$
+\begin{bmatrix}
+1 & 0 & * & 0 & * \\
+0 & 1 & * & 0 & * \\
+0 & 0 & 0 & 1 & * \\
+0 & 0 & 0 & 0 & 0 \\
+0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+
+---
+
+## Example: REF but not RREF
+
+$$
+\begin{bmatrix}
+0 & 1 & 2 & 4 & 0 & \pi & 0 \\
+0 & 0 & 3 & 0 & 0 & \sqrt{2} & 0 \\
+0 & 0 & 0 & 0 & 1 & 7 & 0 \\
+0 & 0 & 0 & 0 & 0 & 0 & 0
+\end{bmatrix}
+$$
+
+- Is in **echelon form**.  
+- Not in reduced echelon form.
+
+
+---
+
+## Algorithms
+
+### Getting to Echelon Form
+
+1. From the left, pick first nonzero column → **pivot column**.  
+2. Swap rows so top entry is nonzero → **pivot**.  
+3. Use pivot to kill entries below (replacement).
+4. Move to submatrix southeast of pivot.  
+5. Repeat until in echelon form.  
+
+
+### Getting to RREF
+
+1. Scale rows so each pivot = $1$  
+   $$
+   \begin{bmatrix}
+   p_1 & * & * & * \\
+   0 & p_2 & * & * \\
+   0 & 0 & p_3 & * \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}
+   \;\;\to\;\;
+   \begin{bmatrix}
+   1 & */p_1 & */p_1 & */p_1 \\
+   0 & 1 & */p_2 & */p_2 \\
+   0 & 0 & 1 & */p_3 \\
+   0 & 0 & 0 & 0
+   \end{bmatrix}
+   $$
+
+2. Use replacements to kill entries **above pivots**.  
+
+$$
+\begin{bmatrix}
+1 & * & * \\
+0 & 1 & * \\
+0 & 0 & 0
+\end{bmatrix}
+\;\;\to\;\;
+\begin{bmatrix}
+1 & 0 & * \\
+0 & 1 & * \\
+0 & 0 & 0
+\end{bmatrix}
+$$
+
+<div class="mx-auto w-[50%]">
+{/* ![RREF Steps](./l2_s5.png) */}
+</div>
+
+---
+
+## Theorem
+
+**Every matrix $A$ reduces to a unique matrix in RREF.**
+
+<div class="mx-auto w-[50%]">
+{/* ![Theorem](./l2_s6.png) */}
+</div>
+
+---
+
+## Echelon and Solutions
+
+- If last column of augmented matrix is pivot → **no solution**.  
+- If every column but last is pivot → **unique solution**.  
+- If last col is not pivot and another col is free → **infinitely many solutions**.  
+
+**Example**
+$$
+\begin{bmatrix}
+1&0&0&|&1\\
+0&1&0&|&-3\\
+0&0&1&|&2
+\end{bmatrix}
+\;\;\Rightarrow\;\;
+x_1=1,\;x_2=-3,\;x_3=2
+$$
+
+---
