@@ -7,7 +7,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
-import type { Payload } from 'recharts/types/component/DefaultTooltipContent'
+import type { Formatter, Payload } from 'recharts/types/component/DefaultTooltipContent'
 
 interface TrajectoryPoint {
   index: number
@@ -22,7 +22,7 @@ interface ContestTrajectoryChartProps {
   data: TrajectoryPoint[]
 }
 
-const tooltipFormatter = (value: number | undefined, name: string) => {
+const tooltipFormatter: Formatter<number, string> = (value, name) => {
   return [`${Number(value ?? 0).toFixed(1)}`, name]
 }
 
