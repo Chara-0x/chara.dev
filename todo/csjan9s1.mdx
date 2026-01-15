@@ -1,0 +1,53 @@
+we have n objects
+m spaces/bins
+if n>m and use place all object, then >= 1 bin will have >= 2 objects.
+so that if there are n?=2 people at a party, then at least 2 people have the same number of friends at the party.
+
+Two cases:
+1. Assume >= 1 person has no friends. F' = {0, 1, 2, ..., n-2} (max friends = n-2 bc can't be friend with self)
+so |F'| = n-1
+we have n people that we are assigning to n-1 possible spots
+via the pigeonhole principle, at least 2 people have same # of friends.
+
+2. Assume everyone has >= 1 friend.
+F' = {1, 2, ..., n-1} (min friends = 1 bc everyone has >= 1 friend)
+so |F'| = n-1
+we have n people that we are assigning to n-1 possible spots
+via the pigeonhole principle, at least 2 people have same # of friends.
+
+
+Proof by contradiction:
+assume no 2 people have the same number of friends.
+if we have P people, P = {1, 2, } = n
+F = {0, 1, 2, ..., } = P-1  (max friends = P-1, min friends = 0)
+so there are P people and P possible # of friends
+if one person has 0 friends, then no one can have P-1 friends (because u can't be friend with 0 friends person)
+so possible # of friends = {0, 1, 2, ..., P-2} = P-1
+P people, P-1 possible # of friends -> by pigeonhole principle, at least 2 people have same # of friends
+contradiction -> original assumption is false -> at least 2 people have same #
+
+
+2. Suppose you have a rectangular array of pebbles, where each pebble is either red or blue.
+Suppose that for every way of choosing one pebble from each column, there exsits a red pebble among the chosen ones. 
+Prove that there must exsit an all red column.
+
+If there dosn't exsit an all red column, then there exsit a way to choose a pebble from each column using only blue pebbles.
+
+We can choose a blue from each column, therefore there exsits a way of choosing one pebble from each column with no red pebbles.
+
+
+Truth table: not (P => Q) === P and not Q
+Proof (by contradiction), in simple language:
+1. Assume the opposite: suppose no column is all red.  
+2. Then every column has at least one blue pebble.  
+3. Now pick a blue pebble from each column. This gives a choice of one pebble per column that are all blue.  
+4. That particular choice has no red pebble, which contradicts the given condition that every choice has a red pebble.  
+5. Therefore the assumption is false, and there must be at least one column that is all red.
+
+Proof my contraposition:
+1. Assume no column is all red.
+2. Then every column has at least one blue pebble.
+3. Now pick a blue pebble from each column. This gives a choice of one pebble per column that are all blue.
+4. Therefore there exsits a way of choosing one pebble from each column with no red pebbles.
+5. Therefore the original statement is true.    
+

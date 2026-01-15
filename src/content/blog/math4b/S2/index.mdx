@@ -1,0 +1,65 @@
+---
+title: "Section 2"
+description: "Notes on my UCSB Math 4B (Differential Equations) course."
+date: 2026-01-06
+tags: ["Math", "UCSBB"]
+image: "../banner.png"
+authors: ["Chara"]
+---
+
+import Callout from '@/components/Callout.astro'
+import EquationPlot from '@/components/EquationPlot.astro'
+
+1. Differential equations are equations containing derivatives, e.g.
+<span style="display: block; text-align: center; margin: 1em 0;">
+$\frac{dy}{dx} = \sin(t^2)+1, \frac{d^2y}{dx^2} = y+t, \frac{\partial f(x,y)}{\partial x} = \sin(x+y)
+$
+</span>
+
+In this class, we would only care about the first two equations, where the third one contains more than one independent variable. 
+All of these kinds of equations are named ODE (Ordinary Differential Equations).
+
+1. The **order** of a differential equation is given by **the order of the highest derivative** in the equation.
+2. We say an n-th order differential equation $F(t, y, y', y'', \ldots, y^{(n)}) = 0$ is **linear** if it can be written as
+<span style="display: block; text-align: center; margin: 1em 0;">
+$a_n(t) y^{(n)} + a_{n-1}(t) y^{(n-1)} + \ldots + a_1(t) y' + a_0(t) y = g(t)$
+</span>
+
+### Practice
+| ODE | Order | Linear/Nonlinear |
+| :--- | :---: | :---: |
+
+
+### Separable ODE
+Separable ODE can be written as
+<span style="display: block; text-align: center; margin: 1em 0;">
+$M(y) dy = N(t) dt$
+</span>
+and then take the integral for both sides.
+(This is only for first-order ODE, can be either linear or nonlinear.)
+
+###  Integrating factors
+A technique used to solve the **1st order linear** ODE of the form
+<span style="display: block; text-align: center; margin: 1em 0;">
+$\frac{dy}{dt} + p(t) y = q(t)$
+</span>
+(Only for first-order linear ODE)
+
+
+
+
+
+
+
+### Notation
+<div class="flex justify-center [&>table]:w-fit">
+
+| &nbsp;&nbsp;&nbsp; Lagrange &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Order &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; Newton &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leibniz &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| :---: | :---: | :---: | :---: |
+| $y'$ | 1-st | $\dot{y}$ | $\frac{dy}{dx}$ |
+| $y''$ | 2-nd | $\ddot{y}$ | $\frac{d^2y}{dx^2}$ |
+| $y'''$ | 3-rd | $\dddot{y}$ | $\frac{d^3y}{dx^3}$ |
+| $y^{(4)}$ | 4-th | | |
+| $y^{(n)}$ | n-th | | $\frac{d^ny}{dx^n}$ |
+
+</div>
